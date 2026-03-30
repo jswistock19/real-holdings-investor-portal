@@ -1,1 +1,582 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>R.E.A.L. Holdings LLC | Investor Portal</title><script src="https://cdn.jsdelivr.net/npm/chart.js"></script><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"><style>*{margin:0;padding:0;box-sizing:border-box}:root{--bg:#0a0e1a;--surface:#111827;--surface2:#1a2236;--border:#1e293b;--text:#e2e8f0;--text2:#94a3b8;--accent:#c9a84c;--accent2:#e8c94a;--purple:#8b5cf6;--green:#10b981;--red:#ef4444;--blue:#3b82f6}body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden}body.light{--bg:#f8fafc;--surface:#ffffff;--surface2:#f1f5f9;--border:#e2e8f0;--text:#1e293b;--text2:#64748b}.topbar{position:fixed;top:0;left:0;right:0;height:56px;background:var(--surface);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 24px;z-index:100}.topbar h1{font-family:'Instrument Serif',serif;font-style:italic;font-size:1.2rem;color:var(--accent)}.conf-badge{background:rgba(201,168,76,0.12);color:var(--accent);font-size:0.65rem;padding:4px 12px;border-radius:20px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;display:flex;align-items:center;gap:6px;margin-left:16px}.conf-badge::before{content:'';width:6px;height:6px;background:var(--accent);border-radius:50%;animation:pulse 2s infinite}@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}.topbar-left{display:flex;align-items:center}.topbar-right{display:flex;align-items:center;gap:12px}.theme-btn{background:var(--surface2);border:1px solid var(--border);color:var(--text);padding:6px 12px;border-radius:8px;cursor:pointer;font-size:.8rem}.avatar{width:32px;height:32px;background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.7rem;color:#0a0e1a}.nav{position:fixed;top:56px;left:0;right:0;height:48px;background:var(--surface);border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 24px;z-index:99;overflow-x:auto;gap:0}.nav a{color:var(--text2);text-decoration:none;font-size:.78rem;font-weight:500;padding:14px 14px;white-space:nowrap;border-bottom:2px solid transparent;transition:all .2s}.nav a:hover,.nav a.active{color:var(--accent);border-bottom-color:var(--accent)}.main{margin-top:104px;padding:32px 40px 80px}.section{display:none}.section.active{display:block}.lbl{font-size:.7rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:8px;display:flex;align-items:center;gap:8px}.lbl::before,.lbl::after{content:'';width:24px;height:1px;background:var(--accent)}.ttl{font-family:'Instrument Serif',serif;font-style:italic;font-size:2.8rem;color:var(--text);margin-bottom:8px}.sub{color:var(--text2);font-size:1rem;margin-bottom:36px;max-width:640px}.grid{display:grid;gap:20px}.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:24px;transition:transform .2s,border-color .2s}.card:hover{border-color:var(--accent);transform:translateY(-2px)}.kv{font-size:.7rem;color:var(--text2);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}.kn{font-size:1.8rem;font-weight:800;color:var(--text)}.ks{font-size:.8rem;color:var(--green);margin-top:4px}.tag{display:inline-block;padding:3px 10px;border-radius:20px;font-size:.68rem;font-weight:600}.tg{background:rgba(16,185,129,.12);color:#10b981}.tb{background:rgba(59,130,246,.12);color:#3b82f6}.tp{background:rgba(139,92,246,.12);color:#8b5cf6}.ta{background:rgba(201,168,76,.12);color:#c9a84c}table{width:100%;border-collapse:collapse;margin-top:16px}th,td{text-align:left;padding:12px 16px;border-bottom:1px solid var(--border);font-size:.85rem}th{color:var(--text2);font-weight:600;font-size:.72rem;text-transform:uppercase;letter-spacing:1px}.cw{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:24px;margin-bottom:20px}.cw h3{font-family:'Instrument Serif',serif;font-style:italic;font-size:1.3rem;margin-bottom:16px;color:var(--text)}.qb{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:32px;margin:24px 0;position:relative}.qt{font-style:italic;color:var(--text);font-size:1.05rem;line-height:1.7;padding-left:24px}.qa{color:var(--accent);font-size:.85rem;margin-top:12px;padding-left:24px;font-weight:600}.mc{position:relative;padding-left:48px}.mn{position:absolute;left:0;top:0;width:36px;height:36px;background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.85rem;color:#0a0e1a}.pb{width:100%;height:8px;background:var(--surface2);border-radius:4px;overflow:hidden;margin-top:8px}.pf{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--accent),var(--accent2))}.footer{background:var(--surface);border-top:1px solid var(--border);padding:40px;margin-top:60px;text-align:center}.fb{font-family:'Instrument Serif',serif;font-style:italic;font-size:1.5rem;color:var(--accent);margin-bottom:8px}.fl{font-size:.72rem;color:var(--text2);max-width:700px;margin:12px auto;line-height:1.6}.fm{font-size:.68rem;color:var(--text2);margin-top:16px;opacity:.6}@media(max-width:900px){.g4{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:1fr}.g2{grid-template-columns:1fr}.main{padding:20px 16px 60px}.ttl{font-size:2rem}}</style></head><body><div class="topbar"><div class="topbar-left"><h1>R.E.A.L. Holdings LLC</h1><span class="conf-badge">Confidential - Qualified Investors Only</span></div><div class="topbar-right"><button class="theme-btn" onclick="document.body.classList.toggle('light')">Light / Dark</button><div class="avatar">JC</div></div></div><nav class="nav"><a href="#" class="active" onclick="show('overview',this)">Overview</a><a href="#" onclick="show('vision',this)">Vision</a><a href="#" onclick="show('company',this)">Company</a><a href="#" onclick="show('products',this)">Products</a><a href="#" onclick="show('moat',this)">Moat</a><a href="#" onclick="show('market',this)">Market</a><a href="#" onclick="show('revenue',this)">Revenue</a><a href="#" onclick="show('financials',this)">Financials</a><a href="#" onclick="show('investment',this)">Investment</a><a href="#" onclick="show('grants',this)">Grants</a><a href="#" onclick="show('returns',this)">Returns</a></nav><div class="main"><div id="overview" class="section active"><div class="lbl">Overview</div><div class="ttl">R.E.A.L. Holdings LLC</div><div class="sub">Seed Round - $3M Raise - $15M Pre-Money Valuation. A vertically integrated healthcare technology and real estate holding company.</div><div class="grid g4"><div class="card"><div class="kv">Valuation</div><div class="kn">$15M</div><div class="ks">Pre-Money</div></div><div class="card"><div class="kv">Raise Target</div><div class="kn">$3M</div><div class="ks">Seed Round</div></div><div class="card"><div class="kv">Revenue Pillars</div><div class="kn">18</div><div class="ks">Diversified Streams</div></div><div class="card"><div class="kv">Grant Pipeline</div><div class="kn">$5.3B+</div><div class="ks">445 Programs</div></div><div class="card"><div class="kv">Clinix AI TAM</div><div class="kn">$48B</div><div class="ks">Healthcare IT</div></div><div class="card"><div class="kv">Return Range</div><div class="kn">1x-37x</div><div class="ks">Multi-Path</div></div><div class="card"><div class="kv">FQHC Network</div><div class="kn">1,400+</div><div class="ks">Target Centers</div></div><div class="card"><div class="kv">Equity Offered</div><div class="kn">16.67%</div><div class="ks">Post-Money</div></div></div><div class="cw" style="margin-top:24px"><h3>3-Year Revenue Projection</h3><canvas id="revChart" height="100"></canvas></div><div class="cw"><h3>Equity Distribution</h3><canvas id="eqChart" height="100"></canvas></div></div><div id="vision" class="section"><div class="lbl">The Founder's Vision</div><div class="ttl">Bridging Healthcare & Technology</div><div class="sub">R.E.A.L. Holdings exists at the intersection of healthcare access, AI innovation, and community development.</div><div class="qb"><div class="qt">We believe healthcare technology should serve the underserved first. Every system we build, every partnership we forge, starts with the communities that need it most.</div><div class="qa">Jake Clopton, Founder & CEO</div></div><div class="grid g2" style="margin-top:24px"><div class="card"><h3 style="color:var(--red);margin-bottom:8px">The Problem</h3><p style="color:var(--text2);font-size:.9rem;line-height:1.6">Fragmented healthcare IT systems leave FQHCs and rural providers behind. EHR vendors charge premium prices for outdated solutions while underserved communities lack modern telehealth and AI-driven care.</p></div><div class="card"><h3 style="color:var(--green);margin-bottom:8px">Our Solution</h3><p style="color:var(--text2);font-size:.9rem;line-height:1.6">A vertically integrated platform combining Clinix AI (healthcare IT), Clopton Capital (real estate), and grant-funded community infrastructure to deliver affordable, AI-powered healthcare technology at scale.</p></div></div></div><div id="company" class="section"><div class="lbl">Company Structure</div><div class="ttl">Holding Company Architecture</div><div class="sub">R.E.A.L. Holdings LLC operates as a parent entity with three core subsidiaries driving value creation.</div><div class="grid g3"><div class="card"><span class="tb tag">Healthcare IT</span><h3 style="margin-top:12px;font-size:1.2rem">Clinix AI</h3><p style="color:var(--text2);font-size:.85rem;margin-top:8px">AI-powered EHR, telehealth, RCM, and practice management platform targeting FQHCs and underserved providers.</p></div><div class="card"><span class="ta tag">Real Estate</span><h3 style="margin-top:12px;font-size:1.2rem">Clopton Capital</h3><p style="color:var(--text2);font-size:.85rem;margin-top:8px">Commercial real estate advisory and investment platform with $2B+ in facilitated transactions.</p></div><div class="card"><span class="tp tag">Infrastructure</span><h3 style="margin-top:12px;font-size:1.2rem">Community Dev</h3><p style="color:var(--text2);font-size:.85rem;margin-top:8px">Grant-funded community health centers, broadband infrastructure, and workforce development programs.</p></div></div><table style="margin-top:24px"><thead><tr><th>Entity</th><th>Role</th><th>Revenue Model</th><th>Status</th></tr></thead><tbody><tr><td>R.E.A.L. Holdings LLC</td><td>Parent Holding Co.</td><td>Subsidiary Distributions</td><td><span class="tg tag">Active</span></td></tr><tr><td>Clinix AI</td><td>Healthcare SaaS</td><td>SaaS + Per-Encounter</td><td><span class="tb tag">Building</span></td></tr><tr><td>Clopton Capital</td><td>CRE Advisory</td><td>Advisory Fees + Equity</td><td><span class="tg tag">Active</span></td></tr><tr><td>PT Services</td><td>Physical Therapy</td><td>Insurance + Cash Pay</td><td><span class="tg tag">Active</span></td></tr></tbody></table></div><div id="products" class="section"><div class="lbl">Products & Services</div><div class="ttl">18 Revenue Pillars</div><div class="sub">Diversified portfolio spanning healthcare IT, real estate, physical therapy, and community development.</div><div class="grid g3"><div class="card"><span class="tb tag">SaaS</span><h3 style="margin-top:8px;font-size:1rem">Clinix AI EHR</h3><p style="color:var(--text2);font-size:.8rem;margin-top:6px">AI-native electronic health records for FQHCs</p><div style="color:var(--accent);font-weight:700;margin-top:8px">$2M-$8M ARR</div></div><div class="card"><span class="tb tag">Telehealth</span><h3 style="margin-top:8px;font-size:1rem">Virtual Care Platform</h3><p style="color:var(--text2);font-size:.8rem;margin-top:6px">HIPAA-compliant telehealth with AI triage</p><div style="color:var(--accent);font-weight:700;margin-top:8px">$500K-$2M ARR</div></div><div class="card"><span class="tb tag">RCM</span><h3 style="margin-top:8px;font-size:1rem">Revenue Cycle Mgmt</h3><p style="color:var(--text2);font-size:.8rem;margin-top:6px">AI-powered billing and claims optimization</p><div style="color:var(--accent);font-weight:700;margin-top:8px">$1M-$4M ARR</div></div><div class="card"><span class="ta tag">Real Estate</span><h3 style="margin-top:8px;font-size:1rem">CRE Advisory</h3><p style="color:var(--text2);font-size:.8rem;margin-top:6px">Commercial mortgage brokerage and advisory</p><div style="color:var(--accent);font-weight:700;margin-top:8px">$1.5M-$5M</div></div><div class="card"><span class="tg tag">Healthcare</span><h3 style="margin-top:8px;font-size:1rem">PT Clinics</h3><p style="color:var(--text2);font-size:.8rem;margin-top:6px">Physical therapy clinic operations</p><div style="color:var(--accent);font-weight:700;margin-top:8px">$800K-$2M</div></div><div class="card"><span class="tp tag">Grants</span><h3 style="margin-top:8px;font-size:1rem">Grant Services</h3><p style="color:var(--text2);font-size:.8rem;margin-top:6px">Grant writing and management for FQHCs</p><div style="color:var(--accent);font-weight:700;margin-top:8px">$300K-$1M</div></div></div></div><div id="moat" class="section"><div class="lbl">Competitive Moats</div><div class="ttl">Defensible Advantages</div><div class="sub">Five structural moats that compound over time.</div><div class="grid g2" style="margin-bottom:24px"><div class="card mc"><div class="mn">1</div><h3 style="font-size:1.1rem">Vertical Integration</h3><p style="color:var(--text2);font-size:.85rem;margin-top:6px">Healthcare IT + Real Estate + Community Dev under one roof.</p></div><div class="card mc"><div class="mn">2</div><h3 style="font-size:1.1rem">FQHC Relationships</h3><p style="color:var(--text2);font-size:.85rem;margin-top:6px">Deep partnerships with federally qualified health centers.</p></div><div class="card mc"><div class="mn">3</div><h3 style="font-size:1.1rem">Grant-Funded Growth</h3><p style="color:var(--text2);font-size:.85rem;margin-top:6px">$5.3B+ grant pipeline provides non-dilutive capital.</p></div><div class="card mc"><div class="mn">4</div><h3 style="font-size:1.1rem">AI-Native Architecture</h3><p style="color:var(--text2);font-size:.85rem;margin-top:6px">Built from scratch with AI at core. 10x lower cost than legacy EHRs.</p></div><div class="card mc"><div class="mn">5</div><h3 style="font-size:1.1rem">Real Estate Collateral</h3><p style="color:var(--text2);font-size:.85rem;margin-top:6px">Tangible asset backing uncommon in pure-play tech.</p></div></div><table><thead><tr><th>Competitor</th><th>EHR</th><th>Telehealth</th><th>RCM</th><th>Real Estate</th><th>Grants</th></tr></thead><tbody><tr><td style="font-weight:700;color:var(--accent)">R.E.A.L. Holdings</td><td style="color:var(--green)">Yes</td><td style="color:var(--green)">Yes</td><td style="color:var(--green)">Yes</td><td style="color:var(--green)">Yes</td><td style="color:var(--green)">Yes</td></tr><tr><td>Epic Systems</td><td style="color:var(--green)">Yes</td><td>Partial</td><td>No</td><td>No</td><td>No</td></tr><tr><td>athenahealth</td><td style="color:var(--green)">Yes</td><td style="color:var(--green)">Yes</td><td style="color:var(--green)">Yes</td><td>No</td><td>No</td></tr></tbody></table></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>R.E.A.L. Holdings LLC | Investor Portal</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0e1a;--surface:#111827;--surface2:#1a2236;--border:#1e293b;--text:#e2e8f0;--text2:#94a3b8;--accent:#c9a84c;--accent2:#e8c94a;--purple:#8b5cf6;--green:#10b981;--red:#ef4444;--blue:#3b82f6;--sidebar-w:260px}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden}
+body.light{--bg:#f8fafc;--surface:#ffffff;--surface2:#f1f5f9;--border:#e2e8f0;--text:#1e293b;--text2:#64748b}
+
+/* ── Topbar ── */
+.topbar{position:fixed;top:0;left:0;right:0;height:56px;background:var(--surface);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 24px;z-index:100}
+.topbar h1{font-family:'Instrument Serif',serif;font-style:italic;font-size:1.2rem;color:var(--accent)}
+.topbar-left{display:flex;align-items:center}
+.topbar-right{display:flex;align-items:center;gap:12px}
+.conf-badge{background:rgba(201,168,76,0.12);color:var(--accent);font-size:.65rem;padding:4px 12px;border-radius:20px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;display:flex;align-items:center;gap:6px;margin-left:16px}
+.conf-badge::before{content:'';width:6px;height:6px;background:var(--accent);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.theme-btn{background:var(--surface2);border:1px solid var(--border);color:var(--text);padding:6px 12px;border-radius:8px;cursor:pointer;font-size:.8rem}
+.avatar{width:32px;height:32px;background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;color:#0a0e1a}
+.sidebar-toggle{background:none;border:none;color:var(--text2);cursor:pointer;font-size:1.2rem;margin-right:12px;display:flex;align-items:center}
+
+/* ── Sidebar ── */
+.sidebar{position:fixed;top:56px;left:0;bottom:0;width:var(--sidebar-w);background:var(--surface);border-right:1px solid var(--border);padding:20px 0;overflow-y:auto;transition:transform .3s ease,width .3s ease;z-index:90}
+.sidebar.collapsed{transform:translateX(calc(-1 * var(--sidebar-w)))}
+.sidebar-section{padding:0 16px;margin-bottom:24px}
+.sidebar-label{font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--text2);margin-bottom:8px;padding:0 8px}
+.sidebar-link{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;color:var(--text2);text-decoration:none;font-size:.85rem;font-weight:500;cursor:pointer;transition:all .15s ease}
+.sidebar-link:hover{background:var(--surface2);color:var(--text)}
+.sidebar-link.active{background:rgba(201,168,76,0.1);color:var(--accent)}
+.sidebar-link svg{width:18px;height:18px;flex-shrink:0}
+
+/* ── Main ── */
+.main{margin-left:var(--sidebar-w);margin-top:56px;padding:32px;min-height:calc(100vh - 56px);transition:margin-left .3s ease}
+.main.expanded{margin-left:0}
+.section{display:none}
+.section.active{display:block}
+
+/* ── Cards / KPIs ── */
+.section-title{font-family:'Instrument Serif',serif;font-style:italic;font-size:1.6rem;color:var(--accent);margin-bottom:24px}
+.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:32px}
+.kpi{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px}
+.kpi-label{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--text2);margin-bottom:8px}
+.kpi-value{font-size:1.8rem;font-weight:800;color:var(--text)}
+.kpi-sub{font-size:.75rem;color:var(--text2);margin-top:4px}
+.kpi-value.accent{color:var(--accent)}
+.kpi-value.green{color:var(--green)}
+.kpi-value.purple{color:var(--purple)}
+.kpi-value.blue{color:var(--blue)}
+
+/* ── Charts ── */
+.chart-row{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:32px}
+.chart-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:24px}
+.chart-card h3{font-family:'Instrument Serif',serif;font-style:italic;font-size:1.1rem;color:var(--accent);margin-bottom:16px}
+.chart-wrap{position:relative;height:260px}
+
+/* ── Tables ── */
+.table-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:24px;margin-bottom:24px;overflow-x:auto}
+.table-card h3{font-family:'Instrument Serif',serif;font-style:italic;font-size:1.1rem;color:var(--accent);margin-bottom:16px}
+table{width:100%;border-collapse:collapse;font-size:.82rem}
+th{text-align:left;color:var(--text2);font-weight:600;font-size:.7rem;text-transform:uppercase;letter-spacing:1px;padding:10px 12px;border-bottom:1px solid var(--border)}
+td{padding:10px 12px;border-bottom:1px solid var(--border);color:var(--text)}
+tr:last-child td{border-bottom:none}
+
+/* ── Badges ── */
+.badge{display:inline-block;padding:3px 10px;border-radius:20px;font-size:.7rem;font-weight:600}
+.badge-green{background:rgba(16,185,129,.15);color:var(--green)}
+.badge-gold{background:rgba(201,168,76,.15);color:var(--accent)}
+.badge-purple{background:rgba(139,92,246,.15);color:var(--purple)}
+.badge-blue{background:rgba(59,130,246,.15);color:var(--blue)}
+.badge-red{background:rgba(239,68,68,.15);color:var(--red)}
+
+/* ── Milestone timeline ── */
+.timeline{position:relative;padding-left:28px;margin:24px 0}
+.timeline::before{content:'';position:absolute;left:8px;top:0;bottom:0;width:2px;background:var(--border)}
+.timeline-item{position:relative;margin-bottom:20px}
+.timeline-item::before{content:'';position:absolute;left:-24px;top:6px;width:12px;height:12px;border-radius:50%;border:2px solid var(--accent);background:var(--bg)}
+.timeline-item.done::before{background:var(--accent)}
+.timeline-item h4{font-size:.85rem;font-weight:600;color:var(--text)}
+.timeline-item p{font-size:.78rem;color:var(--text2);margin-top:2px}
+
+/* ── Progress bars ── */
+.progress-row{margin-bottom:14px}
+.progress-label{display:flex;justify-content:space-between;font-size:.78rem;margin-bottom:4px}
+.progress-label span:first-child{color:var(--text)}
+.progress-label span:last-child{color:var(--accent);font-weight:600}
+.progress-bar{height:8px;background:var(--surface2);border-radius:8px;overflow:hidden}
+.progress-fill{height:100%;border-radius:8px;transition:width 1s ease}
+
+/* ── Moat cards ── */
+.moat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-bottom:24px}
+.moat-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px}
+.moat-num{font-size:2rem;font-weight:900;color:var(--accent);opacity:.4;margin-bottom:4px}
+.moat-card h4{font-size:.9rem;font-weight:700;margin-bottom:6px}
+.moat-card p{font-size:.78rem;color:var(--text2);line-height:1.5}
+
+/* ── Return cards ── */
+.return-cards{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:24px}
+.return-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px;text-align:center}
+.return-card .mult{font-size:1.8rem;font-weight:900}
+.return-card .label{font-size:.7rem;color:var(--text2);margin-top:4px;text-transform:uppercase;letter-spacing:.5px}
+
+/* ── Footer ── */
+.footer{margin-top:48px;padding:24px 0;border-top:1px solid var(--border);text-align:center;color:var(--text2);font-size:.72rem;line-height:1.8}
+.footer strong{color:var(--text)}
+
+/* ── Responsive ── */
+@media(max-width:900px){
+  .kpi-grid{grid-template-columns:repeat(2,1fr)}
+  .chart-row{grid-template-columns:1fr}
+  .return-cards{grid-template-columns:repeat(3,1fr)}
+  .sidebar{transform:translateX(calc(-1 * var(--sidebar-w)))}
+  .sidebar.open{transform:translateX(0)}
+  .main{margin-left:0}
+}
+@media(max-width:600px){
+  .kpi-grid{grid-template-columns:1fr}
+  .return-cards{grid-template-columns:repeat(2,1fr)}
+  .main{padding:16px}
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="topbar-left">
+    <button class="sidebar-toggle" onclick="toggleSidebar()" title="Toggle sidebar">
+      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <h1>R.E.A.L. Holdings LLC</h1>
+    <div class="conf-badge">Confidential &mdash; Qualified Investors Only</div>
+  </div>
+  <div class="topbar-right">
+    <button class="theme-btn" onclick="toggleTheme()">Light / Dark</button>
+    <div class="avatar">JC</div>
+  </div>
+</div>
+
+<!-- SIDEBAR -->
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-section">
+    <div class="sidebar-label">Portal</div>
+    <a class="sidebar-link active" onclick="showSection('dashboard')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+      Dashboard
+    </a>
+    <a class="sidebar-link" onclick="showSection('terms')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      Investment Terms
+    </a>
+    <a class="sidebar-link" onclick="showSection('cap')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      Cap Structure
+    </a>
+    <a class="sidebar-link" onclick="showSection('portfolio')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+      Portfolio Assets
+    </a>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-label">Financials</div>
+    <a class="sidebar-link" onclick="showSection('funds')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+      Use of Funds
+    </a>
+    <a class="sidebar-link" onclick="showSection('revenue')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      Revenue Model
+    </a>
+    <a class="sidebar-link" onclick="showSection('grants')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      Grant Pipeline
+    </a>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-label">Analysis</div>
+    <a class="sidebar-link" onclick="showSection('returns')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+      Return Scenarios
+    </a>
+    <a class="sidebar-link" onclick="showSection('moats')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      Competitive Moats
+    </a>
+  </div>
+</nav>
+
+<!-- MAIN CONTENT -->
+<div class="main" id="main">
+
+<!-- ═══════ DASHBOARD ═══════ -->
+<div class="section active" id="sec-dashboard">
+  <div class="section-title">Dashboard Overview</div>
+  <div class="kpi-grid">
+    <div class="kpi"><div class="kpi-label">Pre-Money Valuation</div><div class="kpi-value accent">$15M</div><div class="kpi-sub">Seed Round</div></div>
+    <div class="kpi"><div class="kpi-label">Raise Target</div><div class="kpi-value accent">$3M</div><div class="kpi-sub">Equity Financing</div></div>
+    <div class="kpi"><div class="kpi-label">Revenue Pillars</div><div class="kpi-value green">18</div><div class="kpi-sub">Diversified Streams</div></div>
+    <div class="kpi"><div class="kpi-label">Grant Pipeline</div><div class="kpi-value purple">$5.3B+</div><div class="kpi-sub">445 Programs Identified</div></div>
+    <div class="kpi"><div class="kpi-label">Clinix AI TAM</div><div class="kpi-value blue">$48B</div><div class="kpi-sub">Healthcare IT Market</div></div>
+    <div class="kpi"><div class="kpi-label">Return Range</div><div class="kpi-value accent">1x–37x</div><div class="kpi-sub">Multi-Path Exit</div></div>
+    <div class="kpi"><div class="kpi-label">FQHC Network</div><div class="kpi-value green">1,400+</div><div class="kpi-sub">Target Centers</div></div>
+    <div class="kpi"><div class="kpi-label">Equity Offered</div><div class="kpi-value purple">16.67%</div><div class="kpi-sub">Post-Money</div></div>
+  </div>
+  <div class="chart-row">
+    <div class="chart-card"><h3>Revenue Projection (3-Year)</h3><div class="chart-wrap"><canvas id="revenueChart"></canvas></div></div>
+    <div class="chart-card"><h3>Equity Distribution</h3><div class="chart-wrap"><canvas id="equityChart"></canvas></div></div>
+  </div>
+  <div class="chart-row">
+    <div class="chart-card"><h3>Recovery Timeline</h3><div class="chart-wrap"><canvas id="recoveryChart"></canvas></div></div>
+    <div class="chart-card"><h3>Revenue by Segment</h3><div class="chart-wrap"><canvas id="segmentChart"></canvas></div></div>
+  </div>
+
+  <!-- Milestone Timeline -->
+  <div class="table-card">
+    <h3>Key Milestones</h3>
+    <div class="timeline">
+      <div class="timeline-item done"><h4>Entity Formation &amp; IP Filing</h4><p>Q1 2025 — Completed</p></div>
+      <div class="timeline-item done"><h4>Clinix AI MVP Development</h4><p>Q2 2025 — Completed</p></div>
+      <div class="timeline-item"><h4>Seed Round Close ($3M)</h4><p>Q3 2025 — In Progress</p></div>
+      <div class="timeline-item"><h4>FQHC Pilot Launch (5 centers)</h4><p>Q4 2025 — Planned</p></div>
+      <div class="timeline-item"><h4>Grant Funding Secured ($2M+)</h4><p>Q1 2026 — Planned</p></div>
+      <div class="timeline-item"><h4>Revenue Generation &amp; Scale</h4><p>Q2–Q4 2026 — Planned</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════ INVESTMENT TERMS ═══════ -->
+<div class="section" id="sec-terms">
+  <div class="section-title">Investment Terms</div>
+  <div class="table-card">
+    <h3>Term Sheet Summary</h3>
+    <table>
+      <thead><tr><th>Parameter</th><th>Details</th></tr></thead>
+      <tbody>
+        <tr><td>Issuer</td><td>R.E.A.L. Holdings LLC</td></tr>
+        <tr><td>Round</td><td>Seed</td></tr>
+        <tr><td>Instrument</td><td>Equity (LLC Membership Units)</td></tr>
+        <tr><td>Raise Amount</td><td><strong>$3,000,000</strong></td></tr>
+        <tr><td>Pre-Money Valuation</td><td><strong>$15,000,000</strong></td></tr>
+        <tr><td>Post-Money Valuation</td><td>$18,000,000</td></tr>
+        <tr><td>Equity Offered</td><td>16.67%</td></tr>
+        <tr><td>Minimum Investment</td><td>$100,000</td></tr>
+        <tr><td>Use of Proceeds</td><td>Technology, Operations, Grants, Personnel</td></tr>
+        <tr><td>Board Seat</td><td>1 Investor Director (≥$500K)</td></tr>
+        <tr><td>Information Rights</td><td>Quarterly Financials + Annual Audit</td></tr>
+        <tr><td>Anti-Dilution</td><td>Broad-Based Weighted Average</td></tr>
+        <tr><td>Liquidation Preference</td><td>1x Non-Participating</td></tr>
+        <tr><td>Pro-Rata Rights</td><td>Yes, for all investors</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-card">
+    <h3>Comparison: R.E.A.L. Holdings vs Silver Arch VC Typical</h3>
+    <table>
+      <thead><tr><th>Term</th><th>R.E.A.L. Holdings</th><th>Silver Arch VC Typical</th></tr></thead>
+      <tbody>
+        <tr><td>Valuation</td><td><span class="badge badge-green">$15M Pre</span></td><td>$8–12M Pre</td></tr>
+        <tr><td>Revenue Pillars</td><td><span class="badge badge-green">18 Streams</span></td><td>1–3 Streams</td></tr>
+        <tr><td>Grant Access</td><td><span class="badge badge-gold">$5.3B+ Pipeline</span></td><td>None / Minimal</td></tr>
+        <tr><td>Healthcare TAM</td><td><span class="badge badge-blue">$48B</span></td><td>Varies</td></tr>
+        <tr><td>Liquidation</td><td>1x Non-Participating</td><td>1–2x Participating</td></tr>
+        <tr><td>Anti-Dilution</td><td>Broad-Based WA</td><td>Full Ratchet Common</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-card" style="background:var(--surface2);border-left:3px solid var(--accent)">
+    <h3>Authorized Signatures</h3>
+    <p style="color:var(--text2);font-size:.85rem;margin-bottom:12px">By executing below, parties agree to the terms outlined in this confidential investor portal.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:16px">
+      <div><div style="border-bottom:1px solid var(--text2);margin-bottom:6px;height:32px"></div><span style="font-size:.75rem;color:var(--text2)">Jonathan Swistock, Managing Member — R.E.A.L. Holdings LLC</span></div>
+      <div><div style="border-bottom:1px solid var(--text2);margin-bottom:6px;height:32px"></div><span style="font-size:.75rem;color:var(--text2)">Investor Representative — Date</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════ CAP STRUCTURE ═══════ -->
+<div class="section" id="sec-cap">
+  <div class="section-title">Capitalization Structure</div>
+  <div class="chart-row">
+    <div class="chart-card"><h3>Equity Ownership (Post-Seed)</h3><div class="chart-wrap"><canvas id="capChart"></canvas></div></div>
+    <div class="table-card" style="margin-bottom:0">
+      <h3>Cap Table</h3>
+      <table>
+        <thead><tr><th>Holder</th><th>Units</th><th>%</th><th>Type</th></tr></thead>
+        <tbody>
+          <tr><td>Jonathan Swistock (Founder)</td><td>7,500,000</td><td>75.00%</td><td><span class="badge badge-gold">Common</span></td></tr>
+          <tr><td>Seed Investors</td><td>1,666,667</td><td>16.67%</td><td><span class="badge badge-purple">Preferred</span></td></tr>
+          <tr><td>ESOP Reserve</td><td>500,000</td><td>5.00%</td><td><span class="badge badge-blue">Options</span></td></tr>
+          <tr><td>Advisory Pool</td><td>333,333</td><td>3.33%</td><td><span class="badge badge-green">Advisory</span></td></tr>
+          <tr><td><strong>Total</strong></td><td><strong>10,000,000</strong></td><td><strong>100%</strong></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="table-card">
+    <h3>Growth-Phase Milestone Targets</h3>
+    <table>
+      <thead><tr><th>Milestone</th><th>Target</th><th>Timeline</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>FQHC Pilot (5 Centers)</td><td>$120K ARR</td><td>Q4 2025</td><td><span class="badge badge-gold">Planned</span></td></tr>
+        <tr><td>Clinix AI Commercial Launch</td><td>$500K ARR</td><td>Q1 2026</td><td><span class="badge badge-blue">In Development</span></td></tr>
+        <tr><td>Series A Readiness</td><td>$2M ARR</td><td>Q3 2026</td><td><span class="badge badge-purple">Target</span></td></tr>
+        <tr><td>National FQHC Expansion</td><td>50+ Centers</td><td>Q4 2026</td><td><span class="badge badge-purple">Target</span></td></tr>
+        <tr><td>Grant Revenue Secured</td><td>$2M+</td><td>Q1–Q2 2026</td><td><span class="badge badge-green">Pipeline Active</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ═══════ PORTFOLIO ASSETS ═══════ -->
+<div class="section" id="sec-portfolio">
+  <div class="section-title">Portfolio Assets &amp; Revenue Pillars</div>
+  <div class="moat-grid">
+    <div class="moat-card"><div class="moat-num">01</div><h4>Clinix AI</h4><p>AI-powered EHR &amp; clinical decision support for FQHCs. SaaS model with per-provider licensing.</p><div style="margin-top:8px"><span class="badge badge-green">Healthcare IT</span> <span class="badge badge-gold">$500K–$2M ARR</span></div></div>
+    <div class="moat-card"><div class="moat-num">02</div><h4>Telehealth Platform</h4><p>Virtual care delivery targeting rural &amp; underserved communities. Integrated with Clinix AI.</p><div style="margin-top:8px"><span class="badge badge-green">Digital Health</span> <span class="badge badge-gold">$200K–$800K</span></div></div>
+    <div class="moat-card"><div class="moat-num">03</div><h4>Revenue Cycle Management</h4><p>Automated billing, coding, and claims processing for healthcare providers.</p><div style="margin-top:8px"><span class="badge badge-blue">FinTech/Health</span> <span class="badge badge-gold">$150K–$500K</span></div></div>
+    <div class="moat-card"><div class="moat-num">04</div><h4>Pharmacy Benefit Services</h4><p>340B program optimization and pharmacy consulting for FQHCs.</p><div style="margin-top:8px"><span class="badge badge-green">Pharmacy</span> <span class="badge badge-gold">$100K–$400K</span></div></div>
+    <div class="moat-card"><div class="moat-num">05</div><h4>Population Health Analytics</h4><p>Data-driven community health management and predictive analytics platform.</p><div style="margin-top:8px"><span class="badge badge-purple">Analytics</span> <span class="badge badge-gold">$100K–$350K</span></div></div>
+    <div class="moat-card"><div class="moat-num">06</div><h4>Workforce Development</h4><p>Healthcare staffing solutions and training programs for underserved regions.</p><div style="margin-top:8px"><span class="badge badge-blue">HR/Training</span> <span class="badge badge-gold">$80K–$300K</span></div></div>
+    <div class="moat-card"><div class="moat-num">07</div><h4>Medical Device Distribution</h4><p>Point-of-care diagnostic equipment supply chain for community health centers.</p><div style="margin-top:8px"><span class="badge badge-green">MedTech</span> <span class="badge badge-gold">$100K–$250K</span></div></div>
+    <div class="moat-card"><div class="moat-num">08</div><h4>Behavioral Health Integration</h4><p>Mental health &amp; substance abuse treatment platform integrated with primary care.</p><div style="margin-top:8px"><span class="badge badge-purple">Behavioral</span> <span class="badge badge-gold">$80K–$300K</span></div></div>
+    <div class="moat-card"><div class="moat-num">09</div><h4>Community Outreach Programs</h4><p>Health literacy, preventive care, and wellness programs for target communities.</p><div style="margin-top:8px"><span class="badge badge-blue">Community</span> <span class="badge badge-gold">$60K–$200K</span></div></div>
+    <div class="moat-card"><div class="moat-num">10</div><h4>Real Estate Holdings</h4><p>Strategic property acquisitions for healthcare facility development.</p><div style="margin-top:8px"><span class="badge badge-gold">Real Estate</span> <span class="badge badge-gold">$150K–$500K</span></div></div>
+    <div class="moat-card"><div class="moat-num">11</div><h4>Lab Services Network</h4><p>Clinical laboratory testing partnerships and mobile lab units for rural access.</p><div style="margin-top:8px"><span class="badge badge-green">Diagnostics</span> <span class="badge badge-gold">$80K–$250K</span></div></div>
+    <div class="moat-card"><div class="moat-num">12</div><h4>Health Data Exchange</h4><p>Interoperability platform connecting FQHC networks with payers and health systems.</p><div style="margin-top:8px"><span class="badge badge-purple">Interop</span> <span class="badge badge-gold">$100K–$350K</span></div></div>
+    <div class="moat-card"><div class="moat-num">13</div><h4>Grant Writing Services</h4><p>Professional grant writing and compliance consulting for healthcare organizations.</p><div style="margin-top:8px"><span class="badge badge-blue">Consulting</span> <span class="badge badge-gold">$60K–$200K</span></div></div>
+    <div class="moat-card"><div class="moat-num">14</div><h4>Insurance Navigation</h4><p>Enrollment assistance and insurance marketplace navigation for patients.</p><div style="margin-top:8px"><span class="badge badge-green">Insurance</span> <span class="badge badge-gold">$50K–$180K</span></div></div>
+    <div class="moat-card"><div class="moat-num">15</div><h4>Supply Chain Management</h4><p>Medical supplies procurement and distribution optimization for health networks.</p><div style="margin-top:8px"><span class="badge badge-blue">Logistics</span> <span class="badge badge-gold">$80K–$250K</span></div></div>
+    <div class="moat-card"><div class="moat-num">16</div><h4>Credentialing Services</h4><p>Provider credentialing and privileging automation for multi-site organizations.</p><div style="margin-top:8px"><span class="badge badge-purple">Compliance</span> <span class="badge badge-gold">$40K–$150K</span></div></div>
+  </div>
+</div>
+
+<!-- ═══════ USE OF FUNDS ═══════ -->
+<div class="section" id="sec-funds">
+  <div class="section-title">Use of Funds ($3M Allocation)</div>
+  <div class="chart-row">
+    <div class="chart-card"><h3>Fund Allocation</h3><div class="chart-wrap"><canvas id="fundsChart"></canvas></div></div>
+    <div class="table-card" style="margin-bottom:0">
+      <h3>Allocation Breakdown</h3>
+      <table>
+        <thead><tr><th>Category</th><th>Amount</th><th>%</th></tr></thead>
+        <tbody>
+          <tr><td>Technology &amp; Product Development</td><td>$1,050,000</td><td>35%</td></tr>
+          <tr><td>Sales &amp; Marketing</td><td>$600,000</td><td>20%</td></tr>
+          <tr><td>Operations &amp; Infrastructure</td><td>$450,000</td><td>15%</td></tr>
+          <tr><td>Grant Acquisition &amp; Compliance</td><td>$375,000</td><td>12.5%</td></tr>
+          <tr><td>Personnel &amp; Talent</td><td>$300,000</td><td>10%</td></tr>
+          <tr><td>Legal &amp; Regulatory</td><td>$150,000</td><td>5%</td></tr>
+          <tr><td>Working Capital Reserve</td><td>$75,000</td><td>2.5%</td></tr>
+          <tr><td><strong>Total</strong></td><td><strong>$3,000,000</strong></td><td><strong>100%</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="table-card">
+    <h3>Allocation Progress</h3>
+    <div class="progress-row"><div class="progress-label"><span>Technology &amp; Product</span><span>35%</span></div><div class="progress-bar"><div class="progress-fill" style="width:35%;background:linear-gradient(90deg,var(--accent),var(--accent2))"></div></div></div>
+    <div class="progress-row"><div class="progress-label"><span>Sales &amp; Marketing</span><span>20%</span></div><div class="progress-bar"><div class="progress-fill" style="width:20%;background:linear-gradient(90deg,var(--green),#34d399)"></div></div></div>
+    <div class="progress-row"><div class="progress-label"><span>Operations</span><span>15%</span></div><div class="progress-bar"><div class="progress-fill" style="width:15%;background:linear-gradient(90deg,var(--blue),#60a5fa)"></div></div></div>
+    <div class="progress-row"><div class="progress-label"><span>Grant Acquisition</span><span>12.5%</span></div><div class="progress-bar"><div class="progress-fill" style="width:12.5%;background:linear-gradient(90deg,var(--purple),#a78bfa)"></div></div></div>
+    <div class="progress-row"><div class="progress-label"><span>Personnel</span><span>10%</span></div><div class="progress-bar"><div class="progress-fill" style="width:10%;background:linear-gradient(90deg,#f59e0b,#fbbf24)"></div></div></div>
+    <div class="progress-row"><div class="progress-label"><span>Legal &amp; Regulatory</span><span>5%</span></div><div class="progress-bar"><div class="progress-fill" style="width:5%;background:linear-gradient(90deg,var(--red),#f87171)"></div></div></div>
+    <div class="progress-row"><div class="progress-label"><span>Working Capital</span><span>2.5%</span></div><div class="progress-bar"><div class="progress-fill" style="width:2.5%;background:linear-gradient(90deg,#6b7280,#9ca3af)"></div></div></div>
+  </div>
+</div>
+
+<!-- ═══════ REVENUE MODEL ═══════ -->
+<div class="section" id="sec-revenue">
+  <div class="section-title">Revenue Model</div>
+  <div class="table-card">
+    <h3>3-Year Revenue Projections by Category</h3>
+    <table>
+      <thead><tr><th>Revenue Stream</th><th>Year 1</th><th>Year 2</th><th>Year 3</th></tr></thead>
+      <tbody>
+        <tr><td>Clinix AI (SaaS)</td><td>$480K</td><td>$1.2M</td><td>$2.8M</td></tr>
+        <tr><td>Telehealth</td><td>$200K</td><td>$520K</td><td>$980K</td></tr>
+        <tr><td>Revenue Cycle Mgmt</td><td>$150K</td><td>$380K</td><td>$720K</td></tr>
+        <tr><td>Pharmacy / 340B</td><td>$100K</td><td>$280K</td><td>$520K</td></tr>
+        <tr><td>Pop. Health Analytics</td><td>$80K</td><td>$210K</td><td>$420K</td></tr>
+        <tr><td>Grant Revenue</td><td>$500K</td><td>$1.5M</td><td>$2.2M</td></tr>
+        <tr><td>Other Pillars (10)</td><td>$390K</td><td>$910K</td><td>$1.8M</td></tr>
+        <tr style="font-weight:700;border-top:2px solid var(--accent)"><td>Total Revenue</td><td>$1.9M</td><td>$5.0M</td><td>$9.44M</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="table-card">
+    <h3>Clinix AI Growth Trajectory</h3>
+    <table>
+      <thead><tr><th>Metric</th><th>Launch</th><th>Month 6</th><th>Month 12</th><th>Month 24</th><th>Month 36</th></tr></thead>
+      <tbody>
+        <tr><td>FQHC Centers</td><td>5</td><td>15</td><td>40</td><td>120</td><td>300</td></tr>
+        <tr><td>Providers on Platform</td><td>25</td><td>90</td><td>240</td><td>720</td><td>1,800</td></tr>
+        <tr><td>Monthly Recurring Revenue</td><td>$15K</td><td>$45K</td><td>$120K</td><td>$360K</td><td>$900K</td></tr>
+        <tr><td>Annual Run Rate</td><td>$180K</td><td>$540K</td><td>$1.44M</td><td>$4.32M</td><td>$10.8M</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="table-card">
+    <h3>Competitive Margin Analysis</h3>
+    <table>
+      <thead><tr><th>Company</th><th>Gross Margin</th><th>Net Margin (Yr 3)</th><th>CAC Payback</th></tr></thead>
+      <tbody>
+        <tr><td><strong>R.E.A.L. Holdings</strong></td><td><span class="badge badge-green">78%</span></td><td><span class="badge badge-green">22%</span></td><td><span class="badge badge-green">6 mo</span></td></tr>
+        <tr><td>Athenahealth</td><td>65%</td><td>12%</td><td>14 mo</td></tr>
+        <tr><td>eClinicalWorks</td><td>60%</td><td>10%</td><td>18 mo</td></tr>
+        <tr><td>NextGen Healthcare</td><td>55%</td><td>8%</td><td>20 mo</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ═══════ GRANT PIPELINE ═══════ -->
+<div class="section" id="sec-grants">
+  <div class="section-title">Grant Pipeline</div>
+  <div class="kpi-grid" style="grid-template-columns:repeat(3,1fr);margin-bottom:24px">
+    <div class="kpi"><div class="kpi-label">Total Pipeline Value</div><div class="kpi-value accent">$5.3B+</div></div>
+    <div class="kpi"><div class="kpi-label">Programs Identified</div><div class="kpi-value green">445</div></div>
+    <div class="kpi"><div class="kpi-label">HRSA Tier 1 Targets</div><div class="kpi-value purple">12</div></div>
+  </div>
+  <div class="table-card">
+    <h3>HRSA Tier 1 — Priority Applications</h3>
+    <table>
+      <thead><tr><th>Program</th><th>Agency</th><th>Amount</th><th>Deadline</th><th>Fit Score</th></tr></thead>
+      <tbody>
+        <tr><td>Health Center Program (New Access Points)</td><td>HRSA</td><td>$650K</td><td><span class="badge badge-red">Apr 2025</span></td><td><span class="badge badge-green">95</span></td></tr>
+        <tr><td>Service Area Competition</td><td>HRSA</td><td>$750K</td><td><span class="badge badge-gold">Jun 2025</span></td><td><span class="badge badge-green">92</span></td></tr>
+        <tr><td>Quality Improvement Awards</td><td>HRSA</td><td>$150K</td><td><span class="badge badge-gold">Jul 2025</span></td><td><span class="badge badge-green">90</span></td></tr>
+        <tr><td>Behavioral Health Integration</td><td>SAMHSA</td><td>$500K</td><td><span class="badge badge-blue">Sep 2025</span></td><td><span class="badge badge-green">88</span></td></tr>
+        <tr><td>Rural Health Network Development</td><td>HRSA</td><td>$300K</td><td><span class="badge badge-blue">Oct 2025</span></td><td><span class="badge badge-green">87</span></td></tr>
+        <tr><td>Telehealth Resource Center</td><td>HRSA</td><td>$425K</td><td><span class="badge badge-blue">Nov 2025</span></td><td><span class="badge badge-green">85</span></td></tr>
+        <tr><td>Community Health Worker Training</td><td>HRSA</td><td>$280K</td><td><span class="badge badge-purple">Jan 2026</span></td><td><span class="badge badge-green">84</span></td></tr>
+        <tr><td>Health IT Enhancement</td><td>ONC</td><td>$600K</td><td><span class="badge badge-purple">Feb 2026</span></td><td><span class="badge badge-green">91</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ═══════ RETURN SCENARIOS ═══════ -->
+<div class="section" id="sec-returns">
+  <div class="section-title">Return Scenarios</div>
+  <div class="return-cards">
+    <div class="return-card"><div class="mult" style="color:var(--text2)">1x</div><div class="label">Capital Preservation</div></div>
+    <div class="return-card"><div class="mult" style="color:var(--blue)">3x</div><div class="label">Base Case</div></div>
+    <div class="return-card"><div class="mult" style="color:var(--green)">8x</div><div class="label">Growth Case</div></div>
+    <div class="return-card"><div class="mult" style="color:var(--accent)">18x</div><div class="label">Upside Case</div></div>
+    <div class="return-card"><div class="mult" style="color:var(--purple)">37x</div><div class="label">Strategic Exit</div></div>
+  </div>
+  <div class="table-card">
+    <h3>5-Path Waterfall Analysis</h3>
+    <table>
+      <thead><tr><th>Scenario</th><th>Revenue (Yr 3)</th><th>Valuation</th><th>Investor Return</th><th>Multiple</th></tr></thead>
+      <tbody>
+        <tr><td>Capital Preservation</td><td>$1.9M</td><td>$18M</td><td>$3M</td><td><span class="badge badge-gold">1x</span></td></tr>
+        <tr><td>Base Case</td><td>$5M</td><td>$50M</td><td>$8.3M</td><td><span class="badge badge-blue">2.8x</span></td></tr>
+        <tr><td>Growth Case</td><td>$9.4M</td><td>$140M</td><td>$23.3M</td><td><span class="badge badge-green">7.8x</span></td></tr>
+        <tr><td>Upside Case</td><td>$15M</td><td>$320M</td><td>$53.3M</td><td><span class="badge badge-gold">17.8x</span></td></tr>
+        <tr><td>Strategic Exit (M&A)</td><td>$20M+</td><td>$660M</td><td>$110M</td><td><span class="badge badge-purple">36.7x</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="table-card">
+    <h3>Strategic Path Breakdown</h3>
+    <table>
+      <thead><tr><th>Exit Path</th><th>Timeline</th><th>Likely Acquirers</th><th>Probability</th></tr></thead>
+      <tbody>
+        <tr><td>Series A Raise</td><td>18–24 months</td><td>Healthcare-focused VCs</td><td><span class="badge badge-green">High</span></td></tr>
+        <tr><td>Strategic Acquisition</td><td>3–5 years</td><td>Epic, Cerner, Athena</td><td><span class="badge badge-gold">Medium</span></td></tr>
+        <tr><td>PE Buyout</td><td>4–6 years</td><td>Healthcare PE firms</td><td><span class="badge badge-gold">Medium</span></td></tr>
+        <tr><td>IPO</td><td>5–7 years</td><td>Public markets</td><td><span class="badge badge-blue">Low-Medium</span></td></tr>
+        <tr><td>Dividend/Cash Flow</td><td>Ongoing from Yr 2</td><td>N/A (retained)</td><td><span class="badge badge-green">High</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ═══════ COMPETITIVE MOATS ═══════ -->
+<div class="section" id="sec-moats">
+  <div class="section-title">Competitive Moats</div>
+  <div class="moat-grid">
+    <div class="moat-card"><div class="moat-num">01</div><h4>FQHC-Specific AI</h4><p>Purpose-built clinical AI for Federally Qualified Health Centers — no competitor targets this niche with dedicated technology. 1,400+ center addressable market with zero viable alternatives.</p></div>
+    <div class="moat-card"><div class="moat-num">02</div><h4>18-Pillar Revenue Diversification</h4><p>Unlike single-product startups, R.E.A.L. Holdings deploys 18 interlocking revenue streams. Loss of any single stream has &lt;15% impact on total revenue.</p></div>
+    <div class="moat-card"><div class="moat-num">03</div><h4>$5.3B+ Non-Dilutive Capital Access</h4><p>Proprietary grant pipeline with 445 identified programs. Grant revenue reduces equity dilution and accelerates growth without additional investor capital.</p></div>
+    <div class="moat-card"><div class="moat-num">04</div><h4>Regulatory &amp; Compliance Expertise</h4><p>Deep domain knowledge in HRSA requirements, 340B compliance, HIPAA, and healthcare IT regulations creates a significant barrier to entry for generalist competitors.</p></div>
+    <div class="moat-card"><div class="moat-num">05</div><h4>Integrated Vertical Stack</h4><p>End-to-end solution from EHR to billing to pharmacy to analytics. Switching costs increase with each module adopted, creating strong customer lock-in.</p></div>
+  </div>
+  <div class="table-card">
+    <h3>Healthcare IT Competitor Comparison</h3>
+    <table>
+      <thead><tr><th>Capability</th><th>R.E.A.L.</th><th>Epic</th><th>Athena</th><th>eClinical</th></tr></thead>
+      <tbody>
+        <tr><td>FQHC-Specific AI</td><td><span class="badge badge-green">Yes</span></td><td><span class="badge badge-red">No</span></td><td><span class="badge badge-red">No</span></td><td><span class="badge badge-red">No</span></td></tr>
+        <tr><td>Grant Pipeline Access</td><td><span class="badge badge-green">$5.3B+</span></td><td><span class="badge badge-red">None</span></td><td><span class="badge badge-red">None</span></td><td><span class="badge badge-red">None</span></td></tr>
+        <tr><td>340B Integration</td><td><span class="badge badge-green">Native</span></td><td><span class="badge badge-gold">Partial</span></td><td><span class="badge badge-gold">Partial</span></td><td><span class="badge badge-red">No</span></td></tr>
+        <tr><td>Telehealth Built-In</td><td><span class="badge badge-green">Yes</span></td><td><span class="badge badge-green">Yes</span></td><td><span class="badge badge-green">Yes</span></td><td><span class="badge badge-gold">Add-On</span></td></tr>
+        <tr><td>Revenue Cycle Mgmt</td><td><span class="badge badge-green">Yes</span></td><td><span class="badge badge-green">Yes</span></td><td><span class="badge badge-green">Yes</span></td><td><span class="badge badge-green">Yes</span></td></tr>
+        <tr><td>Pop. Health Analytics</td><td><span class="badge badge-green">AI-Powered</span></td><td><span class="badge badge-green">Yes</span></td><td><span class="badge badge-gold">Basic</span></td><td><span class="badge badge-gold">Basic</span></td></tr>
+        <tr><td>Pricing (Per Provider/Mo)</td><td><span class="badge badge-green">$200</span></td><td><span class="badge badge-red">$800+</span></td><td><span class="badge badge-gold">$400</span></td><td><span class="badge badge-gold">$350</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ── Footer ── -->
+<div class="footer">
+  <strong>R.E.A.L. Holdings LLC</strong> — Confidential Investor Portal v2.0<br>
+  This document contains proprietary and confidential information. Distribution is prohibited without written consent.<br>
+  © 2025 R.E.A.L. Holdings LLC. All rights reserved. | Kentucky, USA<br>
+  <span style="opacity:.5">Portal Version 2.0 · Last Updated March 2025</span>
+</div>
+
+</div><!-- /main -->
+
+<script>
+// ── Navigation ──
+function showSection(id){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.getElementById('sec-'+id).classList.add('active');
+  document.querySelectorAll('.sidebar-link').forEach(l=>l.classList.remove('active'));
+  event.currentTarget.classList.add('active');
+  window.scrollTo(0,0);
+}
+
+// ── Sidebar Toggle ──
+function toggleSidebar(){
+  const sb=document.getElementById('sidebar');
+  const mn=document.getElementById('main');
+  sb.classList.toggle('collapsed');
+  mn.classList.toggle('expanded');
+}
+
+// ── Theme Toggle ──
+function toggleTheme(){
+  document.body.classList.toggle('light');
+  initCharts();
+}
+
+// ── Charts ──
+const chartInstances={};
+function initCharts(){
+  const isLight=document.body.classList.contains('light');
+  const gridColor=isLight?'rgba(0,0,0,0.08)':'rgba(255,255,255,0.06)';
+  const textColor=isLight?'#64748b':'#94a3b8';
+
+  Object.values(chartInstances).forEach(c=>c.destroy());
+
+  // Revenue Projection
+  const rc=document.getElementById('revenueChart');
+  if(rc){chartInstances.rev=new Chart(rc,{type:'bar',data:{labels:['Year 1','Year 2','Year 3'],datasets:[{label:'Clinix AI',data:[480,1200,2800],backgroundColor:'#c9a84c'},{label:'Grants',data:[500,1500,2200],backgroundColor:'#8b5cf6'},{label:'Other',data:[920,2300,4440],backgroundColor:'#3b82f6'}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:textColor,font:{size:11}}}},scales:{x:{ticks:{color:textColor},grid:{display:false},stacked:true},y:{ticks:{color:textColor,callback:v=>'$'+v+'K'},grid:{color:gridColor},stacked:true}}}});}
+
+  // Equity Chart
+  const ec=document.getElementById('equityChart');
+  if(ec){chartInstances.eq=new Chart(ec,{type:'doughnut',data:{labels:['Founder (75%)','Seed Investors (16.67%)','ESOP (5%)','Advisory (3.33%)'],datasets:[{data:[75,16.67,5,3.33],backgroundColor:['#c9a84c','#8b5cf6','#3b82f6','#10b981'],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{color:textColor,font:{size:11},padding:12}}}}});}
+
+  // Recovery Timeline
+  const rcc=document.getElementById('recoveryChart');
+  if(rcc){chartInstances.rec=new Chart(rcc,{type:'line',data:{labels:['Q1','Q2','Q3','Q4','Q5','Q6','Q7','Q8'],datasets:[{label:'Quarterly Revenue ($K)',data:[120,280,475,690,950,1250,1600,2000],borderColor:'#c9a84c',backgroundColor:'rgba(201,168,76,0.1)',fill:true,tension:0.4,pointRadius:4,pointBackgroundColor:'#c9a84c'}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:textColor}}},scales:{x:{ticks:{color:textColor},grid:{display:false}},y:{ticks:{color:textColor,callback:v=>'$'+v+'K'},grid:{color:gridColor}}}}});}
+
+  // Segment Chart
+  const sc=document.getElementById('segmentChart');
+  if(sc){chartInstances.seg=new Chart(sc,{type:'doughnut',data:{labels:['Clinix AI','Telehealth','RCM','Pharmacy','Analytics','Grants','Other'],datasets:[{data:[30,10,8,6,4,23,19],backgroundColor:['#c9a84c','#10b981','#3b82f6','#8b5cf6','#f59e0b','#ef4444','#6b7280'],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{color:textColor,font:{size:11},padding:12}}}}});}
+
+  // Cap Chart
+  const cc=document.getElementById('capChart');
+  if(cc){chartInstances.cap=new Chart(cc,{type:'doughnut',data:{labels:['Founder','Seed Investors','ESOP','Advisory'],datasets:[{data:[75,16.67,5,3.33],backgroundColor:['#c9a84c','#8b5cf6','#3b82f6','#10b981'],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{color:textColor,font:{size:11},padding:12}}}}});}
+
+  // Funds Chart
+  const fc=document.getElementById('fundsChart');
+  if(fc){chartInstances.funds=new Chart(fc,{type:'doughnut',data:{labels:['Technology','Sales & Marketing','Operations','Grants','Personnel','Legal','Working Capital'],datasets:[{data:[35,20,15,12.5,10,5,2.5],backgroundColor:['#c9a84c','#10b981','#3b82f6','#8b5cf6','#f59e0b','#ef4444','#6b7280'],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{color:textColor,font:{size:11},padding:12}}}}});}
+}
+
+// Init on load
+document.addEventListener('DOMContentLoaded',initCharts);
+</script>
+</body>
+</html>
