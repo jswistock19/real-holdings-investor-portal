@@ -164,6 +164,10 @@ tr:last-child td{border-bottom:none}
   </div>
   <div class="sidebar-section">
     <div class="sidebar-label">Financials</div>
+    <a class="sidebar-link" onclick="showSection('funds')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+      Use of Funds
+    </a>
     <a class="sidebar-link" onclick="showSection('revenue')">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
       Revenue Model
@@ -198,7 +202,7 @@ tr:last-child td{border-bottom:none}
   <div class="section-title">Dashboard Overview</div>
   <div class="kpi-grid">
     <div class="kpi"><div class="kpi-label">Pre-Money Valuation</div><div class="kpi-value accent">$20–30M</div><div class="kpi-sub">Series Seed</div></div>
-    <div class="kpi"><div class="kpi-label">Raise Target</div><div class="kpi-value accent">$2–5M</div><div class="kpi-sub">Series Seed Equity</div></div>
+    <div class="kpi"><div class="kpi-label">Raise Target</div><div class="kpi-value accent">$3M</div><div class="kpi-sub">Equity — 15% Membership Interest</div></div>
     <div class="kpi"><div class="kpi-label">Revenue Channels</div><div class="kpi-value green">7</div><div class="kpi-sub">Per Investor Cap Doc</div></div>
     <div class="kpi"><div class="kpi-label">Revenue Streams</div><div class="kpi-value green">39</div><div class="kpi-sub">Per Revenue Master</div></div>
     <div class="kpi"><div class="kpi-label">EBITDA Margins</div><div class="kpi-value green">48–54%</div><div class="kpi-sub">Projected at Scale</div></div>
@@ -224,7 +228,7 @@ tr:last-child td{border-bottom:none}
       <div class="timeline-item done"><h4>KY HBOT for Veterans — $1.5M State Funding Secured</h4><p>Completed — HB 369 passed 93-0, funded through June 2026</p></div>
       <div class="timeline-item done"><h4>Clinix AI Partnership — 20% Commission Agreement</h4><p>Completed — AI intake &amp; scheduling integrated</p></div>
       <div class="timeline-item"><h4>Owensboro, KY — Flagship Clinic at 300 Frederica St</h4><p>In Progress — Lease offer active, buildout pending</p></div>
-      <div class="timeline-item"><h4>Series Seed Close ($2–5M)</h4><p>In Progress — Investor outreach active</p></div>
+      <div class="timeline-item"><h4>Series Seed Close ($3M for 15% Equity)</h4><p>In Progress — Investor outreach active</p></div>
       <div class="timeline-item"><h4>Multi-State Operator-Equity Expansion</h4><p>Planned — NY Hamptons, MA, CT, FL, PA, NJ, CO, AZ, OR</p></div>
       <div class="timeline-item"><h4>NSF Grant Applications — Coalition Funding</h4><p>Planned — Basham-Swistock-Theis Coalition targeting $7M–$57M</p></div>
     </div>
@@ -243,9 +247,8 @@ tr:last-child td{border-bottom:none}
         <tr><td>Founder &amp; CEO</td><td>Jonathan Swistock</td></tr>
         <tr><td>Round</td><td>Series Seed</td></tr>
         <tr><td>Instrument</td><td>Equity (LLC Membership Units)</td></tr>
-        <tr><td>Raise Target</td><td><strong>$2,000,000 – $5,000,000</strong></td></tr>
-        <tr><td>Pre-Money Valuation</td><td><strong>$20,000,000 – $30,000,000</strong></td></tr>
-        <tr><td>Equity Available</td><td>10–15% (per term sheet versions)</td></tr>
+        <tr><td>Raise Amount</td><td><strong>$3,000,000</strong></td></tr>
+        <tr><td>Equity Offered</td><td><strong>15%</strong> (LLC Membership Interest)</td></tr>
         <tr><td>Board Seat</td><td>1 Investor Director (at qualifying investment)</td></tr>
         <tr><td>Information Rights</td><td>Quarterly Financials + Annual Audit</td></tr>
         <tr><td>Anti-Dilution</td><td>Broad-Based Weighted Average</td></tr>
@@ -256,12 +259,11 @@ tr:last-child td{border-bottom:none}
   </div>
 
   <div class="table-card">
-    <h3>Active Term Sheets</h3>
+    <h3>Prepared For</h3>
     <table>
-      <thead><tr><th>Investor / Partner</th><th>Amount</th><th>Equity</th><th>Key Terms</th></tr></thead>
+      <thead><tr><th>Investor</th><th>Amount</th><th>Equity</th><th>Focus</th></tr></thead>
       <tbody>
-        <tr><td>Jake Clopton / Clopton Capital</td><td>$3,000,000</td><td>15%</td><td>18 revenue pillars identified, 10+ clinic locations</td></tr>
-        <tr><td>Marc Beilin / On The Marc TV</td><td>$820,000</td><td>10%</td><td>Media &amp; content partnership integrated</td></tr>
+        <tr><td>Jake Clopton / Clopton Capital</td><td>$3,000,000</td><td>15%</td><td>Commercial real estate expertise, construction financing, property sourcing nationwide</td></tr>
       </tbody>
     </table>
   </div>
@@ -366,6 +368,69 @@ tr:last-child td{border-bottom:none}
         <tr><td>Enterprise</td><td>$49,000/yr</td><td>200+</td></tr>
       </tbody>
     </table>
+  </div>
+</div>
+
+<!-- ═══════ USE OF FUNDS ═══════ -->
+<div class="section" id="sec-funds">
+  <div class="section-title">Use of Funds ($3M Allocation)</div>
+  <div class="chart-row">
+    <div class="chart-card"><h3>Fund Allocation</h3><div class="chart-wrap"><canvas id="fundsChart"></canvas></div></div>
+    <div class="table-card" style="margin-bottom:0">
+      <h3>Allocation Summary</h3>
+      <table>
+        <thead><tr><th>Category</th><th>Amount</th><th>%</th></tr></thead>
+        <tbody>
+          <tr><td>R.E.A.L. PT — 10+ Locations</td><td>$1,200,000</td><td>40.0%</td></tr>
+          <tr><td>Technology Platform Dev</td><td>$300,000</td><td>10.0%</td></tr>
+          <tr><td>Working Capital &amp; Reserve</td><td>$295,000</td><td>9.8%</td></tr>
+          <tr><td>Streaming &amp; Media Network</td><td>$250,000</td><td>8.3%</td></tr>
+          <tr><td>901 Floyd St Facility (80K sqft)</td><td>$200,000</td><td>6.7%</td></tr>
+          <tr><td>Facility Buildout &amp; Infrastructure</td><td>$200,000</td><td>6.7%</td></tr>
+          <tr><td>Salaries &amp; Travel (6 Months)</td><td>$150,000</td><td>5.0%</td></tr>
+          <tr><td>Pure Defense First Aid Acquisition</td><td>$135,000</td><td>4.5%</td></tr>
+          <tr><td>Eye Care Brand Licensing</td><td>$105,000</td><td>3.5%</td></tr>
+          <tr><td>R.E.A.L. Fresh — Global Menu Rights</td><td>$100,000</td><td>3.3%</td></tr>
+          <tr><td>Extraction Machine &amp; Loading Dock</td><td>$65,000</td><td>2.2%</td></tr>
+          <tr style="font-weight:700;border-top:2px solid var(--accent)"><td>Total</td><td>$3,000,000</td><td>100%</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="table-card">
+    <h3>Detailed Use of Funds</h3>
+    <table>
+      <thead><tr><th>Allocation</th><th>Amount</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td><strong>R.E.A.L. PT — 10+ Locations (Multi-State)</strong></td><td>$1,200,000</td><td>Location deposits, build-out, staffing, licensure, and initial operating capital for 10+ clinics: Owensboro KY (flagship), Hamptons NY, MA, CT, FL, PA, NJ, CO, AZ, OR. HBOT equipment separately financed.</td></tr>
+        <tr><td><strong>Technology Platform Development</strong></td><td>$300,000</td><td>Scale R.E.A.L. SmartScan, Clinix AI, R.E.A.L. AI, and R.E.A.L. Cost Plus Rx platforms — engineering, infrastructure, and go-to-market.</td></tr>
+        <tr><td><strong>Working Capital &amp; Operating Reserve</strong></td><td>$295,000</td><td>General working capital, legal, insurance, accounting, contingency reserve for first 12 months of operations.</td></tr>
+        <tr><td><strong>Streaming &amp; Media Network Launch</strong></td><td>$250,000</td><td>Production infrastructure, content development, and launch costs for six-channel R.E.A.L. streaming network.</td></tr>
+        <tr><td><strong>901 Floyd St, Leitchfield, KY (80,000 sq ft)</strong></td><td>$200,000</td><td>Deposit and initial buildout of 80K sq ft industrial facility (full price $600K via Travis Basham). Data center, bottling, extraction, warehousing, corporate HQ.</td></tr>
+        <tr><td><strong>Facility Buildout &amp; Infrastructure</strong></td><td>$200,000</td><td>Data center infrastructure, iO2 bottling line setup, extraction lab, Bitcoin mining integration, media studio buildout, office space.</td></tr>
+        <tr><td><strong>Salaries &amp; Travel (6 Months)</strong></td><td>$150,000</td><td>Six-month salary and travel for Jonathan Swistock, Travis Basham, and Chris — operational runway through profitability.</td></tr>
+        <tr><td><strong>Pure Defense First Aid Acquisition</strong></td><td>$135,000</td><td>Full acquisition of Pure Defense brand (USPTO #2711840), FDA-registered product line, inventory, manufacturing relationships, distribution rights.</td></tr>
+        <tr><td><strong>Eye Care Brand Licensing</strong></td><td>$105,000</td><td>Exclusive distribution/licensing rights for Bio-Logic Aqua (Nature’s Tears EyeMist, Nature’s Mist), plus launch The Eye Care Network streaming channel.</td></tr>
+        <tr><td><strong>R.E.A.L. Fresh — Global Menu Rights</strong></td><td>$100,000</td><td>Execute licensing agreement for Global Menu rights (French-based AI-powered nutrition &amp; fresh food platform) — R.E.A.L. Holdings owns the rights.</td></tr>
+        <tr><td><strong>Extraction Machine Relocation &amp; Loading Dock</strong></td><td>$65,000</td><td>Transport $2.1M plant material extraction machine from AL to KY + commercial-grade loading dock ramp at 901 Floyd St.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-card">
+    <h3>Allocation Progress</h3>
+    <div class="progress-row"><div class="progress-label"><span>R.E.A.L. PT — 10+ Locations</span><span>40.0%</span></div><div class="progress-bar"><div class="progress-fill" style="width:40%;background:linear-gradient(90deg,var(--accent),var(--accent2))"></div></div></div>
+    <div class="progress-row"><div class="progress-label"><span>Technology Platforms</span><span>10.0%</span></div><div class="progress-bar"><div class="progress-fill" style="width:10%;background:linear-gradient(90deg,var(--blue),#60a5fa)"></div></div></div>
+    <div class="progress-row"><div class="progress-label"><span>Working Capital &amp; Reserve</span><span>9.8%</span></div><div class="progress-bar"><div class="progress-fill" style="width:9.8%;background:linear-gradient(90deg,#6b7280,#9ca3af)"></div></div></div>
+    <div class="progress-row"><div class="progress-label"><span>Streaming &amp; Media</span><span>8.3%</span></div><div class="progress-bar"><div class="progress-fill" style="width:8.3%;background:linear-gradient(90deg,var(--purple),#a78bfa)"></div></div></div>
+    <div class="progress-row"><div class="progress-label"><span>901 Floyd St Facility</span><span>6.7%</span></div><div class="progress-bar"><div class="progress-fill" style="width:6.7%;background:linear-gradient(90deg,var(--green),#34d399)"></div></div></div>
+    <div class="progress-row"><div class="progress-label"><span>Facility Infrastructure</span><span>6.7%</span></div><div class="progress-bar"><div class="progress-fill" style="width:6.7%;background:linear-gradient(90deg,var(--green),#34d399)"></div></div></div>
+    <div class="progress-row"><div class="progress-label"><span>Salaries &amp; Travel</span><span>5.0%</span></div><div class="progress-bar"><div class="progress-fill" style="width:5%;background:linear-gradient(90deg,#f59e0b,#fbbf24)"></div></div></div>
+    <div class="progress-row"><div class="progress-label"><span>Pure Defense Acquisition</span><span>4.5%</span></div><div class="progress-bar"><div class="progress-fill" style="width:4.5%;background:linear-gradient(90deg,var(--red),#f87171)"></div></div></div>
+    <div class="progress-row"><div class="progress-label"><span>Eye Care Licensing</span><span>3.5%</span></div><div class="progress-bar"><div class="progress-fill" style="width:3.5%;background:linear-gradient(90deg,var(--red),#f87171)"></div></div></div>
+    <div class="progress-row"><div class="progress-label"><span>R.E.A.L. Fresh</span><span>3.3%</span></div><div class="progress-bar"><div class="progress-fill" style="width:3.3%;background:linear-gradient(90deg,#f59e0b,#fbbf24)"></div></div></div>
+    <div class="progress-row"><div class="progress-label"><span>Extraction &amp; Loading Dock</span><span>2.2%</span></div><div class="progress-bar"><div class="progress-fill" style="width:2.2%;background:linear-gradient(90deg,#6b7280,#9ca3af)"></div></div></div>
   </div>
 </div>
 
@@ -550,7 +615,7 @@ tr:last-child td{border-bottom:none}
         <tr><td>Clinix AI</td><td><span class="badge badge-purple">20% Commission Agreement</span></td><td>AI-powered intake, scheduling, and clinical workflow automation integrated into REAL PT operations</td></tr>
         <tr><td>SwimEx</td><td><span class="badge badge-green">Equipment Partner</span></td><td>Clinical-grade hydrotherapy pools — 35+ year clinical system, exclusive in-facility deployment</td></tr>
         <tr><td>Physio PS</td><td><span class="badge badge-green">Clinical Partner</span></td><td>FDA-cleared ANS testing for veterans — used at VA Medical Centers and Walter Reed</td></tr>
-        <tr><td>On The Marc TV / Marc Beilin</td><td><span class="badge badge-gold">$820K Investment + Media</span></td><td>Content production, media distribution, REAL TV partnership</td></tr>
+
         <tr><td>Theis Industries / Theis Construction</td><td><span class="badge badge-blue">Coalition Partner</span></td><td>Advanced construction panels and building systems for clinic buildouts</td></tr>
         <tr><td>iO2 Water</td><td><span class="badge badge-blue">Coalition Partner</span></td><td>Water purification and infrastructure technology</td></tr>
         <tr><td>Basham Farms</td><td><span class="badge badge-blue">Coalition Partner</span></td><td>Agricultural innovation — REAL Fresh supply chain and sustainability programs</td></tr>
@@ -603,7 +668,7 @@ tr:last-child td{border-bottom:none}
   <strong>R.E.A.L. Holdings LLC</strong> — "Restoring Everyone's Ability to Live"<br>
   Confidential Investor Portal — Distribution prohibited without written consent.<br>
   &copy; 2025 R.E.A.L. Holdings LLC. All rights reserved. | Graham, Kentucky<br>
-  <span style="opacity:.5">Portal Version 3.0 &middot; Last Updated March 2026</span>
+  <span style="opacity:.5">Portal Version 3.2 &middot; Last Updated March 2026</span>
 </div>
 
 </div><!-- /main -->
@@ -660,6 +725,10 @@ function initCharts(){
   // Cap Chart (Clopton version)
   const cc=document.getElementById('capChart');
   if(cc){chartInstances.cap=new Chart(cc,{type:'doughnut',data:{labels:['Jonathan Swistock (70%)','Chris Mahaffey (10%)','Dr. Clifton Hughes (5%)','Clopton Capital (15%)'],datasets:[{data:[70,10,5,15],backgroundColor:['#c9a84c','#3b82f6','#10b981','#8b5cf6'],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{color:textColor,font:{size:11},padding:12}}}}});}
+
+  // Funds Chart
+  const fc=document.getElementById('fundsChart');
+  if(fc){chartInstances.funds=new Chart(fc,{type:'doughnut',data:{labels:['PT Locations (40%)','Technology (10%)','Working Capital (9.8%)','Media Network (8.3%)','901 Floyd St (6.7%)','Facility Buildout (6.7%)','Salaries (5%)','Pure Defense (4.5%)','Eye Care (3.5%)','REAL Fresh (3.3%)','Extraction (2.2%)'],datasets:[{data:[40,10,9.8,8.3,6.7,6.7,5,4.5,3.5,3.3,2.2],backgroundColor:['#c9a84c','#3b82f6','#6b7280','#8b5cf6','#10b981','#34d399','#f59e0b','#ef4444','#f87171','#fbbf24','#9ca3af'],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{color:textColor,font:{size:10},padding:8}}}}});}
 }
 
 // Init on load
