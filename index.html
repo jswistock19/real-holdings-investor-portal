@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>R.E.A.L. Holdings LLC | Investor Portal</title>
+<title>R.E.A.L. Holdings LLC | Investor Portal — Silver Arch Capital Partners</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <style>
@@ -42,7 +42,9 @@ body.light{--bg:#f8fafc;--surface:#ffffff;--surface2:#f1f5f9;--border:#e2e8f0;--
 
 /* ── Cards / KPIs ── */
 .section-title{font-family:'Instrument Serif',serif;font-style:italic;font-size:1.6rem;color:var(--accent);margin-bottom:24px}
+.section-sub{color:var(--text2);font-size:.85rem;margin-bottom:24px;line-height:1.6}
 .kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:32px}
+.kpi-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:32px}
 .kpi{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px}
 .kpi-label{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--text2);margin-bottom:8px}
 .kpi-value{font-size:1.8rem;font-weight:800;color:var(--text)}
@@ -51,6 +53,7 @@ body.light{--bg:#f8fafc;--surface:#ffffff;--surface2:#f1f5f9;--border:#e2e8f0;--
 .kpi-value.green{color:var(--green)}
 .kpi-value.purple{color:var(--purple)}
 .kpi-value.blue{color:var(--blue)}
+.kpi-value.red{color:var(--red)}
 
 /* ── Charts ── */
 .chart-row{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:32px}
@@ -98,29 +101,89 @@ tr:last-child td{border-bottom:none}
 .moat-card h4{font-size:.9rem;font-weight:700;margin-bottom:6px}
 .moat-card p{font-size:.78rem;color:var(--text2);line-height:1.5}
 
+/* ── Hub-Spoke cards ── */
+.hub-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:24px}
+.hub-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:24px}
+.hub-card-header{background:var(--accent);color:#0a0e1a;font-weight:800;font-size:.85rem;letter-spacing:2px;text-align:center;padding:10px;border-radius:8px;margin-bottom:16px}
+.hub-card-header.blue-bg{background:var(--blue)}
+.hub-card-header.purple-bg{background:var(--purple)}
+.hub-card-size{font-size:1.1rem;font-weight:700;text-align:center;margin-bottom:12px}
+.hub-card ul{list-style:none;padding:0}
+.hub-card ul li{font-size:.8rem;color:var(--text2);padding:4px 0;padding-left:16px;position:relative}
+.hub-card ul li::before{content:'•';position:absolute;left:0;color:var(--accent)}
+
+/* ── Revenue stream grid ── */
+.stream-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:24px}
+.stream-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px}
+.stream-card-title{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--accent);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+.stream-card ol{padding-left:16px;margin-bottom:12px}
+.stream-card ol li{font-size:.78rem;color:var(--text2);padding:3px 0;line-height:1.4}
+.stream-y1{font-size:.75rem;font-weight:700;color:var(--green);margin-top:8px}
+
 /* ── Return cards ── */
-.return-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px}
+.return-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px}
 .return-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px;text-align:center}
 .return-card .mult{font-size:1.8rem;font-weight:900}
 .return-card .label{font-size:.7rem;color:var(--text2);margin-top:4px;text-transform:uppercase;letter-spacing:.5px}
+.return-card .scenario{font-size:.72rem;color:var(--text2);margin-bottom:8px;font-weight:600}
+
+/* ── Ecosystem cards ── */
+.eco-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:24px}
+.eco-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px}
+.eco-card h4{font-size:.95rem;font-weight:700;color:var(--text);margin-bottom:6px}
+.eco-card .eco-sub{font-size:.8rem;color:var(--text2);margin-bottom:8px}
+.eco-card .eco-tag{font-size:.72rem;color:var(--accent);font-style:italic}
+
+/* ── Phase timeline boxes ── */
+.phase-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:24px}
+.phase-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px}
+.phase-header{font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;text-align:center;padding:8px;border-radius:6px;margin-bottom:12px;background:rgba(201,168,76,0.15);color:var(--accent)}
+.phase-header.active-phase{background:var(--accent);color:#0a0e1a}
+.phase-date{font-size:.72rem;color:var(--text2);text-align:center;margin-bottom:12px}
+.phase-card ul{list-style:none;padding:0}
+.phase-card ul li{font-size:.78rem;color:var(--text2);padding:4px 0;padding-left:16px;position:relative;line-height:1.4}
+.phase-card ul li::before{content:'→';position:absolute;left:0;color:var(--accent);font-size:.7rem}
+
+/* ── Highlight box ── */
+.highlight-box{background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.3);border-radius:12px;padding:20px;margin-bottom:24px}
+.highlight-box p{font-size:.85rem;color:var(--text);line-height:1.7}
+.highlight-box strong{color:var(--accent)}
+.info-box{background:var(--surface2);border-left:3px solid var(--accent);border-radius:0 12px 12px 0;padding:20px;margin-bottom:24px}
+.info-box p{font-size:.85rem;color:var(--text);line-height:1.7}
+
+/* ── Capital stack ── */
+.cap-stack-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:24px}
+.cap-item{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;text-align:center}
+.cap-item .cap-val{font-size:1.5rem;font-weight:900;margin-bottom:4px}
+.cap-item .cap-label{font-size:.72rem;color:var(--text2);text-transform:uppercase;letter-spacing:1px}
 
 /* ── Footer ── */
 .footer{margin-top:48px;padding:24px 0;border-top:1px solid var(--border);text-align:center;color:var(--text2);font-size:.72rem;line-height:1.8}
 .footer strong{color:var(--text)}
+.footer .tagline{font-family:'Instrument Serif',serif;font-style:italic;font-size:1rem;color:var(--accent);margin-top:8px;display:block}
 
 /* ── Responsive ── */
+@media(max-width:1100px){
+  .stream-grid{grid-template-columns:repeat(2,1fr)}
+  .phase-grid{grid-template-columns:repeat(2,1fr)}
+}
 @media(max-width:900px){
   .kpi-grid{grid-template-columns:repeat(2,1fr)}
   .chart-row{grid-template-columns:1fr}
   .return-cards{grid-template-columns:repeat(2,1fr)}
+  .hub-grid{grid-template-columns:1fr}
+  .eco-grid{grid-template-columns:repeat(2,1fr)}
+  .stream-grid{grid-template-columns:1fr}
   .sidebar{transform:translateX(calc(-1 * var(--sidebar-w)))}
   .sidebar.open{transform:translateX(0)}
   .main{margin-left:0}
 }
 @media(max-width:600px){
   .kpi-grid{grid-template-columns:1fr}
+  .kpi-grid-3{grid-template-columns:1fr}
   .return-cards{grid-template-columns:repeat(2,1fr)}
   .main{padding:16px}
+  .cap-stack-grid{grid-template-columns:repeat(2,1fr)}
 }
 </style>
 </head>
@@ -137,7 +200,7 @@ tr:last-child td{border-bottom:none}
   </div>
   <div class="topbar-right">
     <button class="theme-btn" onclick="toggleTheme()">Light / Dark</button>
-    <div class="avatar">JS</div>
+    <div class="avatar">JW</div>
   </div>
 </div>
 
@@ -157,9 +220,24 @@ tr:last-child td{border-bottom:none}
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
       Cap Structure
     </a>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-label">The Business</div>
+    <a class="sidebar-link" onclick="showSection('ecosystem')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+      R.E.A.L Ecosystem
+    </a>
+    <a class="sidebar-link" onclick="showSection('hubspoke')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/></svg>
+      Hub &amp; Spoke Model
+    </a>
     <a class="sidebar-link" onclick="showSection('portfolio')">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
       Services &amp; Products
+    </a>
+    <a class="sidebar-link" onclick="showSection('streams')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      39 Revenue Streams
     </a>
   </div>
   <div class="sidebar-section">
@@ -169,24 +247,43 @@ tr:last-child td{border-bottom:none}
       Use of Funds
     </a>
     <a class="sidebar-link" onclick="showSection('revenue')">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><polyline points="3 9 21 9"/><polyline points="9 21 9 9"/></svg>
       Revenue Model
     </a>
-    <a class="sidebar-link" onclick="showSection('expansion')">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
-      Expansion &amp; Locations
+    <a class="sidebar-link" onclick="showSection('clinix')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
+      Clinix Multiplier
     </a>
-    <a class="sidebar-link" onclick="showSection('grants')">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-      Grant Pipeline
-    </a>
-    <a class="sidebar-link" onclick="showSection('construction')">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20h20M5 20V8l7-5 7 5v12"/><rect x="9" y="12" width="6" height="8"/></svg>
-      Lease to Own &amp; Construction
+    <a class="sidebar-link" onclick="showSection('returns')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+      Investor Returns
     </a>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-label">Analysis</div>
+    <div class="sidebar-label">Expansion</div>
+    <a class="sidebar-link" onclick="showSection('expansion')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+      NE Market Opportunity
+    </a>
+    <a class="sidebar-link" onclick="showSection('construction')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20h20M5 20V8l7-5 7 5v12"/><rect x="9" y="12" width="6" height="8"/></svg>
+      Lease to Own / REALECO
+    </a>
+    <a class="sidebar-link" onclick="showSection('airport')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 00-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>
+      Airport Retail
+    </a>
+    <a class="sidebar-link" onclick="showSection('phasing')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      Phasing &amp; Timeline
+    </a>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-label">Capital</div>
+    <a class="sidebar-link" onclick="showSection('grants')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      Grant &amp; Funding Pipeline
+    </a>
     <a class="sidebar-link" onclick="showSection('partnerships')">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
       Partnerships &amp; Coalition
@@ -205,36 +302,37 @@ tr:last-child td{border-bottom:none}
 <div class="section active" id="sec-dashboard">
   <div class="section-title">Dashboard Overview</div>
   <div class="kpi-grid">
-    <div class="kpi"><div class="kpi-label">Pre-Money Valuation</div><div class="kpi-value accent">$20–30M</div><div class="kpi-sub">Series Seed</div></div>
-    <div class="kpi"><div class="kpi-label">Raise Target</div><div class="kpi-value accent">$3M</div><div class="kpi-sub">Equity — 15% Membership Interest</div></div>
-    <div class="kpi"><div class="kpi-label">Revenue Channels</div><div class="kpi-value green">7</div><div class="kpi-sub">Per Investor Cap Doc</div></div>
-    <div class="kpi"><div class="kpi-label">Revenue Streams</div><div class="kpi-value green">39</div><div class="kpi-sub">Per Revenue Master</div></div>
-    <div class="kpi"><div class="kpi-label">EBITDA Margins</div><div class="kpi-value green">48–54%</div><div class="kpi-sub">Projected at Scale</div></div>
+    <div class="kpi"><div class="kpi-label">Combined TAM</div><div class="kpi-value accent">$104.65B</div><div class="kpi-sub">$53B PT + $51.65B Regen Medicine</div></div>
+    <div class="kpi"><div class="kpi-label">Revenue Streams</div><div class="kpi-value green">39</div><div class="kpi-sub">vs. Industry 3–5</div></div>
+    <div class="kpi"><div class="kpi-label">Rev / Sq Ft</div><div class="kpi-value green">$1,000–$1,400</div><div class="kpi-sub">Per Square Foot (Hub)</div></div>
+    <div class="kpi"><div class="kpi-label">Collection Rate</div><div class="kpi-value green">78–92%</div><div class="kpi-sub">Clinix AI Billing</div></div>
+    <div class="kpi"><div class="kpi-label">Raise Target</div><div class="kpi-value accent">$7,000,000</div><div class="kpi-sub">15% Equity — Growth Round</div></div>
+    <div class="kpi"><div class="kpi-label">Pre-Money Valuation</div><div class="kpi-value accent">$46.7M</div><div class="kpi-sub">Silver Arch Term Sheet</div></div>
+    <div class="kpi"><div class="kpi-label">EBITDA Margins</div><div class="kpi-value green">48–54%</div><div class="kpi-sub">vs. Industry 18–28%</div></div>
     <div class="kpi"><div class="kpi-label">Grant Pipeline</div><div class="kpi-value purple">$582M+</div><div class="kpi-sub">41 HRSA + 373 NSF Programs</div></div>
-    <div class="kpi"><div class="kpi-label">KY Veterans Funding</div><div class="kpi-value blue">$1.5M</div><div class="kpi-sub">State HBOT Program</div></div>
-    <div class="kpi"><div class="kpi-label">Clinic Locations</div><div class="kpi-value accent">10+</div><div class="kpi-sub">Funded &amp; Planned</div></div>
   </div>
   <div class="chart-row">
-    <div class="chart-card"><h3>4-Phase Revenue Trajectory</h3><div class="chart-wrap"><canvas id="revenueChart"></canvas></div></div>
-    <div class="chart-card"><h3>Equity Distribution (Post-Seed)</h3><div class="chart-wrap"><canvas id="equityChart"></canvas></div></div>
+    <div class="chart-card"><h3>Revenue Ramp — 6 KY Sites</h3><div class="chart-wrap"><canvas id="revenueChart"></canvas></div></div>
+    <div class="chart-card"><h3>Equity Distribution (Post Silver Arch)</h3><div class="chart-wrap"><canvas id="equityChart"></canvas></div></div>
   </div>
   <div class="chart-row">
-    <div class="chart-card"><h3>7 Revenue Channels</h3><div class="chart-wrap"><canvas id="segmentChart"></canvas></div></div>
-    <div class="chart-card"><h3>Membership Tier Pricing</h3><div class="chart-wrap"><canvas id="memberChart"></canvas></div></div>
+    <div class="chart-card"><h3>EBITDA Comparison vs. Industry</h3><div class="chart-wrap"><canvas id="ebitdaChart"></canvas></div></div>
+    <div class="chart-card"><h3>Use of Funds — $7M Allocation</h3><div class="chart-wrap"><canvas id="fundsChartDash"></canvas></div></div>
   </div>
 
-  <!-- Milestone Timeline -->
   <div class="table-card">
     <h3>Key Milestones</h3>
     <div class="timeline">
-      <div class="timeline-item done"><h4>Entity Formation — R.E.A.L. Holdings LLC</h4><p>Completed — Graham, Kentucky</p></div>
+      <div class="timeline-item done"><h4>Entity Formation — R.E.A.L. Holdings LLC</h4><p>Completed — 212 N 2nd St, Suite 100, Richmond, KY 40475</p></div>
       <div class="timeline-item done"><h4>REAL PT &amp; Wellness Brand &amp; Platform Launch</h4><p>Completed — real-pt.com live with full service catalog</p></div>
       <div class="timeline-item done"><h4>KY HBOT for Veterans — $1.5M State Funding Secured</h4><p>Completed — HB 369 passed 93-0, funded through June 2026</p></div>
       <div class="timeline-item done"><h4>Clinix AI Partnership — 20% Commission Agreement</h4><p>Completed — AI intake &amp; scheduling integrated</p></div>
+      <div class="timeline-item done"><h4>PhysioPS Partnership — Walter Reed 10-yr License</h4><p>Completed — VA/DoD ANS diagnostic channel established</p></div>
       <div class="timeline-item"><h4>Owensboro, KY — Flagship Clinic at 300 Frederica St</h4><p>In Progress — Lease offer active, buildout pending</p></div>
-      <div class="timeline-item"><h4>Series Seed Close ($3M for 15% Equity)</h4><p>In Progress — Investor outreach active</p></div>
-      <div class="timeline-item"><h4>Multi-State Operator-Equity Expansion</h4><p>Planned — NY Hamptons, MA, CT, FL, PA, NJ, CO, AZ, OR</p></div>
-      <div class="timeline-item"><h4>NSF Grant Applications — Coalition Funding</h4><p>Planned — Basham-Swistock-Theis Coalition targeting $7M–$57M</p></div>
+      <div class="timeline-item"><h4>Bowling Green, KY — Hub Launch (60 Days)</h4><p>In Progress — Site identified, permit stage</p></div>
+      <div class="timeline-item"><h4>Silver Arch Capital Partners — $7M Growth Round Close</h4><p>In Progress — Jonathan Weiner, Senior Director. Broker: Frank Perroni</p></div>
+      <div class="timeline-item"><h4>NE Phase 1 — 3–4 Hubs + 10–15 Spokes</h4><p>Planned Q1–Q2 2027 — NY, NJ, MA, CT, RI, ME, NH, VT, PA</p></div>
+      <div class="timeline-item"><h4>NSF Grant Applications — 370+ Filings</h4><p>Planned — $300K allocated. 5 qualification buckets across R.E.A.L Ecosystem</p></div>
     </div>
   </div>
 </div>
@@ -242,34 +340,56 @@ tr:last-child td{border-bottom:none}
 <!-- ═══════ INVESTMENT TERMS ═══════ -->
 <div class="section" id="sec-terms">
   <div class="section-title">Investment Terms</div>
+
+  <div class="kpi-grid">
+    <div class="kpi"><div class="kpi-label">Raise Amount</div><div class="kpi-value accent">$7,000,000</div><div class="kpi-sub">Growth Equity Round</div></div>
+    <div class="kpi"><div class="kpi-label">Equity Offered</div><div class="kpi-value accent">15%</div><div class="kpi-sub">LLC Membership Interest</div></div>
+    <div class="kpi"><div class="kpi-label">Pre-Money Valuation</div><div class="kpi-value green">$46.7M</div><div class="kpi-sub">Agreed Valuation</div></div>
+    <div class="kpi"><div class="kpi-label">Projected ROI (Base)</div><div class="kpi-value purple">15x–27.5x</div><div class="kpi-sub">Worst Case: 1.5x–1.9x</div></div>
+  </div>
+
   <div class="table-card">
-    <h3>Series Seed — Term Sheet Summary</h3>
+    <h3>Term Sheet Summary — Silver Arch Capital Partners</h3>
     <table>
       <thead><tr><th>Parameter</th><th>Details</th></tr></thead>
       <tbody>
-        <tr><td>Issuer</td><td>R.E.A.L. Holdings LLC</td></tr>
+        <tr><td>Issuer</td><td>R.E.A.L. Holdings LLC — 212 N 2nd St, Suite 100, Richmond, KY 40475</td></tr>
         <tr><td>Founder &amp; CEO</td><td>Jonathan Swistock</td></tr>
-        <tr><td>Round</td><td>Series Seed</td></tr>
+        <tr><td>Round</td><td>Growth Equity</td></tr>
         <tr><td>Instrument</td><td>Equity (LLC Membership Units)</td></tr>
-        <tr><td>Raise Amount</td><td><strong>$3,000,000</strong></td></tr>
+        <tr><td>Raise Amount</td><td><strong>$7,000,000</strong></td></tr>
         <tr><td>Equity Offered</td><td><strong>15%</strong> (LLC Membership Interest)</td></tr>
+        <tr><td>Pre-Money Valuation</td><td><strong>$46,700,000</strong></td></tr>
+        <tr><td>Post-Money Valuation</td><td><strong>$53,700,000</strong></td></tr>
         <tr><td>Board Seat</td><td>1 Investor Director (at qualifying investment)</td></tr>
         <tr><td>Information Rights</td><td>Quarterly Financials + Annual Audit</td></tr>
         <tr><td>Anti-Dilution</td><td>Broad-Based Weighted Average</td></tr>
         <tr><td>Liquidation Preference</td><td>1x Non-Participating</td></tr>
         <tr><td>Pro-Rata Rights</td><td>Yes, for all investors</td></tr>
+        <tr><td>Broker</td><td>Frank Perroni</td></tr>
       </tbody>
     </table>
   </div>
 
   <div class="table-card">
-    <h3>Prepared For</h3>
+    <h3>Prepared For — Silver Arch Capital Partners</h3>
     <table>
-      <thead><tr><th>Investor</th><th>Amount</th><th>Equity</th><th>Focus</th></tr></thead>
+      <thead><tr><th>Investor</th><th>Contact</th><th>Amount</th><th>Equity</th><th>Strategic Value</th></tr></thead>
       <tbody>
-        <tr><td>Jake Clopton / Clopton Capital</td><td>$3,000,000</td><td>15%</td><td>Commercial real estate expertise, construction financing, property sourcing nationwide</td></tr>
+        <tr><td><strong>Silver Arch Capital Partners</strong></td><td>Jonathan Weiner, Senior Director</td><td>$7,000,000</td><td>15%</td><td>NE coastal CRE expertise, bridge lending ($1M–$70M), property sourcing, construction financing</td></tr>
       </tbody>
     </table>
+  </div>
+
+  <div class="table-card" style="background:var(--surface2);border-left:3px solid var(--accent)">
+    <h3>What Silver Arch Capital Partners Gets</h3>
+    <div class="moat-grid">
+      <div class="moat-card"><div class="moat-num">15%</div><h4>Equity in R.E.A.L. Holdings</h4><p>Full LLC membership interest in Real PT &amp; Wellness, the operating entity behind the 39-stream model.</p></div>
+      <div class="moat-card"><div class="moat-num">39</div><h4>Revenue Streams</h4><p>Exposure to 39 distinct revenue streams across clinical PT, wellness, SaaS, tech, and equity partnerships.</p></div>
+      <div class="moat-card"><div class="moat-num">CRE</div><h4>NE Coastal CRE Portfolio Upside</h4><p>As Real PT acquires coastal NE properties via Theis SIP build-to-own, Silver Arch gains participation in a growing real estate portfolio.</p></div>
+      <div class="moat-card"><div class="moat-num">$70M</div><h4>Bridge Lending Opportunity</h4><p>Silver Arch bridge lending ($1M–$70M) fits perfectly — Real PT&#39;s lease-to-own coastal NE strategy creates ongoing bridge lending pipeline.</p></div>
+      <div class="moat-card"><div class="moat-num">27.5x</div><h4>15x–27.5x Projected ROI</h4><p>Base plan projects 15x–27.5x return on invested capital. Even worst-case survival scenario returns 1.5x–1.9x at 4.5x exit multiple.</p></div>
+    </div>
   </div>
 
   <div class="table-card" style="background:var(--surface2);border-left:3px solid var(--accent)">
@@ -277,7 +397,7 @@ tr:last-child td{border-bottom:none}
     <p style="color:var(--text2);font-size:.85rem;margin-bottom:12px">By executing below, parties agree to the terms outlined in this confidential investor portal.</p>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:16px">
       <div><div style="border-bottom:1px solid var(--text2);margin-bottom:6px;height:32px"></div><span style="font-size:.75rem;color:var(--text2)">Jonathan Swistock, Managing Member — R.E.A.L. Holdings LLC</span></div>
-      <div><div style="border-bottom:1px solid var(--text2);margin-bottom:6px;height:32px"></div><span style="font-size:.75rem;color:var(--text2)">Investor Representative — Date</span></div>
+      <div><div style="border-bottom:1px solid var(--text2);margin-bottom:6px;height:32px"></div><span style="font-size:.75rem;color:var(--text2)">Jonathan Weiner, Senior Director — Silver Arch Capital Partners | Date</span></div>
     </div>
   </div>
 </div>
@@ -286,30 +406,181 @@ tr:last-child td{border-bottom:none}
 <div class="section" id="sec-cap">
   <div class="section-title">Capitalization Structure</div>
   <div class="chart-row">
-    <div class="chart-card"><h3>Equity Ownership (Clopton Term Sheet)</h3><div class="chart-wrap"><canvas id="capChart"></canvas></div></div>
+    <div class="chart-card"><h3>Equity Ownership (Silver Arch Term Sheet)</h3><div class="chart-wrap"><canvas id="capChart"></canvas></div></div>
     <div class="table-card" style="margin-bottom:0">
-      <h3>Cap Table — Clopton Capital Version</h3>
+      <h3>Cap Table — Silver Arch Capital Partners Version</h3>
       <table>
         <thead><tr><th>Holder</th><th>Ownership %</th><th>Role</th></tr></thead>
         <tbody>
           <tr><td>Jonathan Swistock</td><td>75%</td><td><span class="badge badge-gold">Founder &amp; CEO</span></td></tr>
           <tr><td>Chris Mahaffey</td><td>10%</td><td><span class="badge badge-blue">Co-Founder</span></td></tr>
-          <tr><td>Investor (Clopton Capital)</td><td>15%</td><td><span class="badge badge-purple">Series Seed</span></td></tr>
+          <tr><td>Silver Arch Capital Partners</td><td>15%</td><td><span class="badge badge-purple">Growth Equity</span></td></tr>
           <tr><td><strong>Total</strong></td><td><strong>100%</strong></td><td></td></tr>
         </tbody>
       </table>
     </div>
   </div>
+
   <div class="table-card">
     <h3>4-Phase Growth Model</h3>
-    <p style="color:var(--text2);font-size:.82rem;margin-bottom:16px">From the Investor Capitalization Document — phased revenue scaling from launch to national expansion.</p>
     <table>
       <thead><tr><th>Phase</th><th>Revenue Target</th><th>Description</th></tr></thead>
       <tbody>
-        <tr><td><span class="badge badge-gold">Phase 1</span></td><td>$5M</td><td>Owensboro flagship (300 Frederica St) launch, initial revenue streams activated</td></tr>
-        <tr><td><span class="badge badge-blue">Phase 2</span></td><td>$25M</td><td>Multi-location expansion, operator-equity partnerships</td></tr>
-        <tr><td><span class="badge badge-green">Phase 3</span></td><td>$150M</td><td>Statewide and regional network scaling</td></tr>
-        <tr><td><span class="badge badge-purple">Phase 4</span></td><td>$750M+</td><td>National platform with full product ecosystem</td></tr>
+        <tr><td><span class="badge badge-gold">Phase 1</span></td><td>$5M</td><td>Owensboro (300 Frederica St) + BG flagship launch, 6 KY sites, initial revenue streams activated</td></tr>
+        <tr><td><span class="badge badge-blue">Phase 2</span></td><td>$25M</td><td>NE expansion — 3–4 hubs, 10–15 spokes, coastal flagships (NY, NJ, MA, CT, RI, ME, NH, VT, PA)</td></tr>
+        <tr><td><span class="badge badge-green">Phase 3</span></td><td>$150M</td><td>6–8 NE hubs, 25–30 spokes, grant revenue flowing, Clinix network scale</td></tr>
+        <tr><td><span class="badge badge-purple">Phase 4</span></td><td>$750M+</td><td>10 hubs, 35–45 spokes, 12–18 mobile vans, national partnerships live</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-card">
+    <h3>Valuation Benchmarks &amp; Exit Comparables</h3>
+    <table>
+      <thead><tr><th>Company</th><th>Exit / Valuation</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Hinge Health</strong></td><td>$6.2B</td><td>Digital PT platform — similar clinical + tech model</td></tr>
+        <tr><td><strong>Sword Health</strong></td><td>$3B</td><td>Virtual PT + AI — comparable tech stack thesis</td></tr>
+        <tr><td><strong>ATI Physical Therapy</strong></td><td>Public (900+ clinics)</td><td>Multi-site PT roll-up — comparable scale trajectory</td></tr>
+        <tr><td><strong>R.E.A.L. Holdings (Entry)</strong></td><td>$46.7M</td><td>Pre-money. 39-stream model, 9-state NE pipeline</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ═══════ R.E.A.L ECOSYSTEM ═══════ -->
+<div class="section" id="sec-ecosystem">
+  <div class="section-title">The R.E.A.L Ecosystem</div>
+  <p class="section-sub">Five subsidiaries unlocking distinct federal grant categories. Together they qualify for 370+ NSF programs across 5 research directorates.</p>
+
+  <div class="eco-grid">
+    <div class="eco-card" style="border-left:3px solid var(--accent)">
+      <h4>Real PT &amp; Wellness</h4>
+      <div class="eco-sub">Physical therapy + regenerative wellness</div>
+      <div class="eco-tag">39 revenue streams · 48–54% EBITDA</div>
+    </div>
+    <div class="eco-card" style="border-left:3px solid var(--blue)">
+      <h4>REALECO</h4>
+      <div class="eco-sub">Theis SIP construction — 60% faster, Cat 5, zero VOCs</div>
+      <div class="eco-tag">NSF: Construction / Energy bucket</div>
+    </div>
+    <div class="eco-card" style="border-left:3px solid var(--green)">
+      <h4>Real Fresh</h4>
+      <div class="eco-sub">Quantum-optimized indoor agriculture</div>
+      <div class="eco-tag">Addresses food deserts nationwide · NSF: Agriculture/Food</div>
+    </div>
+    <div class="eco-card" style="border-left:3px solid var(--purple)">
+      <h4>Real Data</h4>
+      <div class="eco-sub">Data center + quantum computing</div>
+      <div class="eco-tag">NSF NQNI/QISE qualified · NSF: Quantum/AI bucket</div>
+    </div>
+    <div class="eco-card" style="border-left:3px solid var(--red)">
+      <h4>IO2 Water</h4>
+      <div class="eco-sub">Patented ingestible oxygen technology</div>
+      <div class="eco-tag">$60B addressable market · NSF: Biotech bucket</div>
+    </div>
+    <div class="eco-card" style="background:rgba(201,168,76,0.05);border:1px solid rgba(201,168,76,0.3)">
+      <h4>370+ NSF Programs</h4>
+      <div class="eco-sub">Combined ecosystem qualifies across 5 research directorates</div>
+      <div class="eco-tag">Healthcare · Construction · Agriculture · Quantum · Biotech</div>
+    </div>
+  </div>
+
+  <div class="table-card">
+    <h3>NSF Qualification Buckets</h3>
+    <table>
+      <thead><tr><th>Subsidiary</th><th>NSF Bucket</th><th>Key Programs</th><th>Potential</th></tr></thead>
+      <tbody>
+        <tr><td>Real PT &amp; Wellness</td><td>Healthcare Technology</td><td>Smart Health AI (NSF 25-542), DARE Disability Rehab, Engineering of Biomedical Systems</td><td><span class="badge badge-green">$2M–$15M</span></td></tr>
+        <tr><td>REALECO</td><td>Construction / Energy</td><td>Advanced Manufacturing, Energy Efficiency, Smart Buildings</td><td><span class="badge badge-green">$1M–$12M</span></td></tr>
+        <tr><td>Real Fresh</td><td>Agriculture / Food</td><td>Sustainable Agriculture, Food Systems Innovation, Rural Infrastructure</td><td><span class="badge badge-gold">$500K–$6M</span></td></tr>
+        <tr><td>Real Data</td><td>Quantum Computing / AI</td><td>NQNI, QISE, Digital Twins BioTech, NSF Regional Innovation Engines</td><td><span class="badge badge-green">$1M–$10M</span></td></tr>
+        <tr><td>IO2 Water</td><td>Biotech / Water</td><td>Water Systems, Environmental Biotech, NSF Convergence Accelerator</td><td><span class="badge badge-green">$1M–$8M</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="highlight-box">
+    <p>The R.E.A.L Ecosystem is not a collection of disparate businesses — it is a <strong>vertically integrated platform</strong> where each subsidiary strengthens the others. Real Fresh provides patient nutrition, Real Data processes clinical analytics, IO2 Water is sold in every clinic, REALECO builds the clinics, and Real PT generates the recurring revenue base. No single competitor can replicate all five.</p>
+  </div>
+</div>
+
+<!-- ═══════ HUB & SPOKE MODEL ═══════ -->
+<div class="section" id="sec-hubspoke">
+  <div class="section-title">Hub &amp; Spoke Model</div>
+  <p class="section-sub">Scalable infrastructure: every market gets a hub, spokes, and mobile vans. The hub anchors the full 39-stream model while spokes feed patients and extend reach.</p>
+
+  <div class="hub-grid">
+    <div class="hub-card">
+      <div class="hub-card-header">HUB</div>
+      <div class="hub-card-size">3,000–5,000 SF</div>
+      <ul>
+        <li>Full 39 revenue streams</li>
+        <li>Flagship coastal locations</li>
+        <li>Aquatic + regen + SaaS</li>
+        <li>All insurance + cash pay</li>
+        <li>SwimEx aquatic therapy</li>
+        <li>HBOT chambers (2.0–2.5 ATA)</li>
+        <li>PhysioPS ANS testing</li>
+      </ul>
+    </div>
+    <div class="hub-card">
+      <div class="hub-card-header blue-bg" style="color:#fff">SPOKE</div>
+      <div class="hub-card-size">1,200–2,000 SF</div>
+      <ul>
+        <li>$59K startup cost</li>
+        <li>12–15 revenue streams</li>
+        <li>PT + wellness core</li>
+        <li>Feeds patients to hub</li>
+        <li>Clinix AI integrated</li>
+        <li>Membership tiers ($99–$1,800)</li>
+        <li>Referral pipeline to Hub</li>
+      </ul>
+    </div>
+    <div class="hub-card">
+      <div class="hub-card-header purple-bg" style="color:#fff">MOBILE</div>
+      <div class="hub-card-size">Van-based</div>
+      <ul>
+        <li>Rural + seasonal coverage</li>
+        <li>Home health PT visits</li>
+        <li>Medicare episodes $3,600–$3,900</li>
+        <li>Events + employer MSK</li>
+        <li>Grant-funded vans ($30K–$80K)</li>
+        <li>Critical for VT/NH/ME rural</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <p><strong>Revenue Ramp (6 KY Sites):</strong> Month 1: $167K → Month 12: $4.8M &nbsp;|&nbsp; <strong>EBITDA: 48–54%</strong></p>
+  </div>
+
+  <div class="table-card">
+    <h3>KY Launch Network — 6 Sites</h3>
+    <table>
+      <thead><tr><th>Site</th><th>Type</th><th>Status</th><th>Startup Cost</th></tr></thead>
+      <tbody>
+        <tr><td>Owensboro — 300 Frederica St</td><td><span class="badge badge-gold">Hub</span></td><td><span class="badge badge-green">Active / Lease Offer</span></td><td>Full build</td></tr>
+        <tr><td>Bowling Green</td><td><span class="badge badge-gold">Hub</span></td><td><span class="badge badge-blue">60 Days</span></td><td>Full build</td></tr>
+        <tr><td>KY Spoke 1</td><td><span class="badge badge-blue">Spoke</span></td><td><span class="badge badge-gold">Planned</span></td><td>$59K</td></tr>
+        <tr><td>KY Spoke 2</td><td><span class="badge badge-blue">Spoke</span></td><td><span class="badge badge-gold">Planned</span></td><td>$59K</td></tr>
+        <tr><td>KY Spoke 3</td><td><span class="badge badge-blue">Spoke</span></td><td><span class="badge badge-gold">Planned</span></td><td>$59K</td></tr>
+        <tr><td>KY Spoke 4</td><td><span class="badge badge-blue">Spoke</span></td><td><span class="badge badge-gold">Planned</span></td><td>$59K</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-card">
+    <h3>Unit Economics Comparison</h3>
+    <table>
+      <thead><tr><th>Metric</th><th>Real PT Hub</th><th>Real PT Spoke</th><th>Mobile Van</th></tr></thead>
+      <tbody>
+        <tr><td>Square Footage</td><td>3,000–5,000 SF</td><td>1,200–2,000 SF</td><td>Van-based</td></tr>
+        <tr><td>Revenue Streams</td><td>39</td><td>12–15</td><td>3–5</td></tr>
+        <tr><td>Startup Cost</td><td>$150K–$300K</td><td>$59K</td><td>$30K–$80K (grant-funded)</td></tr>
+        <tr><td>Monthly Break-Even</td><td>$45K–$55K</td><td>$12K–$20K</td><td>Minimal</td></tr>
+        <tr><td>Cash-Flow Positive</td><td>4–8 months</td><td>2–4 months</td><td>Month 1</td></tr>
+        <tr><td>EBITDA Margin</td><td>48–54%</td><td>40–48%</td><td>60%+ (Medicare episodes)</td></tr>
       </tbody>
     </table>
   </div>
@@ -318,29 +589,29 @@ tr:last-child td{border-bottom:none}
 <!-- ═══════ SERVICES & PRODUCTS ═══════ -->
 <div class="section" id="sec-portfolio">
   <div class="section-title">Services &amp; Products</div>
-  <p style="color:var(--text2);font-size:.85rem;margin-bottom:24px">All services and products below are live on <strong>real-pt.com</strong> or in active development.</p>
+  <p class="section-sub">All services and products are live on <strong>real-pt.com</strong> or in active development. The full 39-stream model is deployed at Hub locations.</p>
 
   <div class="table-card">
     <h3>Clinical &amp; Therapeutic Services</h3>
     <div class="moat-grid">
-      <div class="moat-card"><div class="moat-num">01</div><h4>Physical Therapy</h4><p>Medicare-credentialed, multi-state insurance contracts, HSA/FSA superbills, HIPAA-compliant billing.</p></div>
-      <div class="moat-card"><div class="moat-num">02</div><h4>Aquatic Therapy (SwimEx)</h4><p>Clinical-grade SwimEx hydrotherapy pool — 94&#176;F water, 100+ speed settings, laminar paddlewheel current, multi-depth zones.</p></div>
+      <div class="moat-card"><div class="moat-num">01</div><h4>Physical Therapy</h4><p>Medicare-credentialed, multi-state insurance contracts, HSA/FSA superbills, HIPAA-compliant billing via Clinix AI.</p></div>
+      <div class="moat-card"><div class="moat-num">02</div><h4>Aquatic Therapy (SwimEx)</h4><p>Clinical-grade SwimEx hydrotherapy pool — 94°F water, 100+ speed settings, laminar paddlewheel current, multi-depth zones.</p></div>
       <div class="moat-card"><div class="moat-num">03</div><h4>Hyperbaric Oxygen Therapy</h4><p>Medical-grade hardshell chambers (2.0 &amp; 2.5 ATA), IHA/IBUM-certified staff. 10-session ($2,500) to 40-session ($6,000) packages.</p></div>
-      <div class="moat-card"><div class="moat-num">04</div><h4>EXOPOD Multi-Modality Recovery</h4><p>Proprietary stacked recovery pod: thermal + EMS + infrared + Himalayan salt + BioAlign magnetic + oxygen + DeepWave + PhotonGlow + vibration pulse + ozone.</p></div>
+      <div class="moat-card"><div class="moat-num">04</div><h4>EXOPOD Multi-Modality Recovery</h4><p>Proprietary stacked recovery pod: thermal + EMS + infrared + Himalayan salt + BioAlign magnetic + oxygen + DeepWave + PhotonGlow + vibration + ozone.</p></div>
       <div class="moat-card"><div class="moat-num">05</div><h4>ExoSkin Body Contouring</h4><p>CryoSlimming, CryoFacials, EMS toning, chin reduction, cellulite reduction, pain management protocols.</p></div>
-      <div class="moat-card"><div class="moat-num">06</div><h4>Veterans ANS Testing</h4><p>FDA-cleared Physio PS autonomic nervous system testing. Used at VA Medical Centers &amp; Walter Reed. Targets POTS, PTSD, toxic exposures, Long COVID.</p></div>
+      <div class="moat-card"><div class="moat-num">06</div><h4>PhysioPS ANS Testing</h4><p>FDA-cleared autonomic nervous system testing. Used at VA Medical Centers &amp; Walter Reed. Targets POTS, PTSD, toxic exposures, Long COVID.</p></div>
     </div>
   </div>
 
   <div class="table-card">
     <h3>Proprietary Products &amp; Platforms</h3>
     <div class="moat-grid">
-      <div class="moat-card"><div class="moat-num">07</div><h4>REAL Cost Plus Rx</h4><p>Transparent pharmacy — $99–$499/mo. Semaglutide $199/mo, Tirzepatide $349/mo. Direct-to-consumer prescription access.</p></div>
-      <div class="moat-card"><div class="moat-num">08</div><h4>REAL Fresh</h4><p>Nutrition &amp; meal delivery platform with Uber Eats integration, InBody meal plan sync, and gamification.</p></div>
-      <div class="moat-card"><div class="moat-num">09</div><h4>REAL Mart</h4><p>Health &amp; wellness e-commerce superstore — 7 categories including recovery hardware, biologics, supplements, devices, apparel, Rx, and home wellness.</p></div>
-      <div class="moat-card"><div class="moat-num">10</div><h4>REAL Score</h4><p>Personalized health intelligence dashboard — aggregated wellness metrics and treatment tracking.</p></div>
-      <div class="moat-card"><div class="moat-num">11</div><h4>REAL TV</h4><p>Live commerce health channel — part QVC, part Netflix, all health. Content-driven product education and sales.</p></div>
-      <div class="moat-card"><div class="moat-num">12</div><h4>Real SmartScan AI</h4><p>AI-powered diagnostic and assessment tool for clinical workflows.</p></div>
+      <div class="moat-card"><div class="moat-num">07</div><h4>IO2 Water</h4><p>Patented ingestible oxygen water. $60B addressable market. Sold B2B and B2C in every clinic, airport retail, and online.</p></div>
+      <div class="moat-card"><div class="moat-num">08</div><h4>REAL Cost Plus Rx</h4><p>Transparent pharmacy — $99–$499/mo. Semaglutide $199/mo, Tirzepatide $349/mo. Direct-to-consumer prescription access.</p></div>
+      <div class="moat-card"><div class="moat-num">09</div><h4>REAL Fresh</h4><p>Quantum-optimized indoor agriculture + nutrition &amp; meal delivery platform. Uber Eats integration. Addresses food deserts nationwide.</p></div>
+      <div class="moat-card"><div class="moat-num">10</div><h4>Weekend Warrior Insurance</h4><p>8-tier insurance product with built-in patient pipeline. Pre-approved claims, direct billing, athletic/recreational coverage. $400K allocation to launch.</p></div>
+      <div class="moat-card"><div class="moat-num">11</div><h4>Pure Defense Trademark</h4><p>USPTO #2711840 — FDA-registered first aid product line. $135K acquisition brokered by Frank Perroni. Multi-million $/yr revenue potential.</p></div>
+      <div class="moat-card"><div class="moat-num">12</div><h4>RRG.bio Stem Cell</h4><p>Exclusive regenerative medicine channel. Premium pricing at coastal flagships. Airport wholesale distribution. Travel-size biologics $28–$199 (72–85% margin).</p></div>
     </div>
   </div>
 
@@ -374,28 +645,116 @@ tr:last-child td{border-bottom:none}
   </div>
 </div>
 
+<!-- ═══════ 39 REVENUE STREAMS ═══════ -->
+<div class="section" id="sec-streams">
+  <div class="section-title">39 Revenue Streams — Complete Breakdown</div>
+  <p class="section-sub">B2B + B2C + Medicare. Every Medicare-reimbursable product sold both B2B and B2C. Competitors operate 3–5 streams.</p>
+
+  <div class="stream-grid">
+    <div class="stream-card">
+      <div class="stream-card-title">Clinical PT (Insurance)</div>
+      <ol>
+        <li>In-Clinic PT</li>
+        <li>Home Health Vans</li>
+        <li>Aquatic / SwimEx</li>
+        <li>Neuro PT / qEEG</li>
+        <li>Diagnostics / PhysioPS</li>
+      </ol>
+      <div class="stream-y1">Y1: $2.1M–$3.45M</div>
+    </div>
+    <div class="stream-card">
+      <div class="stream-card-title">Wellness &amp; Recovery</div>
+      <ol start="6">
+        <li>HBOT</li>
+        <li>Red Light / PBM</li>
+        <li>PEMF / Ammortal</li>
+        <li>Cryotherapy</li>
+        <li>Compression</li>
+        <li>Vibration</li>
+        <li>Stem Cell / RRG.bio</li>
+        <li>HOCATT Ozone</li>
+        <li>IV Therapy / NAD+</li>
+        <li>Aesthetics</li>
+        <li>Weight Loss</li>
+        <li>Chiropractic</li>
+        <li>Massage</li>
+      </ol>
+      <div class="stream-y1">Y1: $1.59M–$3.35M</div>
+    </div>
+    <div class="stream-card">
+      <div class="stream-card-title">Tech / SaaS / Retail</div>
+      <ol start="19">
+        <li>Sports Performance</li>
+        <li>Nike / UA Pods</li>
+        <li>Speediance Gym</li>
+        <li>Pet Rehab</li>
+        <li>Clinic Memberships</li>
+        <li>Home Memberships</li>
+        <li>Wearable Hardware</li>
+        <li>Wearable Data Subs</li>
+        <li>Nike / UA Gear</li>
+        <li>Orthotics / DME</li>
+        <li>OEM Home Devices</li>
+        <li>Real Fresh Meals</li>
+        <li>Lounge F&amp;B</li>
+      </ol>
+      <div class="stream-y1">Y1: $1.83M–$3.45M</div>
+    </div>
+    <div class="stream-card">
+      <div class="stream-card-title">Tech / Events / Equity</div>
+      <ol start="32">
+        <li>Clinix SaaS (99%)</li>
+        <li>Clinix Billing (20%)</li>
+        <li>Tele-PT</li>
+        <li>Data Analytics</li>
+        <li>Mobile Events</li>
+        <li>Employer MSK</li>
+        <li>Partner Commissions</li>
+        <li>Equity Partnership</li>
+      </ol>
+      <div class="stream-y1">Y1: $1.2M–$2.85M</div>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <p><strong>48–54% EBITDA</strong> &nbsp;|&nbsp; <strong>78–92% Collection Rate</strong> &nbsp;|&nbsp; <strong>$1,000–$1,400/sq ft</strong> &nbsp;|&nbsp; <strong>99% Clinix Margin</strong> &nbsp;|&nbsp; Competitors operate 3–5 streams</p>
+  </div>
+
+  <div class="table-card">
+    <h3>Total Y1 Revenue by Category (Flagship Hub)</h3>
+    <table>
+      <thead><tr><th>Category</th><th>Streams</th><th>Y1 Low</th><th>Y1 High</th><th>Model</th></tr></thead>
+      <tbody>
+        <tr><td>Clinical PT (Insurance)</td><td>1–5</td><td>$2.1M</td><td>$3.45M</td><td><span class="badge badge-green">Insurance + Cash Pay</span></td></tr>
+        <tr><td>Wellness &amp; Recovery</td><td>6–18</td><td>$1.59M</td><td>$3.35M</td><td><span class="badge badge-blue">Cash Pay + Membership</span></td></tr>
+        <tr><td>Tech / SaaS / Retail</td><td>19–31</td><td>$1.83M</td><td>$3.45M</td><td><span class="badge badge-purple">E-Commerce + SaaS</span></td></tr>
+        <tr><td>Tech / Events / Equity</td><td>32–39</td><td>$1.2M</td><td>$2.85M</td><td><span class="badge badge-gold">Commission + Partnership</span></td></tr>
+        <tr style="font-weight:700;border-top:2px solid var(--accent)"><td>Flagship Hub Total</td><td>39</td><td>$6.72M</td><td>$13.1M</td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
 <!-- ═══════ USE OF FUNDS ═══════ -->
 <div class="section" id="sec-funds">
-  <div class="section-title">Use of Funds ($3M Allocation)</div>
+  <div class="section-title">Use of Funds — $7M Allocation</div>
+  <p class="section-sub">Disciplined capital deployment across launch, expansion, and technology. Pure Defense trademark brokered by Frank Perroni.</p>
+
   <div class="chart-row">
-    <div class="chart-card"><h3>Fund Allocation</h3><div class="chart-wrap"><canvas id="fundsChart"></canvas></div></div>
+    <div class="chart-card"><h3>$7M Fund Allocation</h3><div class="chart-wrap"><canvas id="fundsChart"></canvas></div></div>
     <div class="table-card" style="margin-bottom:0">
       <h3>Allocation Summary</h3>
       <table>
         <thead><tr><th>Category</th><th>Amount</th><th>%</th></tr></thead>
         <tbody>
-          <tr><td>R.E.A.L. PT — 10+ Locations</td><td>$1,200,000</td><td>40.0%</td></tr>
-          <tr><td>Technology Platform Dev</td><td>$300,000</td><td>10.0%</td></tr>
-          <tr><td>Working Capital &amp; Reserve</td><td>$295,000</td><td>9.8%</td></tr>
-          <tr><td>Streaming &amp; Media Network</td><td>$250,000</td><td>8.3%</td></tr>
-          <tr><td>901 Floyd St Facility (80K sqft)</td><td>$200,000</td><td>6.7%</td></tr>
-          <tr><td>Facility Buildout &amp; Infrastructure</td><td>$200,000</td><td>6.7%</td></tr>
-          <tr><td>Salaries &amp; Travel (6 Months)</td><td>$150,000</td><td>5.0%</td></tr>
-          <tr><td>Pure Defense First Aid Acquisition</td><td>$135,000</td><td>4.5%</td></tr>
-          <tr><td>Eye Care Brand Licensing</td><td>$105,000</td><td>3.5%</td></tr>
-          <tr><td>R.E.A.L. Fresh — Global Menu Rights</td><td>$100,000</td><td>3.3%</td></tr>
-          <tr><td>Extraction Machine &amp; Loading Dock</td><td>$65,000</td><td>2.2%</td></tr>
-          <tr style="font-weight:700;border-top:2px solid var(--accent)"><td>Total</td><td>$3,000,000</td><td>100%</td></tr>
+          <tr><td>KY Launch — 6 Locations</td><td>$1,800,000</td><td>25.7%</td></tr>
+          <tr><td>NE Seed Capital</td><td>$2,400,000</td><td>34.3%</td></tr>
+          <tr><td>Coastal Flagships</td><td>$900,000</td><td>12.9%</td></tr>
+          <tr><td>Tech &amp; Equipment</td><td>$1,065,000</td><td>15.2%</td></tr>
+          <tr><td>Weekend Warrior Insurance</td><td>$400,000</td><td>5.7%</td></tr>
+          <tr><td>Grant Filing (370+ NSF)</td><td>$300,000</td><td>4.3%</td></tr>
+          <tr><td>Pure Defense Trademark</td><td>$135,000</td><td>1.9%</td></tr>
+          <tr style="font-weight:700;border-top:2px solid var(--accent)"><td>Total</td><td>$7,000,000</td><td>100%</td></tr>
         </tbody>
       </table>
     </div>
@@ -406,162 +765,449 @@ tr:last-child td{border-bottom:none}
     <table>
       <thead><tr><th>Allocation</th><th>Amount</th><th>Description</th></tr></thead>
       <tbody>
-        <tr><td><strong>R.E.A.L. PT — 10+ Locations (Multi-State)</strong></td><td>$1,200,000</td><td>Location deposits, build-out, staffing, licensure, and initial operating capital for 10+ clinics: Owensboro KY (flagship), Hamptons NY, MA, CT, FL, PA, NJ, CO, AZ, OR. HBOT equipment separately financed.</td></tr>
-        <tr><td><strong>Technology Platform Development</strong></td><td>$300,000</td><td>Scale R.E.A.L. SmartScan, Clinix AI, R.E.A.L. AI, and R.E.A.L. Cost Plus Rx platforms — engineering, infrastructure, and go-to-market.</td></tr>
-        <tr><td><strong>Working Capital &amp; Operating Reserve</strong></td><td>$295,000</td><td>General working capital, legal, insurance, accounting, contingency reserve for first 12 months of operations.</td></tr>
-        <tr><td><strong>Streaming &amp; Media Network Launch</strong></td><td>$250,000</td><td>Production infrastructure, content development, and launch costs for six-channel R.E.A.L. streaming network.</td></tr>
-        <tr><td><strong>901 Floyd St, Leitchfield, KY (80,000 sq ft)</strong></td><td>$200,000</td><td>Deposit and initial buildout of 80K sq ft industrial facility (full price $600K via Travis Basham). Data center, bottling, extraction, warehousing, corporate HQ.</td></tr>
-        <tr><td><strong>Facility Buildout &amp; Infrastructure</strong></td><td>$200,000</td><td>Data center infrastructure, iO2 bottling line setup, extraction lab, Bitcoin mining integration, media studio buildout, office space.</td></tr>
-        <tr><td><strong>Salaries &amp; Travel (6 Months)</strong></td><td>$150,000</td><td>Six-month salary and travel for Jonathan Swistock, Travis Basham, and Chris — operational runway through profitability.</td></tr>
-        <tr><td><strong>Pure Defense First Aid Acquisition</strong></td><td>$135,000</td><td>Full acquisition of Pure Defense brand (USPTO #2711840), FDA-registered product line, inventory, manufacturing relationships, distribution rights.</td></tr>
-        <tr><td><strong>Eye Care Brand Licensing</strong></td><td>$105,000</td><td>Exclusive distribution/licensing rights for Bio-Logic Aqua (Nature’s Tears EyeMist, Nature’s Mist), plus launch The Eye Care Network streaming channel.</td></tr>
-        <tr><td><strong>R.E.A.L. Fresh — Global Menu Rights</strong></td><td>$100,000</td><td>Execute licensing agreement for Global Menu rights (French-based AI-powered nutrition &amp; fresh food platform) — R.E.A.L. Holdings owns the rights.</td></tr>
-        <tr><td><strong>Extraction Machine Relocation &amp; Loading Dock</strong></td><td>$65,000</td><td>Transport $2.1M plant material extraction machine from AL to KY + commercial-grade loading dock ramp at 901 Floyd St.</td></tr>
+        <tr><td><strong>KY Launch — 6 Locations</strong></td><td>$1,800,000</td><td>Owensboro (300 Frederica St) flagship hub + Bowling Green hub + 4 spokes. Deposits, buildout, staffing, licensure, and initial operating capital. Proves unit economics for NE rollout.</td></tr>
+        <tr><td><strong>NE Seed Capital</strong></td><td>$2,400,000</td><td>First 3–4 NE hubs + initial spokes across 9-state target market (NY, NJ, MA, CT, RI, ME, NH, VT, PA). Largest single allocation — enables fastest path to NE market entry.</td></tr>
+        <tr><td><strong>Coastal Flagships</strong></td><td>$900,000</td><td>5,000+ SF premium coastal locations — Manhattan, Hamptons, Newport RI, Portland ME, Cape Cod MA. Full 39-stream model. Highest revenue/sq ft locations.</td></tr>
+        <tr><td><strong>Tech &amp; Equipment</strong></td><td>$1,065,000</td><td>Clinix AI platform scaling, HBOT chambers, SwimEx aquatic systems, mobile vans (grant co-funded), wearable hardware, data infrastructure.</td></tr>
+        <tr><td><strong>Weekend Warrior Insurance</strong></td><td>$400,000</td><td>Launch 8-tier insurance product. Creates built-in patient pipeline at every location. Competitive moat competitors cannot replicate without insurance licensing.</td></tr>
+        <tr><td><strong>Grant Filing (370+ NSF)</strong></td><td>$300,000</td><td>Non-dilutive capital applications across 370+ NSF programs and 41 HRSA programs. 43 time-sensitive programs before June 2026. Seed that grows into $100M–$675M pipeline.</td></tr>
+        <tr><td><strong>Pure Defense Trademark</strong></td><td>$135,000</td><td>Full acquisition of Pure Defense brand (USPTO #2711840), FDA-registered first aid product line. Brokered by Frank Perroni. Multi-million $/yr revenue potential at scale.</td></tr>
       </tbody>
     </table>
   </div>
 
   <div class="table-card">
-    <h3>Allocation Progress</h3>
-    <div class="progress-row"><div class="progress-label"><span>R.E.A.L. PT — 10+ Locations</span><span>40.0%</span></div><div class="progress-bar"><div class="progress-fill" style="width:40%;background:linear-gradient(90deg,var(--accent),var(--accent2))"></div></div></div>
-    <div class="progress-row"><div class="progress-label"><span>Technology Platforms</span><span>10.0%</span></div><div class="progress-bar"><div class="progress-fill" style="width:10%;background:linear-gradient(90deg,var(--blue),#60a5fa)"></div></div></div>
-    <div class="progress-row"><div class="progress-label"><span>Working Capital &amp; Reserve</span><span>9.8%</span></div><div class="progress-bar"><div class="progress-fill" style="width:9.8%;background:linear-gradient(90deg,#6b7280,#9ca3af)"></div></div></div>
-    <div class="progress-row"><div class="progress-label"><span>Streaming &amp; Media</span><span>8.3%</span></div><div class="progress-bar"><div class="progress-fill" style="width:8.3%;background:linear-gradient(90deg,var(--purple),#a78bfa)"></div></div></div>
-    <div class="progress-row"><div class="progress-label"><span>901 Floyd St Facility</span><span>6.7%</span></div><div class="progress-bar"><div class="progress-fill" style="width:6.7%;background:linear-gradient(90deg,var(--green),#34d399)"></div></div></div>
-    <div class="progress-row"><div class="progress-label"><span>Facility Infrastructure</span><span>6.7%</span></div><div class="progress-bar"><div class="progress-fill" style="width:6.7%;background:linear-gradient(90deg,var(--green),#34d399)"></div></div></div>
-    <div class="progress-row"><div class="progress-label"><span>Salaries &amp; Travel</span><span>5.0%</span></div><div class="progress-bar"><div class="progress-fill" style="width:5%;background:linear-gradient(90deg,#f59e0b,#fbbf24)"></div></div></div>
-    <div class="progress-row"><div class="progress-label"><span>Pure Defense Acquisition</span><span>4.5%</span></div><div class="progress-bar"><div class="progress-fill" style="width:4.5%;background:linear-gradient(90deg,var(--red),#f87171)"></div></div></div>
-    <div class="progress-row"><div class="progress-label"><span>Eye Care Licensing</span><span>3.5%</span></div><div class="progress-bar"><div class="progress-fill" style="width:3.5%;background:linear-gradient(90deg,var(--red),#f87171)"></div></div></div>
-    <div class="progress-row"><div class="progress-label"><span>R.E.A.L. Fresh</span><span>3.3%</span></div><div class="progress-bar"><div class="progress-fill" style="width:3.3%;background:linear-gradient(90deg,#f59e0b,#fbbf24)"></div></div></div>
-    <div class="progress-row"><div class="progress-label"><span>Extraction &amp; Loading Dock</span><span>2.2%</span></div><div class="progress-bar"><div class="progress-fill" style="width:2.2%;background:linear-gradient(90deg,#6b7280,#9ca3af)"></div></div></div>
+    <h3>Allocation Visualization</h3>
+    <div class="progress-row"><div class="progress-label"><span>NE Seed Capital</span><span>34.3%</span></div><div class="progress-bar"><div class="progress-fill" style="width:34.3%;background:linear-gradient(90deg,var(--blue),#60a5fa)"></div></div></div>
+    <div class="progress-row"><div class="progress-label"><span>KY Launch — 6 Locations</span><span>25.7%</span></div><div class="progress-bar"><div class="progress-fill" style="width:25.7%;background:linear-gradient(90deg,var(--accent),var(--accent2))"></div></div></div>
+    <div class="progress-row"><div class="progress-label"><span>Tech &amp; Equipment</span><span>15.2%</span></div><div class="progress-bar"><div class="progress-fill" style="width:15.2%;background:linear-gradient(90deg,var(--purple),#a78bfa)"></div></div></div>
+    <div class="progress-row"><div class="progress-label"><span>Coastal Flagships</span><span>12.9%</span></div><div class="progress-bar"><div class="progress-fill" style="width:12.9%;background:linear-gradient(90deg,var(--green),#34d399)"></div></div></div>
+    <div class="progress-row"><div class="progress-label"><span>Weekend Warrior Insurance</span><span>5.7%</span></div><div class="progress-bar"><div class="progress-fill" style="width:5.7%;background:linear-gradient(90deg,#f59e0b,#fbbf24)"></div></div></div>
+    <div class="progress-row"><div class="progress-label"><span>Grant Filing (370+ NSF)</span><span>4.3%</span></div><div class="progress-bar"><div class="progress-fill" style="width:4.3%;background:linear-gradient(90deg,var(--green),#34d399)"></div></div></div>
+    <div class="progress-row"><div class="progress-label"><span>Pure Defense Trademark</span><span>1.9%</span></div><div class="progress-bar"><div class="progress-fill" style="width:1.9%;background:linear-gradient(90deg,var(--red),#f87171)"></div></div></div>
+  </div>
+
+  <div class="info-box">
+    <p>National expansion talks advancing: <strong>Mississippi, Florida, Arizona, Oregon, DMV corridor</strong> — additional capital from subsequent rounds and non-dilutive grant pipeline.</p>
   </div>
 </div>
 
 <!-- ═══════ REVENUE MODEL ═══════ -->
 <div class="section" id="sec-revenue">
   <div class="section-title">Revenue Model</div>
-  <div class="kpi-grid" style="grid-template-columns:repeat(3,1fr);margin-bottom:24px">
-    <div class="kpi"><div class="kpi-label">Revenue Streams</div><div class="kpi-value accent">39</div><div class="kpi-sub">Per Revenue Master Analysis</div></div>
-    <div class="kpi"><div class="kpi-label">Revenue Channels</div><div class="kpi-value green">7</div><div class="kpi-sub">Per Investor Cap Doc</div></div>
-    <div class="kpi"><div class="kpi-label">Target EBITDA</div><div class="kpi-value purple">48–54%</div><div class="kpi-sub">At Scale Per SC Network Analysis</div></div>
+
+  <div class="kpi-grid">
+    <div class="kpi"><div class="kpi-label">Flagship Hub Y1 Low</div><div class="kpi-value accent">$4.9M</div><div class="kpi-sub">Conservative Projection</div></div>
+    <div class="kpi"><div class="kpi-label">Flagship Hub Y1 High</div><div class="kpi-value accent">$8.1M</div><div class="kpi-sub">Upside Projection</div></div>
+    <div class="kpi"><div class="kpi-label">Phase 1 Network (6 Sites Y3)</div><div class="kpi-value green">$13.9M</div><div class="kpi-sub">Revenue — $6.7M EBITDA (48%)</div></div>
+    <div class="kpi"><div class="kpi-label">Capital Required Phase 1</div><div class="kpi-value blue">$1.5M–$2.5M</div><div class="kpi-sub">For 6-site NE network</div></div>
+  </div>
+
+  <div class="chart-row">
+    <div class="chart-card"><h3>Flagship Hub Y1 Revenue by Category</h3><div class="chart-wrap"><canvas id="segmentChart"></canvas></div></div>
+    <div class="chart-card"><h3>EBITDA vs. Industry Benchmark</h3><div class="chart-wrap"><canvas id="ebitdaChartRev"></canvas></div></div>
   </div>
 
   <div class="table-card">
-    <h3>7 Revenue Channels</h3>
+    <h3>Flagship Hub Year 1 Revenue Breakdown</h3>
     <table>
-      <thead><tr><th>Channel</th><th>Description</th><th>Model</th></tr></thead>
+      <thead><tr><th>Category</th><th>Y1 Low</th><th>Y1 High</th><th>Description</th></tr></thead>
       <tbody>
-        <tr><td>Clinical Services</td><td>PT, aquatic therapy, HBOT, recovery — insurance + cash pay</td><td><span class="badge badge-green">Recurring + Fee-for-Service</span></td></tr>
-        <tr><td>Membership Revenue</td><td>7 tiers from $99–$1,800/mo per member</td><td><span class="badge badge-green">Recurring</span></td></tr>
-        <tr><td>Product Sales (REAL Mart)</td><td>Recovery hardware, biologics, supplements, devices, home wellness</td><td><span class="badge badge-blue">E-Commerce</span></td></tr>
-        <tr><td>REAL Cost Plus Rx</td><td>Transparent pharmacy — Semaglutide, Tirzepatide, generics</td><td><span class="badge badge-green">Subscription</span></td></tr>
-        <tr><td>REAL Fresh</td><td>Nutrition delivery with Uber Eats integration</td><td><span class="badge badge-blue">Marketplace</span></td></tr>
-        <tr><td>Corporate &amp; Government</td><td>Employer wellness ($5K–$49K/yr) + government agency programs</td><td><span class="badge badge-gold">Contracts</span></td></tr>
-        <tr><td>Clinix AI Commission</td><td>20% commission on AI intake &amp; scheduling platform</td><td><span class="badge badge-purple">Partnership</span></td></tr>
+        <tr><td>Clinical + Home Health</td><td>$2.0M</td><td>$2.7M</td><td>PT, aquatic, neuro PT, home health van visits, diagnostics</td></tr>
+        <tr><td>Wellness + Regen + Med-Spa</td><td>$1.2M</td><td>$2.0M</td><td>HBOT, stem cells, IV therapy, aesthetics, weight loss, massage</td></tr>
+        <tr><td>Memberships + Retail + Food</td><td>$0.9M</td><td>$1.6M</td><td>7-tier memberships, REAL Mart, Real Fresh meals, lounge F&amp;B</td></tr>
+        <tr><td>SaaS/Clinix + Tech + Events</td><td>$0.8M</td><td>$1.8M</td><td>Clinix billing (20%), SaaS (99% margin), tele-PT, employer MSK</td></tr>
+        <tr style="font-weight:700;border-top:2px solid var(--accent)"><td>Total</td><td>$4.9M</td><td>$8.1M</td><td>48–54% EBITDA on all revenue</td></tr>
       </tbody>
     </table>
   </div>
 
   <div class="table-card">
-    <h3>4-Phase Revenue Trajectory</h3>
-    <p style="color:var(--text2);font-size:.82rem;margin-bottom:16px">From the Investor Capitalization Document.</p>
+    <h3>EBITDA Margin Comparison</h3>
     <table>
-      <thead><tr><th>Phase</th><th>Revenue Target</th><th>Key Drivers</th></tr></thead>
+      <thead><tr><th>Metric</th><th>Real PT &amp; Wellness</th><th>Traditional PT</th><th>Wellness Center</th><th>PE Roll-Up</th></tr></thead>
       <tbody>
-        <tr><td><span class="badge badge-gold">Phase 1</span></td><td>$5M</td><td>Owensboro flagship (300 Frederica St) + initial membership base + HBOT packages + REAL Mart launch</td></tr>
-        <tr><td><span class="badge badge-blue">Phase 2</span></td><td>$25M</td><td>Operator-equity expansion (10+ locations) + Cost Plus Rx scaling + corporate wellness</td></tr>
-        <tr><td><span class="badge badge-green">Phase 3</span></td><td>$150M</td><td>Regional network + REAL Fresh/REAL TV platforms + grant-funded programs</td></tr>
-        <tr><td><span class="badge badge-purple">Phase 4</span></td><td>$750M+</td><td>National footprint + full ecosystem + XPRIZE involvement + government contracts at scale</td></tr>
+        <tr><td>EBITDA Margin</td><td><strong style="color:var(--green)">48–54%</strong></td><td>18–25%</td><td>20–28%</td><td>22–28%</td></tr>
+        <tr><td>Revenue Streams</td><td><strong style="color:var(--green)">39</strong></td><td>3–5</td><td>5–10</td><td>3–7</td></tr>
+        <tr><td>AI Billing</td><td><strong style="color:var(--green)">Yes (Clinix)</strong></td><td>Rarely</td><td>No</td><td>Sometimes</td></tr>
+        <tr><td>Non-Dilutive Capital</td><td><strong style="color:var(--green)">$100M–$675M</strong></td><td>None</td><td>None</td><td>None</td></tr>
       </tbody>
     </table>
   </div>
 
   <div class="table-card">
-    <h3>SC Statewide Network Analysis Highlights</h3>
-    <p style="color:var(--text2);font-size:.82rem;margin-bottom:16px">From the Revenue Master document — 39 revenue streams modeled across a statewide network.</p>
+    <h3>Phase 1 Network Economics (6 Sites, Year 3)</h3>
     <table>
       <thead><tr><th>Metric</th><th>Value</th></tr></thead>
       <tbody>
-        <tr><td>Total Revenue Streams Identified</td><td><strong>39</strong></td></tr>
-        <tr><td>Projected EBITDA Margin</td><td><strong>48–54%</strong></td></tr>
-        <tr><td>Revenue Categories</td><td>Clinical, membership, pharmacy, nutrition, e-commerce, media, government</td></tr>
-        <tr><td>Geographic Model</td><td>Rural-first hub &amp; spoke — underserved PT deserts</td></tr>
+        <tr><td>Total Revenue</td><td><strong>$13.9M</strong></td></tr>
+        <tr><td>EBITDA</td><td><strong>$6.7M</strong></td></tr>
+        <tr><td>Blended EBITDA Margin</td><td><strong style="color:var(--green)">48%</strong></td></tr>
+        <tr><td>Capital Required</td><td>$1.5M–$2.5M</td></tr>
+        <tr><td>Sites</td><td>6 (2 hubs + 4 spokes)</td></tr>
       </tbody>
     </table>
   </div>
 </div>
 
-<!-- ═══════ EXPANSION & LOCATIONS ═══════ -->
-<div class="section" id="sec-expansion">
-  <div class="section-title">Expansion &amp; Locations</div>
-  <div class="kpi-grid" style="grid-template-columns:repeat(3,1fr);margin-bottom:24px">
-    <div class="kpi"><div class="kpi-label">Funded Locations</div><div class="kpi-value accent">10+</div><div class="kpi-sub">Multi-State</div></div>
-    <div class="kpi"><div class="kpi-label">Expansion Model</div><div class="kpi-value green">Operator-Equity</div><div class="kpi-sub">NOT a Franchise</div></div>
-    <div class="kpi"><div class="kpi-label">Launch Timeline</div><div class="kpi-value blue">2–4 Months</div><div class="kpi-sub">Per Location</div></div>
+<!-- ═══════ CLINIX MULTIPLIER ═══════ -->
+<div class="section" id="sec-clinix">
+  <div class="section-title">The Clinix Multiplier</div>
+  <p class="section-sub">AI-powered billing — zero overhead, pure profit. This is the single largest margin differentiator in the Real PT model. SaaS + billing revenue scales with no additional capital, staff, or real estate.</p>
+
+  <div class="kpi-grid">
+    <div class="kpi"><div class="kpi-label">Commission Rate</div><div class="kpi-value accent">20%</div><div class="kpi-sub">On All Billing Volume</div></div>
+    <div class="kpi"><div class="kpi-label">SaaS Margin</div><div class="kpi-value green">99%</div><div class="kpi-sub">Zero Rent / Staff / Equipment</div></div>
+    <div class="kpi"><div class="kpi-label">50-Clinic Network</div><div class="kpi-value purple">$750K–$1M</div><div class="kpi-sub">Pure Annual Profit</div></div>
+    <div class="kpi"><div class="kpi-label">100-Clinic Network</div><div class="kpi-value blue">$1.74M–$4.28M</div><div class="kpi-sub">Annual Pure Profit</div></div>
+  </div>
+
+  <div class="highlight-box">
+    <p><strong>Every new equity partner adds billing commission.</strong> As Real PT expands its network of locations — both owned hubs/spokes and operator-equity partners — every new clinic that deploys Clinix AI adds 20% commission revenue with zero incremental overhead. The Clinix revenue stream (Stream #33) is the model's most scalable asset.</p>
   </div>
 
   <div class="table-card">
-    <h3>Flagship &amp; Kentucky Network</h3>
-    <div class="timeline">
-      <div class="timeline-item done"><h4>Owensboro, KY — Flagship Clinic (300 Frederica St)</h4><p>Lease offer active — primary hub for Western Kentucky</p></div>
-      <div class="timeline-item"><h4>Greenville, KY — HUBZone Satellite</h4><p>Planned — rural satellite in HUBZone-qualified area</p></div>
-      <div class="timeline-item"><h4>Richmond, KY — Eastern/Central Pod Hub</h4><p>Phase 1b — Appalachian corridor satellite network center</p></div>
-      <div class="timeline-item"><h4>Louisville, KY — Metro Flagship</h4><p>Phase 2 — After rural model is validated</p></div>
+    <h3>Clinix Network Scale Revenue Projections</h3>
+    <table>
+      <thead><tr><th>Network Size</th><th>Annual Billing Volume (est.)</th><th>Clinix Commission (20%)</th><th>Pure Profit (99% margin)</th></tr></thead>
+      <tbody>
+        <tr><td>10 Clinics</td><td>$5M–$8M</td><td>$1.0M–$1.6M</td><td>$990K–$1.58M</td></tr>
+        <tr><td>25 Clinics</td><td>$12.5M–$20M</td><td>$2.5M–$4M</td><td>$2.48M–$3.96M</td></tr>
+        <tr><td>50 Clinics</td><td>$25M–$40M</td><td>$5M–$8M</td><td><strong style="color:var(--green)">$750K–$1M (pure profit)</strong></td></tr>
+        <tr><td>100 Clinics</td><td>$50M–$80M</td><td>$10M–$16M</td><td><strong style="color:var(--green)">$1.74M–$4.28M annually</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-card">
+    <h3>B2B Commission Partnerships</h3>
+    <p style="color:var(--text2);font-size:.82rem;margin-bottom:16px">Every Medicare-reimbursable product sold both B2B and B2C. Partners pay commissions on every unit sold through the Real PT network.</p>
+    <div class="moat-grid">
+      <div class="moat-card"><h4>Clinix Agent</h4><p>AI billing platform — 20% commission on all billing. Primary stream #33. 99% SaaS margin.</p></div>
+      <div class="moat-card"><h4>Antimatter AI</h4><p>AI integration partner. Clinical workflow automation across the hub-and-spoke network.</p></div>
+      <div class="moat-card"><h4>SwimEx</h4><p>Aquatic therapy equipment. B2B referral commissions + in-clinic revenue stream #3.</p></div>
+      <div class="moat-card"><h4>Hocott</h4><p>Ozone sauna B2B. HOCATT Ozone revenue stream #13 with B2B wholesale channel.</p></div>
+      <div class="moat-card"><h4>Everyday HBOT</h4><p>Hyperbaric equipment. Equipment commissions + HBOT revenue stream #6 ($2,500–$6,000/package).</p></div>
+      <div class="moat-card"><h4>ExoPod + ExoSkin</h4><p>Recovery systems + skin treatments. Streams #4 and #5. Proprietary stacked modality revenue.</p></div>
+      <div class="moat-card"><h4>RRG.bio</h4><p>Stem cell partner — exclusive regen medicine channel. Premium pricing + airport wholesale (72–85% margin).</p></div>
+      <div class="moat-card"><h4>Pure Defense</h4><p>$135K trademark acquisition. Multi-million $/yr revenue at scale. FDA-registered. Brokered by Frank Perroni.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════ INVESTOR RETURNS ═══════ -->
+<div class="section" id="sec-returns">
+  <div class="section-title">Investor Return Matrix</div>
+  <p class="section-sub">Stress test across 6 performance scenarios. Even at 10% survival, investor capital is protected at 1.5x–1.9x. Base plan: 15x–27.5x ROI.</p>
+
+  <div class="chart-row">
+    <div class="chart-card"><h3>ROI by Scenario (Exit Multiple Range)</h3><div class="chart-wrap"><canvas id="returnChart"></canvas></div></div>
+    <div class="chart-card"><h3>Capital Efficiency — Basis Advantage</h3><div class="chart-wrap"><canvas id="capEffChart"></canvas></div></div>
+  </div>
+
+  <div class="table-card">
+    <h3>Stress Test — All Scenarios</h3>
+    <table>
+      <thead><tr><th>Scenario</th><th>Capital In</th><th>Y3 EBITDA</th><th>Exit 4.5x</th><th>Exit 5.5x</th><th>Investor ROI</th></tr></thead>
+      <tbody>
+        <tr><td>10% Survival</td><td>$2.0M</td><td>$670K</td><td>$3.0M</td><td>$3.7M</td><td><strong>1.5x–1.9x</strong></td></tr>
+        <tr><td>25% Worst Case</td><td>$2.0M</td><td>$1.68M</td><td>$7.5M</td><td>$9.2M</td><td><strong style="color:var(--blue)">3.8x–4.6x</strong></td></tr>
+        <tr><td>50% Conservative</td><td>$2.0M</td><td>$3.35M</td><td>$15.1M</td><td>$18.4M</td><td><strong style="color:var(--blue)">7.5x–9.2x</strong></td></tr>
+        <tr><td>75% Moderate</td><td>$2.0M</td><td>$5.03M</td><td>$22.6M</td><td>$27.7M</td><td><strong style="color:var(--green)">11x–14x</strong></td></tr>
+        <tr style="background:rgba(201,168,76,0.05)"><td><strong>100% Base Plan</strong></td><td><strong>$2.0M</strong></td><td><strong>$6.7M</strong></td><td><strong>$30M</strong></td><td><strong>$55M</strong></td><td><strong style="color:var(--accent)">15x–27.5x</strong></td></tr>
+        <tr><td>125% Upside</td><td>$2.0M</td><td>$8.38M</td><td>$37.7M</td><td>$68.8M</td><td><strong style="color:var(--purple)">19x–34x</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-card">
+    <h3>Capital Efficiency — Basis Advantage</h3>
+    <div class="cap-stack-grid">
+      <div class="cap-item"><div class="cap-val accent" style="color:var(--green)">$150K–$300K</div><div class="cap-label">Real PT Per-Site Cost</div></div>
+      <div class="cap-item"><div class="cap-val" style="color:var(--text2)">$400K–$800K</div><div class="cap-label">Industry Per-Site Cost</div></div>
+      <div class="cap-item"><div class="cap-val" style="color:var(--blue)">$45K–$55K</div><div class="cap-label">Monthly Break-Even</div></div>
+      <div class="cap-item"><div class="cap-val" style="color:var(--accent)">4–8 Mo</div><div class="cap-label">Cash-Flow Positive</div></div>
+    </div>
+    <p style="color:var(--text2);font-size:.82rem;font-weight:600;text-align:center;margin-bottom:16px">$400K basis gap = pure margin of safety for investors</p>
+    <table>
+      <thead><tr><th>Capital Stack Source</th><th>Value</th><th>How It Works</th></tr></thead>
+      <tbody>
+        <tr><td>Landlord TI</td><td>$20K–$50K</td><td>Tenant improvement allowance negotiated into every lease</td></tr>
+        <tr><td>Free Rent</td><td>$15K–$60K</td><td>3–6 months free rent during buildout period</td></tr>
+        <tr><td>Partner-Funded Equipment</td><td>$50K–$200K+</td><td>SwimEx, HBOT, Ammortal contribute hardware at partner terms</td></tr>
+        <tr><td>Grant-Funded Vans</td><td>$30K–$80K/van</td><td>Federal/state grants cover mobile unit costs entirely</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ═══════ NE MARKET OPPORTUNITY ═══════ -->
+<div class="section" id="sec-expansion">
+  <div class="section-title">Northeast Market Opportunity</div>
+  <p class="section-sub">9 target states — massive underserved demand. Rhode Island is the only NE state with a PT deficit (-20 FTE), creating first-mover opportunity.</p>
+
+  <div class="kpi-grid">
+    <div class="kpi"><div class="kpi-label">Combined TAM</div><div class="kpi-value accent">$104.65B</div><div class="kpi-sub">$53B PT + $51.65B Regen</div></div>
+    <div class="kpi"><div class="kpi-label">FTE Physical Therapists</div><div class="kpi-value green">56,960</div><div class="kpi-sub">Across 9 NE States</div></div>
+    <div class="kpi"><div class="kpi-label">Vacancy Rate</div><div class="kpi-value purple">11.1%</div><div class="kpi-sub">Lowest in US — Undersupplied</div></div>
+    <div class="kpi"><div class="kpi-label">Annual Growth Rate</div><div class="kpi-value blue">6.4%</div><div class="kpi-sub">PT Market CAGR</div></div>
+  </div>
+
+  <div class="table-card">
+    <h3>State-by-State Market Overview</h3>
+    <table>
+      <thead><tr><th>State</th><th>Population</th><th>FTE PTs</th><th>Key Markets</th><th>Opportunity</th></tr></thead>
+      <tbody>
+        <tr><td><strong>New York</strong></td><td>8.3M (NYC metro 20M+)</td><td>2,800+</td><td>Manhattan flagship; Brooklyn, Queens, Bronx spokes</td><td><span class="badge badge-gold">Highest Density</span></td></tr>
+        <tr><td><strong>New York (Hamptons)</strong></td><td>—</td><td>—</td><td>Bridgehampton 9,093 SF; Southampton, East Hampton, Montauk spokes</td><td><span class="badge badge-gold">Ultra-HNW Cash Pay</span></td></tr>
+        <tr><td><strong>New Jersey</strong></td><td>9.3M</td><td>1,900+</td><td>Bergen/Essex hub; Cape May, Asbury Park coastal spokes</td><td><span class="badge badge-green">Dense Suburban</span></td></tr>
+        <tr><td><strong>Connecticut</strong></td><td>3.6M</td><td>1,000+</td><td>Hartford/New Haven hub; Mystic/New London coastal spoke</td><td><span class="badge badge-green">High Median Income</span></td></tr>
+        <tr><td><strong>Massachusetts</strong></td><td>7.0M</td><td>2,200+</td><td>Cape Cod 5,000+ SF flagship; Gloucester/Rockport, Plymouth spokes</td><td><span class="badge badge-green">Top Healthcare Market</span></td></tr>
+        <tr><td><strong>Pennsylvania</strong></td><td>13.0M</td><td>3,500+</td><td>Dual hub: Philadelphia + Pittsburgh; State College, Central PA spokes</td><td><span class="badge badge-blue">Largest NE Workforce</span></td></tr>
+        <tr><td><strong>Rhode Island</strong></td><td>1.1M</td><td>Deficit −20</td><td>Providence metro hub; Westerly/Watch Hill, Newport coastal spokes</td><td><span class="badge badge-red">ONLY PT Deficit State</span></td></tr>
+        <tr><td><strong>New Hampshire</strong></td><td>1.4M</td><td>—</td><td>Hampton Beach coastal spoke; rural van model</td><td><span class="badge badge-purple">Mobile Van Ideal</span></td></tr>
+        <tr><td><strong>Vermont</strong></td><td>645K</td><td>—</td><td>Most rural NE state; mobile vans critical</td><td><span class="badge badge-purple">Mobile Van Ideal</span></td></tr>
+        <tr><td><strong>Maine</strong></td><td>1.4M</td><td>—</td><td>Portland hub; Camden/Rockland, Kennebunkport coastal spokes</td><td><span class="badge badge-blue">Growing Wellness</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-card">
+    <h3>CRE Cost Comparison — 9 NE States</h3>
+    <p style="color:var(--text2);font-size:.82rem;margin-bottom:16px">Hub, spoke, and coastal lease rates across the Northeast. Manhattan reference: $70–$90/SF — NE coastal markets offer 60–80% savings. Source: LoopNet, CityFeet</p>
+    <table>
+      <thead><tr><th>State</th><th>Hub Rate ($/SF)</th><th>Spoke Rate ($/SF)</th><th>Coastal Rate ($/SF)</th></tr></thead>
+      <tbody>
+        <tr><td>New York</td><td>$35–$50</td><td>$22–$30</td><td>$30–$45 (Hamptons)</td></tr>
+        <tr><td>New Jersey</td><td>$25–$35</td><td>$18–$25</td><td>$20–$25 (Shore)</td></tr>
+        <tr><td>Connecticut</td><td>$25–$32</td><td>$18–$24</td><td>$23–$28 (Waterfront)</td></tr>
+        <tr><td>Massachusetts</td><td>$28–$38</td><td>$18–$25</td><td>$18 (Cape Cod)</td></tr>
+        <tr><td>Pennsylvania</td><td>$22–$30</td><td>$15–$22</td><td>N/A</td></tr>
+        <tr><td>Rhode Island</td><td>$22–$28</td><td>$16–$22</td><td>$30 (Newport)</td></tr>
+        <tr><td>New Hampshire</td><td>$18–$24</td><td>$14–$18</td><td>$20–$25 (Hampton Beach)</td></tr>
+        <tr><td>Vermont</td><td>$16–$22</td><td>$12–$16</td><td>N/A</td></tr>
+        <tr><td>Maine</td><td>$19–$22</td><td>$14–$18</td><td>$18–$24 (Coastal)</td></tr>
+        <tr style="font-weight:700;color:var(--red)"><td>Manhattan, NY (Reference)</td><td>$70–$90</td><td>—</td><td>$70–$90</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="highlight-box">
+    <p><strong>Market Drivers:</strong> $53B US PT market growing 6.4% annually · $51.65B regenerative medicine market (31.27% CAGR) · NE region: highest insurance reimbursement rates in US · Aging population drives PT + wellness demand · Coastal markets: seasonal tourism adds cash-pay volume · 60–80% cheaper CRE than Manhattan. Source: Grand View Research, Fortune Business Insights, BLS Occupational Data</p>
+  </div>
+</div>
+
+<!-- ═══════ LEASE TO OWN / REALECO ═══════ -->
+<div class="section" id="sec-construction">
+  <div class="section-title">Lease to Own &amp; REALECO / Theis Construction</div>
+  <p class="section-sub">Healthcare revenue + real estate appreciation = compounding returns. Silver Arch bridge lending ($1M–$70M) fits perfectly — Real PT owns coastal NE CRE portfolio + operating healthcare businesses.</p>
+
+  <div class="kpi-grid-3">
+    <div class="kpi"><div class="kpi-label">Phase 1</div><div class="kpi-value accent">Lease</div><div class="kpi-sub">Negotiate favorable NNN leases, Landlord TI, free rent</div></div>
+    <div class="kpi"><div class="kpi-label">Phase 2</div><div class="kpi-value green">Profit</div><div class="kpi-sub">Cash-flow positive 4–8 months, 48–54% EBITDA</div></div>
+    <div class="kpi"><div class="kpi-label">Phase 3</div><div class="kpi-value blue">Build / Own</div><div class="kpi-sub">Theis SIP, 60% faster, Cat 5. Own coastal NE portfolio</div></div>
+  </div>
+
+  <div class="info-box">
+    <p><strong>Silver Arch bridge lending ($1M–$70M) fits perfectly</strong> — Real PT&#39;s lease-to-own coastal NE strategy creates an ongoing pipeline of bridge lending opportunities as sites transition from lease to owned properties. Silver Arch gains both equity appreciation (15% stake) and a recurring bridge lending deal flow.</p>
+  </div>
+
+  <div class="table-card">
+    <h3>Lease-to-Own Strategy</h3>
+    <table>
+      <thead><tr><th>Phase</th><th>Approach</th><th>Advantage</th></tr></thead>
+      <tbody>
+        <tr><td><span class="badge badge-gold">Phase 1: Lease</span></td><td>Negotiate NNN leases, Landlord TI ($20K–$50K), 3–6 months free rent, minimal upfront capital</td><td>Fastest path to revenue — open clinics in 2–4 months with sub-$300K total investment</td></tr>
+        <tr><td><span class="badge badge-blue">Phase 2: Profit</span></td><td>Cash-flow positive 4–8 months, build capital reserves, prove unit economics</td><td>48–54% EBITDA generates acquisition capital internally. No additional dilution required.</td></tr>
+        <tr><td><span class="badge badge-green">Phase 3: Build/Own</span></td><td>Theis SIP construction — 60% faster build, Cat 5 rated, zero VOCs, fully modular</td><td>Convert operating expense to owned real estate. Compounding asset value + clinic revenue.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-card" style="border-left:3px solid var(--accent)">
+    <h3>Theis Construction Panels (SIP) — The Technology</h3>
+    <p style="color:var(--text2);font-size:.82rem;margin-bottom:16px">Theis Construction Panels are Structural Insulated Panels (SIP) that combine multiple construction layers into a single, all-in-one building system. They replace traditional wall framing, roof framing, weather barriers, insulation, and exterior cladding — all in one panel.</p>
+    <div class="moat-grid">
+      <div class="moat-card"><div class="moat-num">⚡</div><h4>60% Faster Construction</h4><p>Panels can be pre-manufactured or fabricated directly on-site, drastically reducing labor, installation time, and cost vs. traditional stick-frame construction.</p></div>
+      <div class="moat-card"><div class="moat-num">🛡️</div><h4>Category 5 Hurricane Rated</h4><p>Fire and impact-resistant, seamless waterproof barrier, UV-stable, high wind protection, corrosion-resistant. Critical for coastal NE properties.</p></div>
+      <div class="moat-card"><div class="moat-num">🌡️</div><h4>Tekton Foam Insulation</h4><p>Customizable R-values to suit any climate. Airtight insulation reduces heating/cooling costs, enhancing energy efficiency and structural integrity.</p></div>
+      <div class="moat-card"><div class="moat-num">🎨</div><h4>Any Exterior Finish</h4><p>Each panel achieves any desired exterior finish — wood, stone, stucco, brick, metal. Design flexibility tailored to local coastal aesthetics.</p></div>
+      <div class="moat-card"><div class="moat-num">🔧</div><h4>Pre-Fitted Systems</h4><p>Flexible options for pre-installed HVAC, plumbing, and electrical built directly into panels. Reduces on-site trades and coordination time.</p></div>
+      <div class="moat-card"><div class="moat-num">🌿</div><h4>Zero VOCs — Eco-Friendly</h4><p>No volatile organic compounds, minimal waste, reduced environmental impact. Long-lasting performance with low maintenance — ideal for healthcare environments.</p></div>
     </div>
   </div>
 
   <div class="table-card">
-    <h3>Multi-State Expansion Pipeline</h3>
+    <h3>Theis Tekton vs. Competing Materials</h3>
     <table>
-      <thead><tr><th>State</th><th>Market</th><th>Status</th></tr></thead>
+      <thead><tr><th>Metric</th><th>Theis Tekton</th><th>Polyurea</th><th>Polyurethane</th><th>Epoxy</th></tr></thead>
       <tbody>
-        <tr><td>Kentucky</td><td>Owensboro (flagship — 300 Frederica St), Greenville, Richmond, Louisville</td><td><span class="badge badge-green">Active / Funded</span></td></tr>
-        <tr><td>New York</td><td>Hamptons</td><td><span class="badge badge-gold">Funded</span></td></tr>
-        <tr><td>Massachusetts</td><td>TBD</td><td><span class="badge badge-gold">Funded</span></td></tr>
-        <tr><td>Connecticut</td><td>TBD</td><td><span class="badge badge-gold">Funded</span></td></tr>
-        <tr><td>Florida</td><td>TBD</td><td><span class="badge badge-gold">Funded</span></td></tr>
-        <tr><td>Pennsylvania</td><td>TBD</td><td><span class="badge badge-gold">Funded</span></td></tr>
-        <tr><td>New Jersey</td><td>TBD</td><td><span class="badge badge-gold">Funded</span></td></tr>
-        <tr><td>Colorado</td><td>TBD</td><td><span class="badge badge-gold">Funded</span></td></tr>
-        <tr><td>Arizona</td><td>TBD</td><td><span class="badge badge-gold">Funded</span></td></tr>
-        <tr><td>Oregon</td><td>TBD</td><td><span class="badge badge-gold">Funded</span></td></tr>
-        <tr><td>Mississippi</td><td>TBD</td><td><span class="badge badge-blue">Agreement in Place</span></td></tr>
-        <tr><td>Vermont</td><td>TBD</td><td><span class="badge badge-blue">Agreement in Place</span></td></tr>
-        <tr><td>South Carolina</td><td>TBD</td><td><span class="badge badge-purple">In Discussion</span></td></tr>
-        <tr><td>Dominican Republic</td><td>TBD</td><td><span class="badge badge-purple">In Discussion</span></td></tr>
+        <tr><td>Impact Resistance</td><td><span class="badge badge-green">5/5</span></td><td>4/5</td><td>1/5</td><td>1/5</td></tr>
+        <tr><td>Fire Proof (Class A)</td><td><span class="badge badge-green">5/5</span></td><td>1/5</td><td>1/5</td><td>1/5</td></tr>
+        <tr><td>Weatherability</td><td><span class="badge badge-green">5/5</span></td><td>3/5</td><td>3/5</td><td>1/5</td></tr>
+        <tr><td>Flexibility</td><td><span class="badge badge-green">5/5</span></td><td>4/5</td><td>4/5</td><td>1/5</td></tr>
+        <tr><td>Corrosion Resistance</td><td><span class="badge badge-green">4/5</span></td><td>2/5</td><td>3/5</td><td>2/5</td></tr>
+        <tr><td>Adhesion to Oily Surface</td><td><span class="badge badge-green">4/5</span></td><td>0/5</td><td>0/5</td><td>0/5</td></tr>
+        <tr><td>Application Temp Range</td><td><span class="badge badge-green">5/5</span></td><td>4/5</td><td>3/5</td><td>1/5</td></tr>
+        <tr><td><strong>Overall</strong></td><td><span class="badge badge-green">4.5/5</span></td><td>2.7/5</td><td>2.6/5</td><td>1.9/5</td></tr>
       </tbody>
     </table>
   </div>
+</div>
+
+<!-- ═══════ AIRPORT RETAIL ═══════ -->
+<div class="section" id="sec-airport">
+  <div class="section-title">Airport Retail Channel</div>
+  <p class="section-sub">500+ slots across 20 airports via RRG wholesale. Year 1 Revenue: $38.4M. $18.50 downstream digital revenue per $1 in-store purchase.</p>
+
+  <div class="kpi-grid">
+    <div class="kpi"><div class="kpi-label">Retail Slots</div><div class="kpi-value accent">500+</div><div class="kpi-sub">Across 20 Major Airports</div></div>
+    <div class="kpi"><div class="kpi-label">Y1 Revenue</div><div class="kpi-value green">$38.4M</div><div class="kpi-sub">Via RRG Wholesale</div></div>
+    <div class="kpi"><div class="kpi-label">Revenue Per Slot / Month</div><div class="kpi-value blue">$6,400</div><div class="kpi-sub">Average</div></div>
+    <div class="kpi"><div class="kpi-label">Blended Margin</div><div class="kpi-value purple">62%</div><div class="kpi-sub">Across All Product Lines</div></div>
+  </div>
+
+  <div class="chart-row">
+    <div class="table-card" style="margin-bottom:0">
+      <h3>Top Airport Locations</h3>
+      <table>
+        <thead><tr><th>Airport</th><th>Slots</th><th>Y1 Revenue</th></tr></thead>
+        <tbody>
+          <tr><td>ATL — Atlanta</td><td>55</td><td>$4.75M</td></tr>
+          <tr><td>LAX — Los Angeles</td><td>50</td><td>$4.50M</td></tr>
+          <tr><td>JFK — New York</td><td>45</td><td>$4.20M</td></tr>
+          <tr><td>ORD — Chicago</td><td>45</td><td>$3.67M</td></tr>
+          <tr><td>DFW — Dallas</td><td>40</td><td>$3.12M</td></tr>
+          <tr><td>DEN — Denver</td><td>35</td><td>$2.60M</td></tr>
+          <tr><td>SFO — San Francisco</td><td>30</td><td>$2.48M</td></tr>
+          <tr><td>SEA — Seattle</td><td>25</td><td>$1.92M</td></tr>
+          <tr><td>MIA — Miami</td><td>25</td><td>$1.98M</td></tr>
+          <tr><td>BOS — Boston</td><td>20</td><td>$1.51M</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="table-card" style="margin-bottom:0">
+      <h3>Product Lines &amp; Margins</h3>
+      <table>
+        <thead><tr><th>Product</th><th>Price Range</th><th>Margin</th></tr></thead>
+        <tbody>
+          <tr><td>Carbon-Fiber Recovery Backpack</td><td>$299–$499</td><td><span class="badge badge-green">68%</span></td></tr>
+          <tr><td>Digital Roll-Case Studios</td><td>$1,499–$2,999</td><td><span class="badge badge-blue">58%</span></td></tr>
+          <tr><td>Travel-Size Biologics (RRG.bio)</td><td>$28–$199</td><td><span class="badge badge-green">72–85%</span></td></tr>
+          <tr><td>Smart Clothing &amp; Wearables</td><td>$49–$249</td><td><span class="badge badge-gold">55–65%</span></td></tr>
+          <tr><td>Recovery Accessories</td><td>$15–$89</td><td><span class="badge badge-green">60–75%</span></td></tr>
+          <tr><td>IO2 Water</td><td>$8–$25</td><td><span class="badge badge-green">70%+</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="highlight-box" style="margin-top:24px">
+    <p><strong>$18.50 downstream digital revenue per $1 in-store purchase.</strong> Airport retail is not just a revenue stream — it is a customer acquisition engine. Every traveler who buys a product becomes a digital customer, enrolled in Real PT memberships, Clinix telehealth, and REAL Mart e-commerce.</p>
+  </div>
+</div>
+
+<!-- ═══════ PHASING & TIMELINE ═══════ -->
+<div class="section" id="sec-phasing">
+  <div class="section-title">Phasing &amp; Timeline</div>
+  <p class="section-sub">KY now through national expansion — disciplined, data-driven rollout. Each phase funded by prior phase cash flow + non-dilutive capital.</p>
+
+  <div class="phase-grid">
+    <div class="phase-card">
+      <div class="phase-header active-phase">KY — NOW</div>
+      <div class="phase-date">Q1–Q2 2026</div>
+      <ul>
+        <li>Owensboro (300 Frederica St)</li>
+        <li>Bowling Green (60 days)</li>
+        <li>4 additional KY spokes</li>
+        <li>Prove unit economics</li>
+        <li>HBOT4KYVETS program active</li>
+        <li>Silver Arch raise close</li>
+      </ul>
+    </div>
+    <div class="phase-card">
+      <div class="phase-header">NE Phase 1</div>
+      <div class="phase-date">Q1–Q2 2027</div>
+      <ul>
+        <li>First 3–4 NE hubs</li>
+        <li>10–15 spokes launched</li>
+        <li>2–3 coastal flagships</li>
+        <li>Clinix network building</li>
+        <li>HRSA grants filing (Q2 2026)</li>
+        <li>Weekend Warrior launch</li>
+      </ul>
+    </div>
+    <div class="phase-card">
+      <div class="phase-header">NE Phase 2</div>
+      <div class="phase-date">Q3–Q4 2027</div>
+      <ul>
+        <li>6–8 total NE hubs</li>
+        <li>25–30 spokes</li>
+        <li>5–6 coastal flagships</li>
+        <li>Grant revenue flowing</li>
+        <li>Clinix 50+ clinic network</li>
+        <li>Airport retail live</li>
+      </ul>
+    </div>
+    <div class="phase-card">
+      <div class="phase-header">Phase 3</div>
+      <div class="phase-date">2028+</div>
+      <ul>
+        <li>10 hubs + 35–45 spokes</li>
+        <li>12–18 mobile vans</li>
+        <li>6–8 coastal flagships</li>
+        <li>National partnerships live</li>
+        <li>MS, FL, AZ, OR, DMV</li>
+        <li>Exit / IPO optionality</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="info-box">
+    <p>National expansion talks advancing: <strong>Mississippi, Florida, Arizona, Oregon, DMV corridor</strong> — partnerships advancing. Doubling hub and spoke count over time — each phase funded by prior phase cash flow + non-dilutive capital.</p>
+  </div>
 
   <div class="table-card">
-    <h3>Operator-Equity Partnership Model</h3>
-    <p style="color:var(--text2);font-size:.82rem;margin-bottom:16px">This is NOT a franchise. Partners co-own individual centers in their market.</p>
-    <table>
-      <thead><tr><th>Component</th><th>Details</th></tr></thead>
-      <tbody>
-        <tr><td>Ownership Split</td><td><strong>REAL PT: 60–80%</strong> / Operator: 20–40%</td></tr>
-        <tr><td>REAL PT Provides</td><td>Brand, clinical framework, payer contracts, Clinix Agent AI, analytics, marketing playbooks</td></tr>
-        <tr><td>Operator Provides</td><td>Local team leadership, referral relationships, community building</td></tr>
-        <tr><td>Launch Timeline</td><td>2–4 months (7 defined steps)</td></tr>
-        <tr><td>Ideal Partners</td><td>Experienced operators, clinicians, long-term local investors</td></tr>
-      </tbody>
-    </table>
+    <h3>PhysioPS &amp; VA/DoD Channel</h3>
+    <p style="color:var(--text2);font-size:.82rem;margin-bottom:16px">VA/Walter Reed validated ANS scanner — $100B+ untapped diagnostic sector. Integrated across all Hub locations.</p>
+    <div class="moat-grid">
+      <div class="moat-card"><h4>Walter Reed National Military Medical Center</h4><p>10-year license — diabetes, cardiology, oral facial pain. Validates PhysioPS ANS scanner at the highest DoD level.</p></div>
+      <div class="moat-card"><h4>East Orange NJ VA</h4><p>Agent Orange, burn pit, chemical exposure diagnostics. Active deployment site for PhysioPS testing protocol.</p></div>
+      <div class="moat-card"><h4>VA Atlanta (Dr. Bloom)</h4><p>Navy SEAL case — vasovagal syncope diagnosis. High-profile clinical validation of ANS testing capability.</p></div>
+      <div class="moat-card"><h4>Key Facts</h4><p>3 Office of Naval Research contracts · ANS dysfunction linked to 70%+ of chronic health issues · $100B+ untapped ANS diagnostic sector · Ben O&#39;Leary — Strategic Advisor DoD/VA · Steve O&#39;Leary — CEO Physio PS</p></div>
+    </div>
   </div>
 </div>
 
 <!-- ═══════ GRANT PIPELINE ═══════ -->
 <div class="section" id="sec-grants">
   <div class="section-title">Grant &amp; Funding Pipeline</div>
+
   <div class="kpi-grid">
-    <div class="kpi"><div class="kpi-label">HRSA Programs Scanned</div><div class="kpi-value accent">41</div><div class="kpi-sub">$582M Total Pool</div></div>
-    <div class="kpi"><div class="kpi-label">HRSA Tier 1 (Strong Match)</div><div class="kpi-value green">7</div><div class="kpi-sub">$108.7M Available</div></div>
-    <div class="kpi"><div class="kpi-label">NSF Programs Matched</div><div class="kpi-value purple">373</div><div class="kpi-sub">$7M–$57M Potential</div></div>
-    <div class="kpi"><div class="kpi-label">KY Veterans HBOT</div><div class="kpi-value blue">$1.5M</div><div class="kpi-sub">Secured — State Funded</div></div>
+    <div class="kpi"><div class="kpi-label">Non-Dilutive Pipeline</div><div class="kpi-value accent">$100M–$675M</div><div class="kpi-sub">50 States, 445 Programs</div></div>
+    <div class="kpi"><div class="kpi-label">Total Program Pools</div><div class="kpi-value green">$5.3B+</div><div class="kpi-sub">Across All 445 Programs</div></div>
+    <div class="kpi"><div class="kpi-label">HRSA Tier 1 (Strong Match)</div><div class="kpi-value purple">$108.7M</div><div class="kpi-sub">7 Programs — Q2 2026</div></div>
+    <div class="kpi"><div class="kpi-label">KY Veterans HBOT</div><div class="kpi-value blue">$1.5M</div><div class="kpi-sub">Secured — State Funded HB 369</div></div>
+  </div>
+
+  <div class="table-card">
+    <h3>Non-Dilutive Capital Pipeline — $100M–$675M Total</h3>
+    <table>
+      <thead><tr><th>Category</th><th>Programs</th><th>Value Range</th><th>Priority</th></tr></thead>
+      <tbody>
+        <tr><td>Federal (NIH, NSF, HRSA)</td><td>119</td><td>$50M–$300M</td><td><span class="badge badge-red">HIGH</span></td></tr>
+        <tr><td>State Economic Development</td><td>156</td><td>$20M–$150M</td><td><span class="badge badge-red">HIGH</span></td></tr>
+        <tr><td>Veterans / DoD</td><td>43</td><td>$10M–$75M</td><td><span class="badge badge-gold">MEDIUM</span></td></tr>
+        <tr><td>Healthcare Innovation</td><td>67</td><td>$15M–$100M</td><td><span class="badge badge-red">HIGH</span></td></tr>
+        <tr><td>Rural / Community</td><td>60</td><td>$5M–$50M</td><td><span class="badge badge-gold">MEDIUM</span></td></tr>
+        <tr style="font-weight:700;border-top:2px solid var(--accent)"><td>Total</td><td>445</td><td>$100M–$675M</td><td></td></tr>
+      </tbody>
+    </table>
   </div>
 
   <div class="table-card">
     <h3>HRSA Tier 1 — Strong Match (Apply / Prepare Immediately)</h3>
-    <p style="color:var(--text2);font-size:.82rem;margin-bottom:16px">7 programs totaling <strong style="color:var(--text)">$108,675,000</strong> in available funding. Directly align with team capabilities, open to for-profit and/or nonprofit applicants. Scored 0–100 using weighted formula: Entity Match (30%) + Funding Accessibility (25%) + Rural KY Alignment (25%) + Mission Fit (20%). Source: Grants.gov &amp; HRSA.gov, March 17, 2026.</p>
+    <p style="color:var(--text2);font-size:.82rem;margin-bottom:16px">7 programs totaling <strong style="color:var(--text)">$108,675,000</strong> in available funding. Source: Grants.gov &amp; HRSA.gov, March 17, 2026.</p>
     <table>
       <thead><tr><th>#</th><th>Program</th><th>NOFO</th><th>Deadline</th><th>Max Award</th><th>Total Pool</th><th>Score</th></tr></thead>
       <tbody>
@@ -578,7 +1224,7 @@ tr:last-child td{border-bottom:none}
 
   <div class="table-card">
     <h3>HRSA Tier 2 — Good Match (Strategic Opportunities)</h3>
-    <p style="color:var(--text2);font-size:.82rem;margin-bottom:16px">8 programs totaling <strong style="color:var(--text)">$106,140,000</strong>. Require university partnerships, have narrower eligibility, or partially align.</p>
+    <p style="color:var(--text2);font-size:.82rem;margin-bottom:16px">8 programs totaling <strong style="color:var(--text)">$106,140,000</strong>. Require university partnerships or have narrower eligibility.</p>
     <table>
       <thead><tr><th>#</th><th>Program</th><th>NOFO</th><th>Deadline</th><th>Max Award</th><th>Total Pool</th><th>Score</th></tr></thead>
       <tbody>
@@ -597,30 +1243,34 @@ tr:last-child td{border-bottom:none}
   <div class="table-card" style="background:var(--surface2);border-left:3px solid var(--accent)">
     <h3>HRSA Application Timeline</h3>
     <div class="timeline">
-      <div class="timeline-item"><h4>April 2026</h4><p>RCORP-Planning ($100K, 40 awards — low-hanging fruit) • Chronic Care Telehealth CoE ($3.8M, with university partner) • State Offices of Rural Health (contact KY state)</p></div>
+      <div class="timeline-item"><h4>April 2026</h4><p>RCORP-Planning ($100K, 40 awards) • Chronic Care Telehealth CoE ($3.8M, with university partner) • State Offices of Rural Health (KY state)</p></div>
       <div class="timeline-item"><h4>May 2026</h4><p>Telehealth Nutrition ($300K — Real PT + IO2 + Basham triple play) • RCORP-Impact ($750K, 80 awards) • Maternal Produce Prescription (up to $13M) • Collaborative Learning ($475K)</p></div>
       <div class="timeline-item"><h4>June–July 2026</h4><p>Rural Health Network ($500K) • Delta Rural Health Network ($350K, Western KY) • ECCS SEED ($875K, early childhood + nutrition)</p></div>
     </div>
   </div>
 
   <div class="table-card">
-    <h3>Basham-Swistock-Theis Coalition</h3>
-    <p style="color:var(--text2);font-size:.82rem;margin-bottom:16px">Multi-entity coalition targeting NSF and federal grant programs.</p>
+    <h3>NE Grant Pipeline by State</h3>
+    <p style="color:var(--text2);font-size:.82rem;margin-bottom:16px">~$1.7B+/yr combined RHTP across 9 target states. PA leads with 23 programs — every NE state has active grant opportunities for healthcare + tech.</p>
     <table>
-      <thead><tr><th>Coalition Member</th><th>Role</th></tr></thead>
+      <thead><tr><th>State</th><th>Programs</th><th>Key Agencies</th></tr></thead>
       <tbody>
-        <tr><td>Real PT &amp; Wellness</td><td>Healthcare technology &amp; clinical delivery</td></tr>
-        <tr><td>iO2 Water</td><td>Water purification &amp; infrastructure technology</td></tr>
-        <tr><td>Basham Farms</td><td>Agricultural innovation &amp; sustainability</td></tr>
-        <tr><td>Theis Industries / Theis Construction</td><td>Advanced construction panels &amp; building systems</td></tr>
-        <tr><td>501(c)(3) Nonprofit</td><td>HBOT4KYVETS — veteran treatment delivery</td></tr>
+        <tr><td>Pennsylvania</td><td><strong>23</strong></td><td>Ben Franklin Technology Partners, PIDA, DCED</td></tr>
+        <tr><td>New York</td><td>7</td><td>Empire State Development, NY HEAL, NYSERDA</td></tr>
+        <tr><td>New Jersey</td><td>5</td><td>NJ Economic Development Authority, NJ Commission on Science</td></tr>
+        <tr><td>Massachusetts</td><td>5</td><td>MassVentures, MassCEC, MassDev</td></tr>
+        <tr><td>New Hampshire</td><td>4</td><td>NH BFA, Live Free &amp; Start</td></tr>
+        <tr><td>Connecticut</td><td>3</td><td>CT Innovations, CT Next</td></tr>
+        <tr><td>Maine</td><td>3</td><td>Maine Technology Institute, FAME</td></tr>
+        <tr><td>Vermont</td><td>3</td><td>VT ACCD, VT EPSCoR</td></tr>
+        <tr><td>Rhode Island</td><td>3</td><td>RI Commerce Corporation, Slater Fund</td></tr>
       </tbody>
     </table>
   </div>
 
   <div class="table-card">
     <h3>NSF Grant Strategy — Key Programs</h3>
-    <p style="color:var(--text2);font-size:.82rem;margin-bottom:16px">373 NSF programs ranked across 86+ targeted opportunities. Full analysis in Team NSF Funding Report V2.</p>
+    <p style="color:var(--text2);font-size:.82rem;margin-bottom:16px">373 NSF programs ranked across 86+ targeted opportunities. $300K allocated to NSF filing. 370+ applications planned across 5 research directorates.</p>
     <table>
       <thead><tr><th>Program Category</th><th># Programs</th><th>Potential Funding</th><th>Coalition Fit</th></tr></thead>
       <tbody>
@@ -651,84 +1301,6 @@ tr:last-child td{border-bottom:none}
   </div>
 </div>
 
-<!-- ═══════ LEASE TO OWN & CONSTRUCTION ═══════ -->
-<div class="section" id="sec-construction">
-  <div class="section-title">Lease to Own &amp; Theis Construction</div>
-  <p style="color:var(--text2);font-size:.85rem;margin-bottom:24px;line-height:1.6">R.E.A.L. Holdings' long-term real estate strategy transitions from leasing clinic spaces to purchasing land and building purpose-designed facilities using <strong style="color:var(--text)">Theis Construction Panels</strong> — a revolutionary building system that dramatically reduces cost, construction time, and long-term maintenance while producing Category 5 hurricane-rated structures.</p>
-
-  <div class="kpi-grid" style="grid-template-columns:repeat(3,1fr);margin-bottom:24px">
-    <div class="kpi"><div class="kpi-label">Phase 1</div><div class="kpi-value accent">Lease</div><div class="kpi-sub">300 Frederica St, Owensboro</div></div>
-    <div class="kpi"><div class="kpi-label">Phase 2</div><div class="kpi-value green">Buy Land</div><div class="kpi-sub">Acquire lots in target markets</div></div>
-    <div class="kpi"><div class="kpi-label">Phase 3</div><div class="kpi-value blue">Build with Theis</div><div class="kpi-sub">Purpose-built clinics, owned assets</div></div>
-  </div>
-
-  <div class="table-card">
-    <h3>The Strategy: From Leasing to Building</h3>
-    <table>
-      <thead><tr><th>Phase</th><th>Approach</th><th>Advantage</th></tr></thead>
-      <tbody>
-        <tr><td><span class="badge badge-gold">Launch</span></td><td>Lease existing commercial space (e.g., 300 Frederica St, Owensboro)</td><td>Fastest path to revenue — minimal upfront capital, immediate operations</td></tr>
-        <tr><td><span class="badge badge-blue">Transition</span></td><td>Acquire land in target markets as clinic revenue proves out</td><td>Build equity in real estate — owned asset appreciates vs. lease expense</td></tr>
-        <tr><td><span class="badge badge-green">Scale</span></td><td>Build purpose-designed clinics using Theis Construction Panels</td><td>Faster builds, lower cost, hurricane/fire-rated, custom clinic layouts, long-term ownership</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="table-card" style="border-left:3px solid var(--accent)">
-    <h3>Theis Construction Panels — The Technology</h3>
-    <p style="color:var(--text2);font-size:.82rem;margin-bottom:16px">Theis Construction Panels are Structural Insulated Panels (SIP) that combine multiple construction layers into a single, all-in-one building system. They replace traditional wall framing, roof framing, weather barriers, insulation, and exterior cladding — all in one panel.</p>
-    <div class="moat-grid">
-      <div class="moat-card"><div class="moat-num">⚡</div><h4>Rapid SIP-Style Assembly</h4><p>Panels can be pre-manufactured or fabricated directly on-site, drastically reducing labor, installation time, and cost compared to traditional stick-frame construction.</p></div>
-      <div class="moat-card"><div class="moat-num">🛡️</div><h4>Category 5 Hurricane Rated</h4><p>Fire and impact-resistant, seamless waterproof barrier, UV-stable, high wind protection, corrosion-resistant. Built to withstand extreme weather, fire, and environmental degradation.</p></div>
-      <div class="moat-card"><div class="moat-num">🌡️</div><h4>Tekton Foam Insulation</h4><p>Customizable R-values to suit any climate. Airtight insulation reduces heating/cooling costs, enhancing energy efficiency and structural integrity.</p></div>
-      <div class="moat-card"><div class="moat-num">🎨</div><h4>Any Exterior Finish</h4><p>Each panel can achieve the appearance of any desired exterior finish — wood, stone, stucco, brick, metal. Design flexibility tailored to local aesthetics.</p></div>
-      <div class="moat-card"><div class="moat-num">🔧</div><h4>Pre-Fitted Systems</h4><p>Flexible options for pre-installed HVAC, plumbing, and electrical built directly into the panels. Reduces on-site trades and coordination.</p></div>
-      <div class="moat-card"><div class="moat-num">🌿</div><h4>Eco-Friendly</h4><p>Zero VOCs, minimal waste, reduced environmental impact. Long-lasting performance engineered for exceptional durability with low maintenance.</p></div>
-    </div>
-  </div>
-
-  <div class="table-card">
-    <h3>All-in-One Panel: What It Replaces</h3>
-    <p style="color:var(--text2);font-size:.82rem;margin-bottom:16px">A single Theis Construction Panel replaces 5+ separate construction stages in traditional building.</p>
-    <table>
-      <thead><tr><th>Traditional Construction Layer</th><th>Theis Panel</th></tr></thead>
-      <tbody>
-        <tr><td>Wall &amp; roof framing (studs, headers, trusses)</td><td><span class="badge badge-green">Integrated — fully load-bearing structure</span></td></tr>
-        <tr><td>Sheathing (plywood/OSB for rigidity)</td><td><span class="badge badge-green">Integrated — weather-resistant barrier</span></td></tr>
-        <tr><td>Weather barrier (housewrap, air/vapor barrier)</td><td><span class="badge badge-green">Integrated — seamless waterproof barrier</span></td></tr>
-        <tr><td>Insulation (cellulose, spray foam, batts)</td><td><span class="badge badge-green">Integrated — Tekton foam, adjustable R-values</span></td></tr>
-        <tr><td>Exterior cladding (vinyl, stucco, brick, siding)</td><td><span class="badge badge-green">Integrated — customizable Theis Tekton Skin</span></td></tr>
-        <tr><td>Roofing materials (shingles, tiles, metal)</td><td><span class="badge badge-green">Integrated — customizable roof finish</span></td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="table-card">
-    <h3>Theis Tekton vs. Competing Materials</h3>
-    <p style="color:var(--text2);font-size:.82rem;margin-bottom:16px">Theis Tekton outperforms Polyurea, Polyurea Hybrids, Polyurethane, and Epoxy across all key metrics.</p>
-    <table>
-      <thead><tr><th>Metric</th><th>Theis Tekton</th><th>Polyurea</th><th>Polyurethane</th><th>Epoxy</th></tr></thead>
-      <tbody>
-        <tr><td>Impact Resistance</td><td><span class="badge badge-green">5/5</span></td><td>4/5</td><td>1/5</td><td>1/5</td></tr>
-        <tr><td>Fire Proof (Class A)</td><td><span class="badge badge-green">5/5</span></td><td>1/5</td><td>1/5</td><td>1/5</td></tr>
-        <tr><td>Weatherability</td><td><span class="badge badge-green">5/5</span></td><td>3/5</td><td>3/5</td><td>1/5</td></tr>
-        <tr><td>Flexibility</td><td><span class="badge badge-green">5/5</span></td><td>4/5</td><td>4/5</td><td>1/5</td></tr>
-        <tr><td>Corrosion Resistance</td><td><span class="badge badge-green">4/5</span></td><td>2/5</td><td>3/5</td><td>2/5</td></tr>
-        <tr><td>Adhesion to Oily Surface</td><td><span class="badge badge-green">4/5</span></td><td>0/5</td><td>0/5</td><td>0/5</td></tr>
-        <tr><td>Application Temp Range</td><td><span class="badge badge-green">5/5</span></td><td>4/5</td><td>3/5</td><td>1/5</td></tr>
-        <tr><td>Overall</td><td><span class="badge badge-green">4.5/5</span></td><td>2.7/5</td><td>2.6/5</td><td>1.9/5</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="table-card" style="background:var(--surface2);border-left:3px solid var(--accent)">
-    <h3>Why This Matters for Investors</h3>
-    <p style="color:var(--text);font-size:.85rem;line-height:1.7">
-      Leasing gets clinics open fast, but every lease payment is an expense — not equity. By transitioning to buying land and building with Theis Construction Panels, R.E.A.L. Holdings converts operating expense into owned real estate assets. The panels enable clinic builds at a fraction of traditional cost and time, with structures rated for extreme weather. Each location becomes a long-term appreciating asset on the balance sheet — not just a revenue center. Combined with HUBZone qualification and Clopton Capital's commercial real estate expertise, this strategy creates a compounding advantage as the network scales.
-    </p>
-  </div>
-</div>
-
 <!-- ═══════ PARTNERSHIPS & COALITION ═══════ -->
 <div class="section" id="sec-partnerships">
   <div class="section-title">Partnerships &amp; Coalition</div>
@@ -738,63 +1310,104 @@ tr:last-child td{border-bottom:none}
     <table>
       <thead><tr><th>Partner</th><th>Relationship</th><th>Value</th></tr></thead>
       <tbody>
-        <tr><td>Clinix AI</td><td><span class="badge badge-purple">20% Commission Agreement</span></td><td>AI-powered intake, scheduling, and clinical workflow automation integrated into REAL PT operations</td></tr>
-        <tr><td>SwimEx</td><td><span class="badge badge-green">Equipment Partner</span></td><td>Clinical-grade hydrotherapy pools — 35+ year clinical system, exclusive in-facility deployment</td></tr>
-        <tr><td>Physio PS</td><td><span class="badge badge-green">Clinical Partner</span></td><td>FDA-cleared ANS testing for veterans — used at VA Medical Centers and Walter Reed</td></tr>
-
-        <tr><td>Theis Industries / Theis Construction</td><td><span class="badge badge-blue">Coalition Partner</span></td><td>Advanced construction panels and building systems for clinic buildouts</td></tr>
-        <tr><td>iO2 Water</td><td><span class="badge badge-blue">Coalition Partner</span></td><td>Water purification and infrastructure technology</td></tr>
-        <tr><td>Basham Farms</td><td><span class="badge badge-blue">Coalition Partner</span></td><td>Agricultural innovation — REAL Fresh supply chain and sustainability programs</td></tr>
-        <tr><td>HBOT4KYVETS, Inc.</td><td><span class="badge badge-green">501(c)(3) Nonprofit</span></td><td>$1.5M state-funded veteran HBOT treatment delivery network</td></tr>
-        <tr><td>Uber Eats</td><td><span class="badge badge-gold">Integration Partner</span></td><td>REAL Fresh meal delivery distribution platform</td></tr>
+        <tr><td>Clinix AI</td><td><span class="badge badge-purple">20% Commission Agreement</span></td><td>AI-powered intake, scheduling, and billing. 20% of all billing, 99% SaaS margin. Scales to $4.28M/yr at 100-clinic network.</td></tr>
+        <tr><td>SwimEx</td><td><span class="badge badge-green">Equipment Partner</span></td><td>Clinical-grade hydrotherapy pools — 35+ year clinical system. B2B wholesale referrals + in-clinic aquatic therapy revenue.</td></tr>
+        <tr><td>Physio PS</td><td><span class="badge badge-green">Clinical Partner</span></td><td>FDA-cleared ANS testing. Walter Reed 10-yr license, East Orange NJ VA, VA Atlanta. 3 Office of Naval Research contracts.</td></tr>
+        <tr><td>RRG.bio</td><td><span class="badge badge-gold">Stem Cell Partner</span></td><td>Exclusive regenerative medicine channel. Premium clinical pricing + 500+ airport retail slots. 72–85% margin biologics.</td></tr>
+        <tr><td>Theis Industries / REALECO</td><td><span class="badge badge-blue">Coalition Partner</span></td><td>Theis SIP construction panels — 60% faster, Cat 5, zero VOCs. Clinic build-to-own strategy across coastal NE portfolio.</td></tr>
+        <tr><td>iO2 Water</td><td><span class="badge badge-blue">Coalition Partner</span></td><td>Patented ingestible oxygen. $60B TAM. Sold in every clinic, airport retail, and online. NSF Biotech qualification bucket.</td></tr>
+        <tr><td>Basham Farms</td><td><span class="badge badge-blue">Coalition Partner</span></td><td>Agricultural innovation — REAL Fresh supply chain + NSF Agriculture/Food qualification bucket.</td></tr>
+        <tr><td>HBOT4KYVETS, Inc.</td><td><span class="badge badge-green">501(c)(3) Nonprofit</span></td><td>$1.5M state-funded veteran HBOT treatment delivery. HB 369 passed 93-0. Extension to 2028 in progress.</td></tr>
+        <tr><td>Antimatter AI</td><td><span class="badge badge-purple">AI Partner</span></td><td>AI integration across clinical workflows. B2B commission Stream #38.</td></tr>
+        <tr><td>Hocott</td><td><span class="badge badge-gold">Equipment Partner</span></td><td>HOCATT ozone sauna B2B wholesale. Stream #13. Revenue on every unit sold to partner clinics.</td></tr>
+        <tr><td>Everyday HBOT</td><td><span class="badge badge-gold">Equipment Partner</span></td><td>Hyperbaric equipment wholesale. Stream #6 enabler. Partner commissions on B2B sales.</td></tr>
+        <tr><td>Uber Eats</td><td><span class="badge badge-gold">Integration Partner</span></td><td>REAL Fresh meal delivery distribution platform integration.</td></tr>
       </tbody>
     </table>
   </div>
 
   <div class="table-card">
-    <h3>Technology &amp; Equipment Vendors</h3>
+    <h3>Team — Founders &amp; Advisors</h3>
     <table>
-      <thead><tr><th>Vendor</th><th>Product/Service</th></tr></thead>
+      <thead><tr><th>Name</th><th>Role</th></tr></thead>
       <tbody>
-        <tr><td>PNOE</td><td>Metabolic testing &amp; VO2 Max analysis</td></tr>
-        <tr><td>Speediance</td><td>AI-powered smart gym equipment</td></tr>
-        <tr><td>Storz Medical</td><td>Shockwave therapy devices</td></tr>
-        <tr><td>Oxy Chambers / Everyday Hyperbaric</td><td>HBOT chambers (medical-grade hardshell)</td></tr>
-        <tr><td>CryoPhit-USA</td><td>Cryotherapy systems</td></tr>
-        <tr><td>RRG</td><td>Stem cell therapy</td></tr>
-        <tr><td>Symmetry Neuro PT</td><td>Neuro PT, brain training &amp; recovery</td></tr>
-        <tr><td>Arca Aesthetics</td><td>Micro-needling</td></tr>
+        <tr><td>Jonathan Swistock</td><td><span class="badge badge-gold">Founder &amp; CEO — R.E.A.L. Holdings LLC</span></td></tr>
+        <tr><td>Travis Basham</td><td><span class="badge badge-blue">IO2 Water — Coalition Partner</span></td></tr>
+        <tr><td>Jason Theis</td><td><span class="badge badge-blue">Theis Industries / REALECO — Coalition Partner</span></td></tr>
+        <tr><td>Ben O'Leary</td><td><span class="badge badge-purple">Strategic Advisor — PhysioPS / VA / DoD</span></td></tr>
+        <tr><td>Steve O'Leary</td><td><span class="badge badge-purple">CEO — Physio PS</span></td></tr>
+        <tr><td>Chris Mahaffey</td><td><span class="badge badge-green">Co-Founder — 10% Equity</span></td></tr>
+        <tr><td>Frank Perroni</td><td><span class="badge badge-gold">Broker — Silver Arch Capital Transaction</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-card">
+    <h3>Basham-Swistock-Theis Coalition — Grant Strategy</h3>
+    <table>
+      <thead><tr><th>Coalition Member</th><th>Role</th><th>NSF Bucket</th></tr></thead>
+      <tbody>
+        <tr><td>Real PT &amp; Wellness</td><td>Healthcare technology &amp; clinical delivery</td><td>Healthcare Innovation</td></tr>
+        <tr><td>IO2 Water</td><td>Patented ingestible oxygen + water infrastructure</td><td>Biotech / Water Systems</td></tr>
+        <tr><td>Basham Farms</td><td>Agricultural innovation &amp; sustainability</td><td>Agriculture / Sustainability</td></tr>
+        <tr><td>Theis Industries / Theis Construction</td><td>Advanced SIP construction panels &amp; building systems</td><td>Advanced Manufacturing</td></tr>
+        <tr><td>Real Data</td><td>Data center + quantum computing</td><td>NQNI / QISE / Quantum</td></tr>
+        <tr><td>HBOT4KYVETS, Inc. (501c3)</td><td>Veteran HBOT treatment delivery</td><td>Veterans / DoD</td></tr>
       </tbody>
     </table>
   </div>
 
   <div class="table-card">
     <h3>XPRIZE Healthspan</h3>
-    <p style="color:var(--text2);font-size:.85rem">R.E.A.L. Holdings is involved with the <strong>$101M XPRIZE Healthspan</strong> global competition — the world's largest health longevity initiative. Aligns with REAL PT's regenerative medicine and longevity-focused clinical model.</p>
+    <p style="color:var(--text2);font-size:.85rem">R.E.A.L. Holdings is involved with the <strong>$101M XPRIZE Healthspan</strong> global competition — the world's largest health longevity initiative. Aligns with REAL PT's regenerative medicine and longevity-focused clinical model across all 39 revenue streams.</p>
   </div>
 </div>
 
 <!-- ═══════ COMPETITIVE MOATS ═══════ -->
 <div class="section" id="sec-moats">
   <div class="section-title">Competitive Moats</div>
+  <p class="section-sub">9 moats no single competitor can replicate. Each moat is independently defensible; together they create an interlocking advantage.</p>
+
   <div class="moat-grid">
-    <div class="moat-card"><div class="moat-num">01</div><h4>39-Stream Revenue Diversification</h4><p>Unlike single-service PT clinics, REAL PT operates 39 distinct revenue streams across clinical, membership, e-commerce, pharmacy, nutrition, media, and government channels. Loss of any single stream has minimal impact.</p></div>
-    <div class="moat-card"><div class="moat-num">02</div><h4>Operator-Equity Model (Not Franchise)</h4><p>Shared ownership model (60–80% REAL / 20–40% operator) attracts top clinical operators while maintaining brand control. More aligned incentives than traditional franchise structures.</p></div>
-    <div class="moat-card"><div class="moat-num">03</div><h4>Proprietary Technology Stack</h4><p>EXOPOD, ExoSkin, REAL Score, Real SmartScan AI — proprietary devices and platforms that competitors cannot replicate. Clinix AI integration (20% commission) adds AI-powered clinical workflows.</p></div>
-    <div class="moat-card"><div class="moat-num">04</div><h4>Veterans &amp; Government Pipeline</h4><p>$1.5M Kentucky HBOT funding secured. FDA-cleared Physio PS ANS testing with VA/DoD provenance. Government contracts create sticky, long-term revenue.</p></div>
-    <div class="moat-card"><div class="moat-num">05</div><h4>Non-Dilutive Grant Capital</h4><p>373 NSF programs matched with $7M–$57M potential. Coalition structure (Basham-Swistock-Theis) qualifies for broader federal programs. Reduces equity dilution for investors.</p></div>
-    <div class="moat-card"><div class="moat-num">06</div><h4>Rural-First Strategy</h4><p>Targeting PT deserts in underserved communities — lower real estate costs, less competition, higher need. HUBZone qualification opens federal contracting advantages.</p></div>
-    <div class="moat-card"><div class="moat-num">07</div><h4>Full Wellness Ecosystem</h4><p>REAL Mart (e-commerce) + REAL Fresh (nutrition) + REAL Cost Plus Rx (pharmacy) + REAL TV (media) create a closed-loop wellness economy around every patient relationship.</p></div>
-    <div class="moat-card"><div class="moat-num">08</div><h4>48–54% EBITDA at Scale</h4><p>Revenue Master analysis projects 48–54% EBITDA margins across a statewide network — significantly above typical PT clinic margins of 15–25%.</p></div>
+    <div class="moat-card"><div class="moat-num">01</div><h4>Multi-Modal Wellness</h4><p>39 revenue streams vs. industry 3–5. Loss of any single stream has minimal impact. Cross-selling across all 39 streams creates compounding revenue per patient.</p></div>
+    <div class="moat-card"><div class="moat-num">02</div><h4>Weekend Warrior Insurance</h4><p>Built-in patient pipeline. Pre-approved claims, direct billing, athletic/recreational coverage. Competitors cannot replicate without insurance licensing infrastructure.</p></div>
+    <div class="moat-card"><div class="moat-num">03</div><h4>Clinix AI Billing</h4><p>20% commission on all billing, 99% SaaS margin. Network effect — every new clinic partner adds pure-profit commission revenue with zero incremental overhead.</p></div>
+    <div class="moat-card"><div class="moat-num">04</div><h4>IO2 Water</h4><p>Patented ingestible oxygen technology. $60B addressable market. Sold B2B and B2C across clinic, airport retail, and e-commerce. Patented = defensible.</p></div>
+    <div class="moat-card"><div class="moat-num">05</div><h4>REALECO / Theis SIP</h4><p>Lease-to-own CRE strategy using Cat 5 rated, 60% faster construction panels. Silver Arch bridge lending ($1M–$70M) creates compounding CRE + healthcare returns.</p></div>
+    <div class="moat-card"><div class="moat-num">06</div><h4>Non-Dilutive Capital</h4><p>$100M–$675M grant pipeline across 445 programs, $5.3B+ total pools. 5 qualification buckets. Protects investor equity from dilution as company scales.</p></div>
+    <div class="moat-card"><div class="moat-num">07</div><h4>RRG.bio Stem Cells</h4><p>Exclusive regenerative medicine channel. Premium coastal pricing, airport wholesale distribution. 72–85% margin travel-size biologics. Regen medicine CAGR 31.27%.</p></div>
+    <div class="moat-card"><div class="moat-num">08</div><h4>PhysioPS ANS</h4><p>FDA-cleared, VA/Walter Reed validated ANS scanner. 3 Office of Naval Research contracts. $100B+ untapped ANS diagnostic sector. Government channel competitors cannot access.</p></div>
+    <div class="moat-card"><div class="moat-num">09</div><h4>B2B Commission Network</h4><p>Revenue on every partner sale: Clinix Agent, Antimatter AI, SwimEx, Hocott, Everyday HBOT, ExoPod, ExoSkin, RRG.bio, Pure Defense. Scales with zero incremental cost.</p></div>
+  </div>
+
+  <div class="table-card">
+    <h3>Technology &amp; Equipment Vendors</h3>
+    <table>
+      <thead><tr><th>Vendor</th><th>Product/Service</th><th>Revenue Stream</th></tr></thead>
+      <tbody>
+        <tr><td>PNOE</td><td>Metabolic testing &amp; VO2 Max analysis</td><td>Diagnostics / Performance</td></tr>
+        <tr><td>Speediance</td><td>AI-powered smart gym equipment</td><td>Stream #21 — Speediance Gym</td></tr>
+        <tr><td>Storz Medical</td><td>Shockwave therapy devices</td><td>Clinical PT / Recovery</td></tr>
+        <tr><td>Oxy Chambers / Everyday Hyperbaric</td><td>HBOT chambers (medical-grade hardshell)</td><td>Stream #6 — HBOT</td></tr>
+        <tr><td>CryoPhit-USA</td><td>Cryotherapy systems</td><td>Stream #9 — Cryotherapy</td></tr>
+        <tr><td>RRG.bio</td><td>Stem cell therapy + biologics</td><td>Stream #12 + Airport Retail</td></tr>
+        <tr><td>Symmetry Neuro PT</td><td>Neuro PT, brain training &amp; recovery</td><td>Stream #4 — Neuro PT / qEEG</td></tr>
+        <tr><td>Arca Aesthetics</td><td>Micro-needling</td><td>Stream #15 — Aesthetics</td></tr>
+      </tbody>
+    </table>
   </div>
 </div>
 
 <!-- ── Footer ── -->
 <div class="footer">
   <strong>R.E.A.L. Holdings LLC</strong> — "Restoring Everyone's Ability to Live"<br>
+  Prepared for <strong>Silver Arch Capital Partners</strong> — Jonathan Weiner, Senior Director &nbsp;|&nbsp; Broker: Frank Perroni<br>
   Confidential Investor Portal — Distribution prohibited without written consent.<br>
-  &copy; 2025 R.E.A.L. Holdings LLC. All rights reserved. | Graham, Kentucky<br>
-  <span style="opacity:.5">Portal Version 3.2 &middot; Last Updated March 2026</span>
+  &copy; 2026 R.E.A.L. Holdings LLC. All rights reserved. | 212 N 2nd St, Suite 100, Richmond, KY 40475<br>
+  <span style="opacity:.5">Portal Version 4.0 &middot; Updated March 2026 &middot; Silver Arch Capital Partners Edition</span><br>
+  <br>
+  <strong>Exit Comparables:</strong> Hinge Health ($6.2B) &nbsp;|&nbsp; Sword Health ($3B) &nbsp;|&nbsp; ATI PT (900+ clinics)<br>
+  <span class="tagline">"We Build. We Own. We Operate."</span>
 </div>
 
 </div><!-- /main -->
@@ -807,6 +1420,8 @@ function showSection(id){
   document.querySelectorAll('.sidebar-link').forEach(l=>l.classList.remove('active'));
   event.currentTarget.classList.add('active');
   window.scrollTo(0,0);
+  // Re-init charts in case newly visible canvas
+  setTimeout(initCharts, 50);
 }
 
 // ── Sidebar Toggle ──
@@ -830,31 +1445,51 @@ function initCharts(){
   const gridColor=isLight?'rgba(0,0,0,0.08)':'rgba(255,255,255,0.06)';
   const textColor=isLight?'#64748b':'#94a3b8';
 
-  Object.values(chartInstances).forEach(c=>c.destroy());
+  Object.values(chartInstances).forEach(c=>{try{c.destroy();}catch(e){}});
 
-  // 4-Phase Revenue Trajectory
+  // Revenue Ramp Chart (KY 6 sites, month 1–12)
   const rc=document.getElementById('revenueChart');
-  if(rc){chartInstances.rev=new Chart(rc,{type:'bar',data:{labels:['Phase 1','Phase 2','Phase 3','Phase 4'],datasets:[{label:'Revenue Target ($M)',data:[5,25,150,750],backgroundColor:['#c9a84c','#3b82f6','#10b981','#8b5cf6'],borderRadius:6}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:textColor,font:{size:11}}}},scales:{x:{ticks:{color:textColor},grid:{display:false}},y:{ticks:{color:textColor,callback:v=>'$'+v+'M'},grid:{color:gridColor}}}}});}
+  if(rc){
+    const labels=['M1','M2','M3','M4','M5','M6','M7','M8','M9','M10','M11','M12'];
+    const data=[167,285,420,580,740,950,1200,1500,1900,2500,3400,4800];
+    chartInstances.rev=new Chart(rc,{type:'line',data:{labels,datasets:[{label:'Monthly Revenue ($K)',data,borderColor:'#c9a84c',backgroundColor:'rgba(201,168,76,0.1)',borderWidth:2,pointBackgroundColor:'#c9a84c',pointRadius:4,fill:true,tension:.4}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:textColor,font:{size:11}}}},scales:{x:{ticks:{color:textColor,font:{size:10}},grid:{color:gridColor}},y:{ticks:{color:textColor,callback:v=>'$'+v+'K'},grid:{color:gridColor}}}}});
+  }
 
-  // Equity Chart (Clopton version)
+  // Equity Chart — Silver Arch
   const ec=document.getElementById('equityChart');
-  if(ec){chartInstances.eq=new Chart(ec,{type:'doughnut',data:{labels:['Jonathan Swistock (75%)','Chris Mahaffey (10%)','Clopton Capital (15%)'],datasets:[{data:[75,10,15],backgroundColor:['#c9a84c','#3b82f6','#8b5cf6'],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{color:textColor,font:{size:11},padding:12}}}}});}
+  if(ec){chartInstances.eq=new Chart(ec,{type:'doughnut',data:{labels:['Jonathan Swistock (75%)','Chris Mahaffey (10%)','Silver Arch Capital (15%)'],datasets:[{data:[75,10,15],backgroundColor:['#c9a84c','#3b82f6','#8b5cf6'],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{color:textColor,font:{size:11},padding:12}}}}});}
 
-  // 7 Revenue Channels
-  const sc=document.getElementById('segmentChart');
-  if(sc){chartInstances.seg=new Chart(sc,{type:'doughnut',data:{labels:['Clinical Services','Memberships','REAL Mart','Cost Plus Rx','REAL Fresh','Corporate & Gov','Clinix AI Commission'],datasets:[{data:[28,22,15,12,8,10,5],backgroundColor:['#c9a84c','#10b981','#3b82f6','#8b5cf6','#f59e0b','#ef4444','#6b7280'],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{color:textColor,font:{size:11},padding:10}}}}});}
+  // EBITDA comparison chart (dashboard)
+  const ed=document.getElementById('ebitdaChart');
+  if(ed){chartInstances.ebd=new Chart(ed,{type:'bar',data:{labels:['Real PT & Wellness','Traditional PT','Wellness Center','PE Roll-Up'],datasets:[{label:'EBITDA Margin (%)',data:[51,21.5,24,25],backgroundColor:['#c9a84c','#94a3b8','#94a3b8','#94a3b8'],borderRadius:6}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:textColor,font:{size:11}}}},scales:{x:{ticks:{color:textColor,font:{size:10}},grid:{display:false}},y:{ticks:{color:textColor,callback:v=>v+'%'},grid:{color:gridColor},suggestedMax:65}}}});}
 
-  // Membership Tier Chart
-  const mc=document.getElementById('memberChart');
-  if(mc){chartInstances.mem=new Chart(mc,{type:'bar',data:{labels:['Starter','Recovery','Performance','Vitality','Elite','Premium','Unlimited'],datasets:[{label:'Monthly Price',data:[99,250,500,750,1000,1500,1800],backgroundColor:'rgba(201,168,76,0.7)',borderColor:'#c9a84c',borderWidth:1,borderRadius:4}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:textColor,font:{size:11}}}},scales:{x:{ticks:{color:textColor,font:{size:10}},grid:{display:false}},y:{ticks:{color:textColor,callback:v=>'$'+v},grid:{color:gridColor}}}}});}
+  // Funds chart (dashboard version)
+  const fcd=document.getElementById('fundsChartDash');
+  if(fcd){chartInstances.fcdash=new Chart(fcd,{type:'doughnut',data:{labels:['NE Seed Capital (34.3%)','KY Launch (25.7%)','Tech & Equipment (15.2%)','Coastal Flagships (12.9%)','Weekend Warrior (5.7%)','Grant Filing (4.3%)','Pure Defense (1.9%)'],datasets:[{data:[34.3,25.7,15.2,12.9,5.7,4.3,1.9],backgroundColor:['#3b82f6','#c9a84c','#8b5cf6','#10b981','#f59e0b','#34d399','#ef4444'],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{color:textColor,font:{size:9},padding:6}}}}});}
 
-  // Cap Chart (Clopton version)
+  // Cap Chart — Silver Arch
   const cc=document.getElementById('capChart');
-  if(cc){chartInstances.cap=new Chart(cc,{type:'doughnut',data:{labels:['Jonathan Swistock (75%)','Chris Mahaffey (10%)','Clopton Capital (15%)'],datasets:[{data:[75,10,15],backgroundColor:['#c9a84c','#3b82f6','#8b5cf6'],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{color:textColor,font:{size:11},padding:12}}}}});}
+  if(cc){chartInstances.cap=new Chart(cc,{type:'doughnut',data:{labels:['Jonathan Swistock (75%)','Chris Mahaffey (10%)','Silver Arch Capital (15%)'],datasets:[{data:[75,10,15],backgroundColor:['#c9a84c','#3b82f6','#8b5cf6'],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{color:textColor,font:{size:11},padding:12}}}}});}
 
-  // Funds Chart
+  // Use of Funds pie (dedicated page)
   const fc=document.getElementById('fundsChart');
-  if(fc){chartInstances.funds=new Chart(fc,{type:'doughnut',data:{labels:['PT Locations (40%)','Technology (10%)','Working Capital (9.8%)','Media Network (8.3%)','901 Floyd St (6.7%)','Facility Buildout (6.7%)','Salaries (5%)','Pure Defense (4.5%)','Eye Care (3.5%)','REAL Fresh (3.3%)','Extraction (2.2%)'],datasets:[{data:[40,10,9.8,8.3,6.7,6.7,5,4.5,3.5,3.3,2.2],backgroundColor:['#c9a84c','#3b82f6','#6b7280','#8b5cf6','#10b981','#34d399','#f59e0b','#ef4444','#f87171','#fbbf24','#9ca3af'],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{color:textColor,font:{size:10},padding:8}}}}});}
+  if(fc){chartInstances.funds=new Chart(fc,{type:'doughnut',data:{labels:['NE Seed Capital (34.3%)','KY Launch — 6 Locations (25.7%)','Tech & Equipment (15.2%)','Coastal Flagships (12.9%)','Weekend Warrior (5.7%)','Grant Filing (4.3%)','Pure Defense (1.9%)'],datasets:[{data:[34.3,25.7,15.2,12.9,5.7,4.3,1.9],backgroundColor:['#3b82f6','#c9a84c','#8b5cf6','#10b981','#f59e0b','#34d399','#ef4444'],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{color:textColor,font:{size:10},padding:8}}}}});}
+
+  // Segment chart — Hub revenue by category
+  const sc=document.getElementById('segmentChart');
+  if(sc){chartInstances.seg=new Chart(sc,{type:'doughnut',data:{labels:['Clinical + Home Health ($2.0M–$2.7M)','Wellness + Regen + Med-Spa ($1.2M–$2.0M)','Memberships + Retail + Food ($0.9M–$1.6M)','SaaS/Clinix + Tech + Events ($0.8M–$1.8M)'],datasets:[{data:[2.35,1.6,1.25,1.3],backgroundColor:['#c9a84c','#10b981','#3b82f6','#8b5cf6'],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{color:textColor,font:{size:10},padding:8}}}}});}
+
+  // EBITDA comparison (revenue page)
+  const er=document.getElementById('ebitdaChartRev');
+  if(er){chartInstances.ebr=new Chart(er,{type:'bar',data:{labels:['Real PT & Wellness','Traditional PT','Wellness Center','PE Roll-Up'],datasets:[{label:'EBITDA Margin (%)',data:[51,21.5,24,25],backgroundColor:['#c9a84c','rgba(148,163,184,0.5)','rgba(148,163,184,0.5)','rgba(148,163,184,0.5)'],borderRadius:6}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:textColor,font:{size:11}}}},scales:{x:{ticks:{color:textColor,font:{size:10}},grid:{display:false}},y:{ticks:{color:textColor,callback:v=>v+'%'},grid:{color:gridColor},suggestedMax:65}}}});}
+
+  // Return matrix bar chart
+  const rrc=document.getElementById('returnChart');
+  if(rrc){chartInstances.ret=new Chart(rrc,{type:'bar',data:{labels:['10% Survival','25% Worst','50% Conservative','75% Moderate','100% Base','125% Upside'],datasets:[{label:'Max ROI Multiple',data:[1.9,4.6,9.2,14,27.5,34],backgroundColor:['#6b7280','#94a3b8','#3b82f6','#10b981','#c9a84c','#8b5cf6'],borderRadius:6},{label:'Min ROI Multiple',data:[1.5,3.8,7.5,11,15,19],backgroundColor:['rgba(107,114,128,0.4)','rgba(148,163,184,0.4)','rgba(59,130,246,0.4)','rgba(16,185,129,0.4)','rgba(201,168,76,0.4)','rgba(139,92,246,0.4)'],borderRadius:6}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:textColor,font:{size:11}}}},scales:{x:{ticks:{color:textColor,font:{size:9}},grid:{display:false}},y:{ticks:{color:textColor,callback:v=>v+'x'},grid:{color:gridColor}}}}});}
+
+  // Capital efficiency chart
+  const cec=document.getElementById('capEffChart');
+  if(cec){chartInstances.capEff=new Chart(cec,{type:'bar',data:{labels:['Real PT Per-Site','Industry Per-Site'],datasets:[{label:'Cost Range Low',data:[150,400],backgroundColor:['rgba(16,185,129,0.6)','rgba(239,68,68,0.4)'],borderRadius:4},{label:'Cost Range High',data:[300,800],backgroundColor:['rgba(16,185,129,0.4)','rgba(239,68,68,0.2)'],borderRadius:4}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:textColor,font:{size:11}}}},scales:{x:{ticks:{color:textColor},grid:{display:false}},y:{ticks:{color:textColor,callback:v=>'$'+v+'K'},grid:{color:gridColor}}}}});}
 }
 
 // Init on load
