@@ -738,7 +738,7 @@ tr:last-child td{border-bottom:none}
 <!-- ═══════ USE OF FUNDS ═══════ -->
 <div class="section" id="sec-funds">
   <div class="section-title">Use of Funds — $7M Allocation</div>
-  <p class="section-sub">15 locations funded from this $7M raise at $150K–$250K each (costs decreasing). Clinic revenue + state funding scales to 30 locations in 18 months. Transition to buying land &amp; building with Theis SIP ASAP.</p>
+  <p class="section-sub">15 locations funded from this $7M raise at $150K–$250K each (costs decreasing) across KY, NE, and FL. Clinic revenue + state funding scales to 30 locations in 18 months. Transition to buying land &amp; building with Theis SIP ASAP.</p>
 
   <div class="chart-row">
     <div class="chart-card"><h3>$7M Fund Allocation</h3><div class="chart-wrap"><canvas id="fundsChart"></canvas></div></div>
@@ -747,7 +747,7 @@ tr:last-child td{border-bottom:none}
       <table>
         <thead><tr><th>Category</th><th>Amount</th><th>%</th></tr></thead>
         <tbody>
-          <tr><td>15 Location Buildouts (KY + NE)</td><td>$4,200,000</td><td>60.0%</td></tr>
+          <tr><td>15 Location Buildouts (KY + NE + FL)</td><td>$4,200,000</td><td>60.0%</td></tr>
           <tr><td>Tech &amp; Equipment</td><td>$765,000</td><td>10.9%</td></tr>
           <tr><td>Working Capital &amp; Operating Reserve</td><td>$565,000</td><td>8.1%</td></tr>
           <tr><td>Weekend Warrior Insurance</td><td>$400,000</td><td>5.7%</td></tr>
@@ -766,7 +766,7 @@ tr:last-child td{border-bottom:none}
     <table>
       <thead><tr><th>Allocation</th><th>Amount</th><th>Description</th></tr></thead>
       <tbody>
-        <tr><td><strong>15 Location Buildouts (KY + NE)</strong></td><td>$4,200,000</td><td>$150K–$250K per location (costs decreasing). 15 locations funded directly from this raise — KY: Owensboro flagship (300 Frederica St) + Bowling Green + spokes. NE: hubs + spokes across 9-state market. Clinic revenue + state funding scales to <strong>30 locations within 18 months</strong>. All 15 open before selling equity partnerships. Transition to buying land &amp; building with Theis SIP as soon as possible.</td></tr>
+        <tr><td><strong>15 Location Buildouts (KY + NE + FL)</strong></td><td>$4,200,000</td><td>$150K–$250K per location (costs decreasing). 15 locations funded directly from this raise — KY: Owensboro flagship (300 Frederica St) + Bowling Green + spokes. NE: hubs + spokes across 9-state market. FL: 3 Florida locations (coastal + metro). Clinic revenue + state funding scales to <strong>30 locations within 18 months</strong>. All 15 open before selling equity partnerships. Transition to buying land &amp; building with Theis SIP as soon as possible.</td></tr>
         <tr><td><strong>Tech &amp; Equipment</strong></td><td>$765,000</td><td>Clinix AI platform scaling, HBOT chambers, SwimEx aquatic systems, mobile vans (grant co-funded), wearable hardware, data infrastructure.</td></tr>
         <tr><td><strong>Working Capital &amp; Operating Reserve</strong></td><td>$565,000</td><td>General working capital, legal, insurance, accounting, staffing runway, and contingency reserve for first 12–18 months of multi-location operations.</td></tr>
         <tr><td><strong>Weekend Warrior Insurance</strong></td><td>$400,000</td><td>Launch 8-tier insurance product. Creates built-in patient pipeline at every location. Competitive moat competitors cannot replicate without insurance licensing.</td></tr>
@@ -780,7 +780,7 @@ tr:last-child td{border-bottom:none}
 
   <div class="table-card">
     <h3>Allocation Visualization</h3>
-    <div class="progress-row"><div class="progress-label"><span>15 Location Buildouts (KY + NE)</span><span>60.0%</span></div><div class="progress-bar"><div class="progress-fill" style="width:60%;background:linear-gradient(90deg,var(--accent),var(--accent2))"></div></div></div>
+    <div class="progress-row"><div class="progress-label"><span>15 Location Buildouts (KY + NE + FL)</span><span>60.0%</span></div><div class="progress-bar"><div class="progress-fill" style="width:60%;background:linear-gradient(90deg,var(--accent),var(--accent2))"></div></div></div>
     <div class="progress-row"><div class="progress-label"><span>Tech &amp; Equipment</span><span>10.9%</span></div><div class="progress-bar"><div class="progress-fill" style="width:10.9%;background:linear-gradient(90deg,var(--purple),#a78bfa)"></div></div></div>
     <div class="progress-row"><div class="progress-label"><span>Working Capital &amp; Reserve</span><span>8.1%</span></div><div class="progress-bar"><div class="progress-fill" style="width:8.1%;background:linear-gradient(90deg,var(--blue),#60a5fa)"></div></div></div>
     <div class="progress-row"><div class="progress-label"><span>Weekend Warrior Insurance</span><span>5.7%</span></div><div class="progress-bar"><div class="progress-fill" style="width:5.7%;background:linear-gradient(90deg,#f59e0b,#fbbf24)"></div></div></div>
@@ -791,7 +791,7 @@ tr:last-child td{border-bottom:none}
   </div>
 
   <div class="info-box">
-    <p><strong>15 locations funded from this raise → 30 locations within 18 months</strong> via clinic revenue + state funding. All 15 open before selling equity partnerships. Transition to buying land &amp; building with Theis SIP as fast as revenue allows. National expansion talks advancing: <strong>Mississippi, Florida, Arizona, Oregon, DMV corridor.</strong></p>
+    <p><strong>15 locations funded from this raise (KY + NE + 3 FL) → 30 locations within 18 months</strong> via clinic revenue + state funding. All 15 open before selling equity partnerships. Transition to buying land &amp; building with Theis SIP as fast as revenue allows. National expansion talks advancing: <strong>Mississippi, Arizona, Oregon, DMV corridor.</strong></p>
   </div>
 </div>
 
@@ -1468,7 +1468,7 @@ function initCharts(){
 
   // Funds chart (dashboard version)
   const fcd=document.getElementById('fundsChartDash');
-  if(fcd){chartInstances.fcdash=new Chart(fcd,{type:'doughnut',data:{labels:['15 Locations (60%)','Tech & Equipment (10.9%)','Working Capital (8.1%)','Weekend Warrior (5.7%)','REAL Fresh (5.7%)','Grant Filing (4.3%)','Land Reserve (3.4%)','Pure Defense (1.9%)'],datasets:[{data:[60,10.9,8.1,5.7,5.7,4.3,3.4,1.9],backgroundColor:['#c9a84c','#8b5cf6','#6b7280','#f59e0b','#10b981','#34d399','#3b82f6','#ef4444'],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{color:textColor,font:{size:9},padding:6}}}}});}
+  if(fcd){chartInstances.fcdash=new Chart(fcd,{type:'doughnut',data:{labels:['15 Locations KY+NE+FL (60%)','Tech & Equipment (10.9%)','Working Capital (8.1%)','Weekend Warrior (5.7%)','REAL Fresh (5.7%)','Grant Filing (4.3%)','Land Reserve (3.4%)','Pure Defense (1.9%)'],datasets:[{data:[60,10.9,8.1,5.7,5.7,4.3,3.4,1.9],backgroundColor:['#c9a84c','#8b5cf6','#6b7280','#f59e0b','#10b981','#34d399','#3b82f6','#ef4444'],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{color:textColor,font:{size:9},padding:6}}}}});}
 
   // Cap Chart — Silver Arch
   const cc=document.getElementById('capChart');
@@ -1476,7 +1476,7 @@ function initCharts(){
 
   // Use of Funds pie (dedicated page)
   const fc=document.getElementById('fundsChart');
-  if(fc){chartInstances.funds=new Chart(fc,{type:'doughnut',data:{labels:['15 Locations (60%)','Tech & Equipment (10.9%)','Working Capital (8.1%)','Weekend Warrior (5.7%)','REAL Fresh (5.7%)','Grant Filing (4.3%)','Land Reserve (3.4%)','Pure Defense (1.9%)'],datasets:[{data:[60,10.9,8.1,5.7,5.7,4.3,3.4,1.9],backgroundColor:['#c9a84c','#8b5cf6','#6b7280','#f59e0b','#10b981','#34d399','#3b82f6','#ef4444'],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{color:textColor,font:{size:10},padding:8}}}}});}
+  if(fc){chartInstances.funds=new Chart(fc,{type:'doughnut',data:{labels:['15 Locations KY+NE+FL (60%)','Tech & Equipment (10.9%)','Working Capital (8.1%)','Weekend Warrior (5.7%)','REAL Fresh (5.7%)','Grant Filing (4.3%)','Land Reserve (3.4%)','Pure Defense (1.9%)'],datasets:[{data:[60,10.9,8.1,5.7,5.7,4.3,3.4,1.9],backgroundColor:['#c9a84c','#8b5cf6','#6b7280','#f59e0b','#10b981','#34d399','#3b82f6','#ef4444'],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{color:textColor,font:{size:10},padding:8}}}}});}
 
   // Segment chart — Hub revenue by category
   const sc=document.getElementById('segmentChart');
